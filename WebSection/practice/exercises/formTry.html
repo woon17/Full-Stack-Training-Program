@@ -1,0 +1,137 @@
+<strong>form1: input box with limit length</strong>
+<form>
+    <label for="fname">First name:</label><br>
+    <input type="text" id="fname" name="fname"><br>
+    <label for="lname">Last name:</label><br>
+    <input type="text" id="lname" name="lname">
+  </form>
+
+<br>
+<br>
+  <strong>form2: input box with larger length</strong>
+  <form>
+    <label for="address">Address:</label>
+    <textarea rows="3" cols="30" name="address" id="address"></textarea>
+</form>
+<br>
+<br>
+
+<strong>form3: dropdown list</strong>
+<form>
+    <label for="city">City:</label>
+    <select name="city" id="city">
+        <option value="sydney">Sydney</option>
+        <option value="melbourne">Melbourne</option>
+        <option value="cromwell">Cromwell</option>
+    </select>
+</form>
+<br>
+<br>
+
+<strong>form4: A form with checkboxes (can choose mutiple options)</strong>
+<form>
+    <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+    <label for="vehicle1"> I have a bike</label><br>
+    <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+    <label for="vehicle2"> I have a car</label><br>
+    <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+    <label for="vehicle3"> I have a boat</label>
+  </form>
+<br>
+<br>
+
+<strong>form4: A form with radio buttons (only choose one)</strong>
+<form>
+  <input type="radio" id="html" name="fav_language" value="HTML">
+  <label for="html">HTML</label><br>
+  <input type="radio" id="css" name="fav_language" value="CSS">
+  <label for="css">CSS</label><br>
+  <input type="radio" id="javascript" name="fav_language" value="JavaScript">
+  <label for="javascript">JavaScript</label>
+</form>
+<br>
+<br>
+
+<strong>form4: Grouping Form Controls</strong>
+You also group logically related controls and labels within a web form using the <legend> element. Grouping form controls into categories makes it easier for users to locate a control which makes the form more user-friendly. Let's try out the following example to see how it works:
+<form>
+    <fieldset>
+        <legend>Contact Details</legend>
+        <label>Email Address: <input type="email" name="email"></label>
+        <label>Phone Number: <input type="text" name="phone"></label>
+    </fieldset>
+</form>
+<br>
+<br>
+
+<form action="action.php" method="post">
+    <label for="first-name">First Name:</label>
+    <input type="text" name="first-name" id="first-name">
+    <input type="submit" value="Submit">
+    <input type="reset" value="Reset">
+</form>
+
+
+
+<form action="success.html">
+  <label for="fname">First name:</label><br>
+  <input type="text" id="fname" name="fname" value="Shufa"><br>
+  <label for="lname">Last name:</label><br>
+  <input type="text" id="lname" name="lname" value="Wen"><br><br>
+  <input type="submit" value="Submit">
+  <input type="reset">
+</form>
+
+<label">Input Type Button:</label><br>
+<input type="button" onclick="alert('Hello World!')" value="Click Me!"><br><br>
+
+
+
+<strong>Input Type color:</strong>
+<form>
+  <label for="favcolor">Select your favorite color:</label>
+  <input type="color" id="favcolor" name="favcolor">
+</form>
+
+
+<strong>Input Type Date:</strong>
+<form>
+  <label for="birthday">Birthday:</label>
+  <input type="date" id="birthday" name="birthday">
+</form>
+
+<form>
+  <label for="datemax">Enter a date before 1980-01-01:</label>
+  <input type="date" id="datemax" name="datemax" max="1979-12-31"><br><br>
+  <label for="datemin">Enter a date after 2000-01-01:</label>
+  <input type="date" id="datemin" name="datemin" min="2000-01-02">
+</form>
+
+
+
+<strong>Input Type Datetime-local:</strong>
+<form>
+  <label for="birthdaytime">Birthday (date and time):</label>
+  <input type="datetime-local" id="birthdaytime" name="birthdaytime">
+</form>
+
+
+<strong>Input Type Email:</strong>
+<form>
+  <label for="email">Enter your email:</label>
+  <input type="email" id="email" name="email">
+</form>
+
+<strong>Input Type File:</strong>
+<form>
+  <label for="myfile">Select a file:</label>
+  <input type="file" id="myfile" name="myfile">
+</form>
+
+<strong>Input Type Hidden:</strong>
+<form>
+  <label for="fname">First name:</label>
+  <input type="text" id="fname" name="fname"><br><br>
+  <input type="hidden" id="custId" name="custId" value="3487">
+  <input type="submit" value="Submit">
+</form>

@@ -1,0 +1,20 @@
+p{
+    color:blue;
+    background-color: pink;
+    font-size: 50px;
+    font-family: monospace;
+    border: 2px solid rgb(123, 255, 0);
+}
+
+h1{
+    color:red;
+    background-color: black;
+    font-size: 70px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-style: italic;
+}
+
+img{
+    height: 100%; 
+    width: 100%;
+}

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form practice</title>
+</head>
+
+<body>
+
+    <em>
+        <h1 style="color:rgb(7, 7, 7)" align="center"><u>Welcome to be part of XYZ sports</u><br></h1>
+    </em>
+    <hr>
+    <p align="right" style="margin-right: 40px;">
+        <a href="home.html" style="margin-right: 10px;">Home</a>
+        <a style="margin-right: 10px;"> > </a>
+        <em><strong><a style="margin-right: 10px;">Join Us</a></strong></em>
+    </p>
+    <!-- <div align="center"> -->
+    <form action="success.html" style="text-align: left;">
+        <table align="center">
+            <caption><h3 style="color:blue">Job Application Form</h3></caption>
+            <tr>
+                <td>
+                    <div style="margin-bottom: 10px;">
+                        <lable>First Name: </lable><input type="text" name="firstname"
+                            placeholder="Enter the first name" required><br>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+
+                <td>
+                    <div style="margin-bottom: 10px;">
+                        <lable style="margin-right: 2px;">Last Name: </lable><input type="text" name="lastname"
+                            placeholder="Enter the last name" required><br>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+
+                <td>
+                    <div style="margin-bottom: 10px;">
+                        <lable style="margin-right: 44px;">City: </lable><input type="text" name="city"
+                            placeholder="Enter the City" required><br>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p><strong>Are you married?</strong></p>
+                    <lable for="my">Yes</lable>
+                    <input type="radio" id="my" name="married" value="my"  style="margin-right: 30px;" required>
+                    <lable for="mn">No</lable>
+                    <input type="radio" id="mn" name="married" value="mn">
+                    <br>
+                    <br>
+                </td>
+            </tr>
+            <tr>
+                <td>
+
+                    <p><strong>Which role u want to apply?</strong></p>
+                    
+                    <input type="checkbox" name="status" value="frontend">
+                    <label for="frontend">frontend</label><br>
+                    <input type="checkbox" name="status" value="backend">
+                    <label for="backend">backend</label><br>
+                    <input type="checkbox" name="status" value="full stack">
+                    <label for="full stack">full stack</label>
+                    <br>
+                    <br>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p><strong>Choose the city u want to work?</strong></p>
+                    <label for="city">City:</label>
+                    <select name="city" id="city">
+                        <option value="singapore">singapore</option>
+                        <option value="melbourne">Melbourne</option>
+                        <option value="cromwell">Cromwell</option>
+                    </select>
+                    <br>
+                    <br>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="submit" value="Click here to submit" style="margin-left: 50%;">
+                </td>
+            </tr>
+        </table>
+    </form>
+    <!-- </div> -->
+</body>
+
+</html>

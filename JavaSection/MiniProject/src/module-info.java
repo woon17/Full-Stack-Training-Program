@@ -1,0 +1,9 @@
+/**
+ * 
+ */
+/**
+ * @author shufa
+ *
+ */
+module MiniProject {
+}

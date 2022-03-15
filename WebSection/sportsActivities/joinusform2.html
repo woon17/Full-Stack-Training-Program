@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form practice</title>
+</head>
+
+<body>
+    <em>
+        <h1 style="color:rgb(7, 7, 7)" align="center"><u>Welcome to be part of XYZ sports</u><br></h1>
+    </em>
+    <!-- <div align="center"> -->
+    <form action="success.html">
+        <table align="center">
+            <tr>
+                <td>
+                    <lable>First Name: </lable>
+                </td>
+                <td>
+                    <input type="text" name="firstname" placeholder="Enter the first name" required><br>
+                </td>
+            </tr>
+            <tr>
+
+                <td>
+                    <lable>Last Name: </lable>
+                </td>
+                <td>
+                    <input type="text" name="lastname" placeholder="Enter the last name" required><br>
+                </td>
+            </tr>
+            <tr>
+
+                <td>
+                    <div style="margin-bottom: 10px;">
+                        <lable style="margin-right: 44px;">City: </lable><input type="text" name="city"
+                            placeholder="Enter the City" required><br>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>Are you married?</p>
+                    <lable for="my">Yes</lable>
+                    <input type="radio" id="my" name="married" value="my" required>
+                    <lable for="mn">No</lable>
+                    <input type="radio" id="mn" name="married" value="mn">
+                    <br>
+                </td>
+            </tr>
+            <tr>
+                <td>
+
+                    <p>which role u want to apply</p>
+                    <input type="checkbox" name="status" value="frontend">
+                    <label for="frontend"> frontend</label><br>
+                    <input type="checkbox" name="status" value="backend">
+                    <label for="backend"> I have a car</label><br>
+                    <input type="checkbox" name="status" value="full stack">
+                    <label for="full stack">full stack</label>
+                    <br>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>choose the city u want to work</p>
+                    <label for="city">City:</label>
+                    <select name="city" id="city">
+                        <option value="singapore">singapore</option>
+                        <option value="melbourne">Melbourne</option>
+                        <option value="cromwell">Cromwell</option>
+                    </select>
+                    <br>
+                    <br>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="submit" value="Click here to submit">
+                </td>
+            </tr>
+        </table>
+    </form>
+    <!-- </div> -->
+</body>
+
+</html>

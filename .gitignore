@@ -1,0 +1,16 @@
+
+JavaSection/.metadata
+*.class
+JavaSection/.project
+
+JavaSection/MiniProject/.classpath
+
+JavaSection/MiniProject/.project
+
+JavaSection/MiniProject/.settings/org.eclipse.jdt.core.prefs
+
+JavaSection/testproject/.classpath
+
+JavaSection/testproject/.project
+
+JavaSection/testproject/.settings/org.eclipse.jdt.core.prefs
