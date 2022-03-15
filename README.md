@@ -13,11 +13,11 @@ Practice for Java:
 - [Practice code for Java](https://github.com/woon17/Full-Stack-Training-Program/tree/main/JavaSection/testproject/src/testproject)
 - [Practice problem 1](https://github.com/woon17/Full-Stack-Training-Program/blob/main/JavaSection/testproject/src/testproject/Problem1.java)
 - [Practice problem 2](https://github.com/woon17/Full-Stack-Training-Program/blob/main/JavaSection/testproject/src/testproject/Problem2.java)
-- Other practice:[26 letters](https://github.com/woon17/Full-Stack-Training-Program/blob/main/JavaSection/testproject/src/testproject/letters.java)
+- Other practice: [26 letters](https://github.com/woon17/Full-Stack-Training-Program/blob/main/JavaSection/testproject/src/testproject/letters.java)
   
 Practice for HTML:
-- <a herf="/WebSection/practice">Practice code for html</a>
-- <a herf="/WebSection/sportsActivities">Simple website by HTML only</a>
+- [Practice code for html](https://github.com/woon17/Full-Stack-Training-Program/tree/main/WebSection/practice)
+- [Sports activities website by HTML only](https://github.com/woon17/Full-Stack-Training-Program/tree/main/WebSection/sportsActivities)
 <hr>
 
 ### Some important notes:
