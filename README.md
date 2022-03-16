@@ -7,6 +7,42 @@ Spring Boot / Angular / Java / Html / CSS
 - Visual Studio Code: used for web development
 - Eclipse IDE for Java Developer: used for Java learning
 ***
+
+### Week 2
+
+- <strong><em>Day 1</em></strong>:
+    | Section        | topic                                                                    | task                                                                                                                                                                                                                                                                                                                                                                                   |
+    | -------------- | ------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+    | *Java Section* | `Variables · anonymous object`                                           | [LaunchDog.java](https://github.com/woon17/Full-Stack-Training-Program/blob/main/JavaSection/MiniProject/src/MiniProject/LaunchDog.java)                                                                                                                                                                                                                                               |
+    | *Web Section*  | `HTML · clickable image · Iframe · HTML Input type· Single page website` | [index2.html](https://github.com/woon17/Full-Stack-Training-Program/tree/main/WebSection/practice/exercises/index2.html) · [index1.html](https://github.com/woon17/Full-Stack-Training-Program/tree/main/WebSection/practice/exercises/index1.html) · [inputTypes.html](https://github.com/woon17/Full-Stack-Training-Program/tree/main/WebSection/practice/exercises/inputTypes.html) |
+
+1. Instance variable can choose not to initialise.
+But for local variables, must initialise it
+2. anonymous object: If you have to use an object only once, an anonymous object is a good approach.
+
+- <strong><em>Day 2</em></strong>: 
+    | Section        | topic                                                                                    | task                                                                                                                                                                                                                                                                                                        |
+    | -------------- | ---------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+    | *Java Section* | `encapsulation · polymorphism · Inheritance · Abstraction · constructor · For each loop` | [LaunchForEach.java](https://github.com/woon17/Full-Stack-Training-Program/blob/main/JavaSection/testproject/src/testproject/LaunchForEach.java) [LaunchSubstraction.java](https://github.com/woon17/Full-Stack-Training-Program/blob/main/JavaSection/testproject/src/testproject/LaunchSubstraction.java) |
+    | *Web Section*  | `HTML · legend tag for forms · CSS`                                                      | [forml.html](https://github.com/woon17/Full-Stack-Training-Program/blob/main/WebSection/practice/exercises/forml.html) · [cssPractice.html](https://github.com/woon17/Full-Stack-Training-Program/blob/main/WebSection/practice/exercises/cssPractice.html)                                                 |
+
+1. CSS: style the webpage 
+
+2. Style ways:
+	- Inline attribute (html): 
+	- Internal stylesheet
+	- External stylesheet
+
+3. CSS: cascading style sheets
+	- It is a style sheet language which is used to give or describe the look and feel of the websites - which is written in markup language
+
+- <strong><em>Day 3</em></strong>: 
+    | Section        | topic                                                     | task                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+    | -------------- | --------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+    | *Java Section* | `Static variable · Static block · Static method · String` | [LaunchSimpleIntererst.java](https://github.com/woon17/Full-Stack-Training-Program/blob/main/JavaSection/testproject/src/testproject/LaunchSimpleIntererst.java) · [LaunchObjectsCount.java](https://github.com/woon17/Full-Stack-Training-Program/blob/main/JavaSection/testproject/src/testproject/LaunchObjectsCount.java) · [LaunchStaticPractice.java](https://github.com/woon17/Full-Stack-Training-Program/blob/main/JavaSection/testproject/src/testproject/LaunchStaticPractice.java) · [StringPractice.java](https://github.com/woon17/Full-Stack-Training-Program/blob/main/JavaSection/testproject/src/testproject/StringPractice.java) |
+    | *Web Section*  | `CSS · `                                                  |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+<hr>
+
 ### Week 1
 
 Practice for Java:
@@ -87,6 +123,9 @@ tags:
 
 ***
 
-### Week 2
-- <strong><em>Day 1</em></strong>: 
-Strings, static, encapsulation, access modifiers, overloading, polymorphism, inheritance.
+
+<hr>
+
+    1. add image per day
+    2. add code per day for weeek 1 and 2
+

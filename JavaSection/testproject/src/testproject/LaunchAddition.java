@@ -9,7 +9,7 @@ class Addition{
 		return sum;
 	}
 }
-public class LauchAddition {
+public class LaunchAddition {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
