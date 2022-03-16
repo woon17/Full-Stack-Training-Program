@@ -1,6 +1,6 @@
 p{
     color:red;
-    background-color: blue;
+    /* background-color: blue; */
     font-size: 30px;
     font-family: monospace;
     border: 2px solid rgb(123, 255, 0);
@@ -10,12 +10,10 @@ h1{
     color: blue;
     border-style: groove;
     background-color: aqua;
-    font-family: 'Fredericka the Great', cursive;
 }
 
 h3{
     color: blueviolet;
-    background-color: beige;
 }
 
 ul{
@@ -25,53 +23,53 @@ ul{
 div{
     border-style: double;
     text-align: center;
-    border-width: 5px;
-    border-color: brown;
-    background-color: cyan;
 }
 
 body{
     /* background: url(https://img.freepik.com/free-photo/interior-wall-mockup-with-green-plantgreen-wall-shelf3d-rendering_41470-4431.jpg?t=st=1647415551~exp=1647416151~hmac=2d8bc35222fe2ceb6830b4766e91475f718a5deef420eee7373b10532ef9cd08&w=1380); */
     background: url(../images/background.webp);
-    background-color: cadetblue;
+    /* background-color: cadetblue; */
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-    /* filter: blur(3px); */
     /* background-image: -moz-element(); */
 }
 
-#noimage{
-    background: url();
+a{
+    font-size: larger;
+    color: burlywood;
+    font-family: 'Fredericka the Great', cursive;
+    font-weight: 1000;
+
 }
 
-#oddrow{
-    color: tomato;
+td{
+    font-size: large;
+    color: rgb(0, 0, 0);
+    font-family: 'Fredericka the Great', cursive;
+    font-weight: 1000;
 }
 
-
-#evenrow{
-    color: black;
+caption{
+    caption-side: bottom;
+    font-weight: 1000;
 }
 
-#blueborder{
-    background-color: red;
-    border-color: blue;
-    /* font-family: ; */
-}
-
-.redclass{
+#table-header{
+    color: red;
     background-color: blue;
-    border-color: red; 
 }
 
-.p2{
-    color: aqua;
-    background-color: tomato;
+#odd-row{
+    background-color: aqua;
 }
 
-h2, h3, h4, h5{
-    color: cyan;
-    background-color: tomato;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+#even-row{
+    background-color: rgb(0, 255, 106);
+}
+
+.red-text{
+    color: red;
+    font-weight: 800;
 }

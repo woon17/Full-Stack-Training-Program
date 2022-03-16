@@ -7,6 +7,10 @@ Spring Boot / Angular / Java / Html / CSS
 - Visual Studio Code: used for web development
 - Eclipse IDE for Java Developer: used for Java learning
 
+How to preview github HTML files:
+```
+add: https://htmlpreview.github.io/?
+```
 Practice for Java Section:
 - [Practice code for Java](https://github.com/woon17/Full-Stack-Training-Program/tree/main/JavaSection/testproject/src/testproject)
 - [Practice problem 1](https://github.com/woon17/Full-Stack-Training-Program/blob/main/JavaSection/testproject/src/testproject/Problem1.java)
@@ -17,6 +21,11 @@ Practice for Web Section:
 - [Practice code for Web Section](https://github.com/woon17/Full-Stack-Training-Program/tree/main/WebSection/practice)
 - [Sports activities website by HTML only](https://github.com/woon17/Full-Stack-Training-Program/tree/HtmlOnly/WebSection/sportsActivities)
 - [Sports activities website with CSS](https://github.com/woon17/Full-Stack-Training-Program/tree/main/WebSection/sportsActivities)
+<!-- TODO: need to start to add different version of porfolio and deploy by github.io -->
+- [Portfolio with html only]()
+- [live Portfolio with html only]()
+- [Portfolio by using CSS]()
+- [live Portfolio by using CSS]()
 ***
 
 ### Week 2
@@ -80,16 +89,78 @@ But for local variables, must initialise it
 	- It is a style sheet language which is used to give or describe the look and feel of the websites - which is written in markup language
 
 - <strong><em>Day 3</em></strong>: 
-    | Section        | topic                                                     | task                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
-    | -------------- | --------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-    | *Java Section* | `Static variable · Static block · Static method · String` | [LaunchSimpleIntererst.java](https://github.com/woon17/Full-Stack-Training-Program/blob/main/JavaSection/testproject/src/testproject/LaunchSimpleInterest.java) · [LaunchObjectsCount.java](https://github.com/woon17/Full-Stack-Training-Program/blob/main/JavaSection/testproject/src/testproject/LaunchObjectsCount.java) · [LaunchStaticPractice.java](https://github.com/woon17/Full-Stack-Training-Program/blob/main/JavaSection/testproject/src/testproject/LaunchStaticPractice.java) · [StringPractice.java](https://github.com/woon17/Full-Stack-Training-Program/blob/main/JavaSection/testproject/src/testproject/StringPractice.java) |
-    | *Web Section*  | `CSS · precedence of the style rules`                                                  |[index4.html](https://github.com/woon17/Full-Stack-Training-Program/blob/main/WebSection/practice/exercises/index4.html) · [hello.html](https://github.com/woon17/Full-Stack-Training-Program/blob/main/WebSection/practice/exercises/hello.html)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+    | Section        | topic                                                                                         | task                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+    | -------------- | --------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+    | *Java Section* | `Static variable · Static block · Static method · String`                                     | [LaunchSimpleIntererst.java](https://github.com/woon17/Full-Stack-Training-Program/blob/main/JavaSection/testproject/src/testproject/LaunchSimpleInterest.java) · [LaunchObjectsCount.java](https://github.com/woon17/Full-Stack-Training-Program/blob/main/JavaSection/testproject/src/testproject/LaunchObjectsCount.java) · [LaunchStaticPractice.java](https://github.com/woon17/Full-Stack-Training-Program/blob/main/JavaSection/testproject/src/testproject/LaunchStaticPractice.java) · [StringPractice.java](https://github.com/woon17/Full-Stack-Training-Program/blob/main/JavaSection/testproject/src/testproject/StringPractice.java) |
+    | *Web Section*  | `CSS · precedence of the style rules · Different font online · background images · Selectors` | [index4.html](https://github.com/woon17/Full-Stack-Training-Program/blob/main/WebSection/practice/exercises/index4.html) · [hello.html](https://github.com/woon17/Full-Stack-Training-Program/blob/main/WebSection/practice/exercises/hello.html)  · [my profile home page](https://github.com/woon17/Full-Stack-Training-Program/blob/main/WebSection/practice/myProfile/home.html)                                                                                                                                                                                                                                                               |
 1. Order of the style/precedence of the style rules:    
-    1. inline style (highest priority)
-    2. Internal style
-    3. External style
-    4. Browser default style
+    - inline style (highest priority)
+    - Internal style
+    - External style
+    - Browser default style
+  
+2. Types of Selectors
+    - Tag selectors:
+        ```
+        HTML file:
+        <tagname></tagname>
+        
+        CSS file:
+        tagname{
+            ...
+        }
+        ```
 
+	- Id selectors:
+        ```
+        HTML file: 
+        <tagname id="idatvalue"></tagname>
+
+        CSS file:
+		#idatvalue{
+        .. }
+        ```
+        
+	- Class selectors:
+
+        ```
+        HTML file:
+        <tagname class="classname"></tagname>
+        
+        CSS file:
+        .classname{
+            Declaration List 
+        }
+
+        OR
+
+        tagname.classname{
+            Declaration List 
+        }
+
+        ```
+
+	- Group selectors:
+  
+        ```
+        HTML file:
+        <tagname1></tagname1>
+        <tagname2></tagname2>
+        <tagname3></tagname3>
+        <tagname4></tagname4>
+        
+        CSS file:
+        tagname1, tagname2, tagname3, tagname4{
+            Declaration List 
+        }
+        ```
+
+	- Combination selectors
+	- Contextual selectors 
+	- Attribute selectors
+	- Pseudo class selectors
+	- Pseudo element selectors
+Universal selectors
 <hr>
 
 ### Week 1
@@ -175,4 +246,3 @@ tags:
 
     1. add image per day
     2. add code per day for weeek 1 and 2
-
