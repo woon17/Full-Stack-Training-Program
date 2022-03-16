@@ -6,9 +6,23 @@ Spring Boot / Angular / Java / Html / CSS
 <!-- TODO: add links to download -->
 - Visual Studio Code: used for web development
 - Eclipse IDE for Java Developer: used for Java learning
+
+Practice for Java Section:
+- [Practice code for Java](https://github.com/woon17/Full-Stack-Training-Program/tree/main/JavaSection/testproject/src/testproject)
+- [Practice problem 1](https://github.com/woon17/Full-Stack-Training-Program/blob/main/JavaSection/testproject/src/testproject/Problem1.java)
+- [Practice problem 2](https://github.com/woon17/Full-Stack-Training-Program/blob/main/JavaSection/testproject/src/testproject/Problem2.java)
+- Other practice: [26 letters](https://github.com/woon17/Full-Stack-Training-Program/blob/main/JavaSection/testproject/src/testproject/letters.java)
+  
+Practice for Web Section:
+- [Practice code for Web Section](https://github.com/woon17/Full-Stack-Training-Program/tree/main/WebSection/practice)
+- [Sports activities website by HTML only](https://github.com/woon17/Full-Stack-Training-Program/tree/HtmlOnly/WebSection/sportsActivities)
+- [Sports activities website with CSS](https://github.com/woon17/Full-Stack-Training-Program/tree/main/WebSection/sportsActivities)
 ***
 
 ### Week 2
+
+Practice for Web:
+- [Sports activities website with CSS](https://github.com/woon17/Full-Stack-Training-Program/tree/main/WebSection/sportsActivities)
 
 - <strong><em>Day 1</em></strong>:
     | Section        | topic                                                                    | task                                                                                                                                                                                                                                                                                                                                                                                   |
@@ -46,14 +60,12 @@ But for local variables, must initialise it
 ### Week 1
 
 Practice for Java:
-- [Practice code for Java](https://github.com/woon17/Full-Stack-Training-Program/tree/main/JavaSection/testproject/src/testproject)
 - [Practice problem 1](https://github.com/woon17/Full-Stack-Training-Program/blob/main/JavaSection/testproject/src/testproject/Problem1.java)
 - [Practice problem 2](https://github.com/woon17/Full-Stack-Training-Program/blob/main/JavaSection/testproject/src/testproject/Problem2.java)
 - Other practice: [26 letters](https://github.com/woon17/Full-Stack-Training-Program/blob/main/JavaSection/testproject/src/testproject/letters.java)
   
 Practice for HTML:
-- [Practice code for html](https://github.com/woon17/Full-Stack-Training-Program/tree/main/WebSection/practice)
-- [Sports activities website by HTML only](https://github.com/woon17/Full-Stack-Training-Program/tree/main/WebSection/sportsActivities)
+- [Sports activities website by HTML only](https://github.com/woon17/Full-Stack-Training-Program/tree/HtmlOnly/WebSection/sportsActivities)
 <hr>
 
 ### Some important notes:
