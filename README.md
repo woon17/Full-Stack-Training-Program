@@ -43,18 +43,53 @@ But for local variables, must initialise it
 1. CSS: style the webpage 
 
 2. Style ways:
-	- Inline attribute (html): 
+	- Inline style attribute (html):
+        ```
+        <body>
+            <p style="color:blue">Hello world</p>
+        </body>
+        ```
 	- Internal stylesheet
+        ```
+        <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Document</title>
+            <style>
+                p{
+                    color: blue;
+                }
+            </style>
+        </head>
+        ```
 	- External stylesheet
+
+        ``` 
+        external.css: 
+        p{
+            color:blue;
+            background-color: pink;
+            font-size: 50px;
+            font-family: monospace;
+            border: 2px solid rgb(123, 255, 0);
+        }
+        ```
 
 3. CSS: cascading style sheets
 	- It is a style sheet language which is used to give or describe the look and feel of the websites - which is written in markup language
 
 - <strong><em>Day 3</em></strong>: 
-    | Section        | topic                                                     | task                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
-    | -------------- | --------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+    | Section        | topic                                                     | task                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+    | -------------- | --------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
     | *Java Section* | `Static variable · Static block · Static method · String` | [LaunchSimpleIntererst.java](https://github.com/woon17/Full-Stack-Training-Program/blob/main/JavaSection/testproject/src/testproject/LaunchSimpleInterest.java) · [LaunchObjectsCount.java](https://github.com/woon17/Full-Stack-Training-Program/blob/main/JavaSection/testproject/src/testproject/LaunchObjectsCount.java) · [LaunchStaticPractice.java](https://github.com/woon17/Full-Stack-Training-Program/blob/main/JavaSection/testproject/src/testproject/LaunchStaticPractice.java) · [StringPractice.java](https://github.com/woon17/Full-Stack-Training-Program/blob/main/JavaSection/testproject/src/testproject/StringPractice.java) |
-    | *Web Section*  | `CSS · `                                                  |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+    | *Web Section*  | `CSS · precedence of the style rules`                                                  |[index4.html](https://github.com/woon17/Full-Stack-Training-Program/blob/main/WebSection/practice/exercises/index4.html) · [hello.html](https://github.com/woon17/Full-Stack-Training-Program/blob/main/WebSection/practice/exercises/hello.html)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+1. Order of the style/precedence of the style rules:    
+    1. inline style (highest priority)
+    2. Internal style
+    3. External style
+    4. Browser default style
+
 <hr>
 
 ### Week 1
