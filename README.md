@@ -161,6 +161,29 @@ But for local variables, must initialise it
 	- Pseudo class selectors
 	- Pseudo element selectors
 Universal selectors
+
+- <strong><em>Day 4</em></strong>:
+    | Section        | topic                                                                    | task                                                                                                                                                                                                                                                                                                                                                                                   |
+    | -------------- | ------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+    | *Java Section* | `Variables · anonymous object`                                           | [LaunchDog.java](https://github.com/woon17/Full-Stack-Training-Program/blob/main/JavaSection/testproject/src/testproject/LaunchDog.java)                                                                                                                                                                                                                                               |
+    | *Web Section*  | `Selectors · link states · selectors` | [index2.html](https://github.com/woon17/Full-Stack-Training-Program/tree/main/WebSection/practice/exercises/index2.html) · [index1.html](https://github.com/woon17/Full-Stack-Training-Program/tree/main/WebSection/practice/exercises/index1.html) · [inputTypes.html](https://github.com/woon17/Full-Stack-Training-Program/tree/main/WebSection/practice/exercises/inputTypes.html) |
+
+
+
+
+1. Types of Selectors
+    - Tag selectors
+	- Id selectors
+    - Class selectors
+	- Group selectors
+	- Combination selectors：
+        ```
+        
+        ```
+	- Contextual selectors 
+	- Attribute selectors
+	- Pseudo class selectors
+	- Pseudo element selectors
 <hr>
 
 ### Week 1

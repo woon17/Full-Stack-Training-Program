@@ -1,0 +1,92 @@
+/* ----------------------------------descendant and combaination selector------------------------------------------ */
+/* div#innerDiv1 p{
+    color:red;
+} */
+
+/* header p{
+    color:pink;
+}
+
+header h2{
+    color: cyan;
+}
+
+footer h2{
+    color: yellow;
+}
+
+div div a{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+} */
+
+/* ----------------------------------Direct child selector------------------------------------------ */
+/* header>a{
+    color: red;
+    background-color: black;
+
+}
+
+footer>a{
+    font-family: 'Courier New', Courier, monospace;
+
+} */
+
+
+/* the bellow selector take no effect as div no immediate child h2 */
+/* div>h2{ 
+    color: white;
+    background-color: black;
+}
+
+body>div>footer>h2{
+    color: red;
+}
+
+div>footer>a>sup{
+    color: red;
+} */
+
+/* ----------------------------------Adjacent Sibling Selector------------------------------------------ */
+
+/* a is the adjacent Sibling tag for p 
+ * div is the parent for (p and a)    
+**/
+/* div>p+a {
+    background-color: yellow;
+} */
+
+/* p is the adjacent Sibling tag for h2 */
+/* h2+p {
+    background-color: red;
+    background-color: green;
+} */
+
+/* a is the adjacent Sibling tag for p and p is the adjacent sibling tag for h2 */
+/* footer>h2+p+a{
+    background-color: pink;
+} */
+
+/* tag, id, direct child, adjacnet sibling selectors */
+/* div#innerDiv2>p+a{
+    background-color: cyan;
+}
+
+footer>h2{
+    background-color: rgb(99, 2, 255);
+} */
+
+/* ----------------------------------general Sibling Selector------------------------------------------ */
+h2~p{
+    border: red 2px solid;
+    background-color: pink;
+}
+
+footer>h2~a{
+    border: cyan 2px dotted;
+    background-color: green;
+}
+
+header p~a{
+    border: blue 2px double;
+    background-color: rgb(179, 255, 0);
+}

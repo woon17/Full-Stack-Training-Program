@@ -1,3 +1,4 @@
+/* Tag Selector */
 p{
     color:red;
     background-color: blue;
@@ -41,6 +42,7 @@ body{
     /* background-image: -moz-element(); */
 }
 
+/* Id Selector */
 #noimage{
     background: url();
 }
@@ -60,6 +62,7 @@ body{
     /* font-family: ; */
 }
 
+/* Class Selector */
 .redclass{
     background-color: blue;
     border-color: red; 
@@ -70,6 +73,7 @@ body{
     background-color: tomato;
 }
 
+/* Group Selector */
 h2, h3, h4, h5{
     color: cyan;
     background-color: tomato;

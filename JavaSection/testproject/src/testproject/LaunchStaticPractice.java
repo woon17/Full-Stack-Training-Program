@@ -15,7 +15,7 @@ class Student{
 	static void display2() {
 //		bellow one line code cause error:
 //		Cannot make a static reference to the non-static field a
-		System.out.println(a);
+//		System.out.println(a);
 		System.out.println(m);
 	}
 }
