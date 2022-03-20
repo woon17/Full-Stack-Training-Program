@@ -163,29 +163,142 @@ But for local variables, must initialise it
 Universal selectors
 
 - <strong><em>Day 4</em></strong>:
-    | Section        | topic                                                                    | task                                                                                                                                                                                                                                                                                                                                                                                   |
-    | -------------- | ------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-    | *Java Section* | `Variables · anonymous object`                                           | [LaunchDog.java](https://github.com/woon17/Full-Stack-Training-Program/blob/main/JavaSection/testproject/src/testproject/LaunchDog.java)                                                                                                                                                                                                                                               |
-    | *Web Section*  | `Selectors · link states · selectors` | [index2.html](https://github.com/woon17/Full-Stack-Training-Program/tree/main/WebSection/practice/exercises/index2.html) · [index1.html](https://github.com/woon17/Full-Stack-Training-Program/tree/main/WebSection/practice/exercises/index1.html) · [inputTypes.html](https://github.com/woon17/Full-Stack-Training-Program/tree/main/WebSection/practice/exercises/inputTypes.html) |
+    | Section        | topic                                 | task                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+    | -------------- | ------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+    | *Java Section* | `Inheritance · constructor ·  `       | [LaunchDemo.java](https://github.com/woon17/Full-Stack-Training-Program/blob/main/JavaSection/testproject/src/testproject/LaunchDemo.java) · [LaunchDog.java](https://github.com/woon17/Full-Stack-Training-Program/blob/main/JavaSection/testproject/src/testproject/LaunchDog.java) · [TicTacToe Game](https://github.com/woon17/Full-Stack-Training-Program/blob/main/JavaSection/testproject/src/TicTacToe/LaunchGames.java)                                                                                                                                                                                                                       |
+    | *Web Section*  | `Selectors · link states · selectors` | [index7.html](https://github.com/woon17/Full-Stack-Training-Program/tree/main/WebSection/practice/exercises/index7.html) · [index6.html](https://github.com/woon17/Full-Stack-Training-Program/tree/main/WebSection/practice/exercises/index6.html) · [link.html](https://github.com/woon17/Full-Stack-Training-Program/tree/main/WebSection/practice/exercises/link.html) · [index7Style.css](https://github.com/woon17/Full-Stack-Training-Program/tree/main/WebSection/practice/exercises/index7Style.html) · [externalStyle.css](https://github.com/woon17/Full-Stack-Training-Program/tree/main/WebSection/practice/exercises/externalStyle.html) |
 
+1. The purpose of inheritance: 
+   The idea behind inheritance in Java is that you can create new classes that are built upon existing classes. When you inherit from an existing class, you can reuse methods and fields of the parent class. Moreover, you can add new methods and fields in your current class also.
 
+2. extends: The extends keyword indicates that you are making a new class that derives from an existing class. The 
+   meaning of "extends" is to increase the functionality.
 
+3. this() - local chaining; super() - constructor chaining
 
-1. Types of Selectors
+4. Cyclic inheritance is not permit; Multiple inheritance is not permit; Multi-level inheritance is allowed
+
+5. Types of Selectors: 
     - Tag selectors
 	- Id selectors
     - Class selectors
 	- Group selectors
-	- Combination selectors：
+	- Descendant Selector: Indicated with blank space
         ```
-        
+        Selector1 Seclector2
+        {
+            declaration list;
+        }
         ```
+	- Combination selectors：Witout any space
+        ```
+        div#innerDiv p
+        {
+            declaration list
+        }
+        ```
+    - Direct child selector: (>)
+        ```
+        Selector1>Seclector2
+        {
+            declaration list;
+        }
+        ```
+    - Adjancent Sibling Selectir/Next Sibling Selector: (+):
+        ```
+        Selector1+Seclector2
+        {
+            declaration list;
+        }
+        ```
+    - General Sibling Selector: (~)
+        ```
+        Selector1~Seclector2
+        {
+            declaration list;
+        }
+        ```
+    - Attribute selectors: [index7Style.css](https://github.com/woon17/Full-Stack-Training-Program/tree/main/WebSection/practice/exercises/index7Style.html)
 	- Contextual selectors 
-	- Attribute selectors
 	- Pseudo class selectors
 	- Pseudo element selectors
+
+
+6. states of a link: (must keep the order)
+	1. Link: normal state or unvisited state 
+	2. Visited: when user opens a link
+	3. Hover: move the cursor over the link
+	4. Active: currently opened link
+    ```
+	• a:link - a normal, unvisited link
+	• a:visited - a link the user has visited
+	• a:hover - a link when the user mouses over it
+    • a:active - a link the moment it is clicked
+    ```
+7. - Siblings: children who have the same parent
+   - Adjacent Siblings: same parent and adjacent to each other
 <hr>
 
+- <strong><em>Day 5</em></strong>:
+    | Section        | topic                                       | task                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+    | -------------- | ------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+    | *Java Section* | `Inheritance · constructor · polymorphism ` | [LaunchDemo2.java](https://github.com/woon17/Full-Stack-Training-Program/blob/main/JavaSection/testproject/src/testproject/LaunchDemo2.java) · [LaunchPlane.java](https://github.com/woon17/Full-Stack-Training-Program/blob/main/JavaSection/testproject/src/testproject/LaunchPlane.java) · [LaunchAnimal.java](https://github.com/woon17/Full-Stack-Training-Program/blob/main/JavaSection/testproject/src/testproject/LaunchAnimal.java) · [TicTacToe Game](https://github.com/woon17/Full-Stack-Training-Program/blob/main/JavaSection/testproject/src/TicTacToe/LaunchGames.java)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+    | *Web Section*  | `Selectors · link states · selectors`       | [index8.html](https://github.com/woon17/Full-Stack-Training-Program/tree/main/WebSection/practice/exercises/index8.html) · [linkStyle.css](https://github.com/woon17/Full-Stack-Training-Program/tree/main/WebSection/practice/exercises/linkStyle.html) · [detailsForm.html](https://github.com/woon17/Full-Stack-Training-Program/tree/main/WebSection/practice/exercises/detailsForm.html) · [boxMod.html](https://github.com/woon17/Full-Stack-Training-Program/tree/main/WebSection/practice/css/boxMod.html) · [board.html](https://github.com/woon17/Full-Stack-Training-Program/tree/main/WebSection/board.html) · [chessboard.html](https://github.com/woon17/Full-Stack-Training-Program/tree/main/WebSection//ChesssBoardchessboard.html) · [pseudoclass.css](https://github.com/woon17/Full-Stack-Training-Program/tree/main/WebSection/practice/css/pseudoclass.css) · [form.css](https://github.com/woon17/Full-Stack-Training-Program/tree/main/WebSection/practice/css/form.css) · [boxMod.css](https://github.com/woon17/Full-Stack-Training-Program/tree/main/WebSection/practice/css/boxMod.css) · [chessboard.css](https://github.com/woon17/Full-Stack-Training-Program/tree/main/WebSection/ChessBoard/chessboard.css) · [board.css](https://github.com/woon17/Full-Stack-Training-Program/tree/main/WebSection/ChessBoard/board.css) |
+
+1. polymorphism
+   - true polymophrism (run time): Parent type reference point to child object (override)
+   - Virtual polymophrism (compile time): overload method in same class (overload)
+  
+2. Down casting for inheritance (instanceof)
+   ```
+    Plane p = new Plane();
+    p = new PassengerPlane();
+    if (p instanceof PassengerPlane){
+        ((PassengerPlane) p).carryPassenger();
+    }
+   ```
+3. Types of Selectors: 
+    - Tag selectors
+	- Id selectors
+    - Class selectors
+	- Group selectors
+	- Descendant Selector
+	- Combination selectors
+    - Direct child selector
+    - Adjancent Sibling Selectir/Next Sibling Selector
+    - General Sibling Selector
+    - Attribute selectors
+	- Contextual selectors 
+	- Pseudo class selectors:
+    ```
+ 	Selector1:Pseudocclassselectors
+    {
+    }
+	Tagname:target
+    {
+    }
+    ```
+	- Pseudo element selectors
+  
+4. Inheritance in css:
+	- Tag inheritance from parent tags 
+	- Child tag can have a specific style
+
+5. Font style: (default or internet)
+	- Font-family
+	- Font-size
+	- Font-weight
+	- line-height
+	- text-align: left, right, center, justy
+    - Text-decoration: line, line-through, overline, underline
+
+6. Box model Diagram: (for all content) From outer to inner:
+    - Margin
+    - Border
+    - Padding 
+
+
+<hr>
 ### Week 1
 
 Practice for Java:

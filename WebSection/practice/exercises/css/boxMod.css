@@ -1,0 +1,6 @@
+p{
+    width:200px;
+    border: 2px solid blue;
+    padding: 50px 50px 50px 50px;/* left, right, top, bottom: ; */
+    margin: 50px 200px 50px 200px;
+}

@@ -1,0 +1,51 @@
+input:enabled{
+    color: blue;
+}
+
+input[type="email"]:enabled{
+    color:green;
+}
+
+input:disabled{
+    color:black;
+}
+
+input:focus{
+    background-color: aqua;
+}
+
+input:optional{
+    background-color: silver;
+}
+
+input:required{
+    border: 2px solid royalblue;
+}
+
+input:invalid{
+    color: red;
+    background-color: blue;
+}
+
+input:valid{
+    border: 2px solid green;
+}
+
+input:checked + label{
+    font-family: 'Courier New', Courier, monospace;
+    color: rgb(76, 0, 252);
+}
+
+p{
+    font-family: 'Inspiration', cursive;;
+}
+
+span{
+    /* font-size: 50px; */
+    /* font-size: 2.0em; */
+    font-weight: lighter;
+    /* distance between two lines */
+    /* line-height: 5.5; */
+    text-align: justify;
+    text-decoration: line-through;
+}

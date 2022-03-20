@@ -1,7 +1,14 @@
 package Games;
 
-import java.util.Random;
 import java.util.Scanner;
+
+/**
+ * Two players
+ * player1: X
+ * player2: O
+ * 
+ * Winner: player1 or player2 or No Winner
+ * /
 
 /*
  * 1: board[0][0]
@@ -14,7 +21,7 @@ import java.util.Scanner;
  * 8: board[4][2]
  * 9: board[4][4]
  * **/
-class TicTacToe {
+class TicTacToe2 {
 	static int emptyPositions = 9;
 	static String winner = "";
 
@@ -25,6 +32,7 @@ class TicTacToe {
 			}
 			System.out.println();
 		}
+		System.out.println();
 	}
 
 	private static Boolean isEmpty(char current) {
@@ -33,7 +41,7 @@ class TicTacToe {
 
 	public static boolean insertBoard(char[][] board, int position, String role) {
 		char sample = 'X';
-		if (role.equals("player")) {
+		if (role.equals("player1")) {
 			sample = 'X';
 		} else {
 			sample = 'O';
@@ -148,38 +156,37 @@ class TicTacToe {
 	}
 }
 
-public class LaunchGames {
+public class LaunchGamesTwoPlayers {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		char board[][] = { { ' ', '|', ' ', '|', ' ' }, { '-', '+', '-', '+', '-' }, { ' ', '|', ' ', '|', ' ' },
 				{ '-', '+', '-', '+', '-' }, { ' ', '|', ' ', '|', ' ' } };
-		// TicTacToe.displayBoard(board);
+		// TicTacToe2.displayBoard(board);
 		Scanner sc = new Scanner(System.in);
-		int playerPos = 0;
-		while (TicTacToe.emptyPositions > 0 && TicTacToe.winner.length() == 0) {
-			System.out.println("Enter the postition (1-9): ");
-			playerPos = sc.nextInt();
-			if (TicTacToe.insertBoard(board, playerPos, "player")) {
-				System.out.println("Player:\n");
-				TicTacToe.displayBoard(board);
-				System.out.println("---------------");
-				System.out.println("CPU:\n");
-				while (true) {
-					if (TicTacToe.emptyPositions == 0) {
+		int playerPos1 = 0;
+		int playerPos2 = 0;
+		while (TicTacToe2.emptyPositions > 0 && TicTacToe2.winner.length() == 0) {
+			System.out.println("Player1 (X):\nEnter the postition (1-9): ");
+			playerPos1 = sc.nextInt();
+			if (TicTacToe2.insertBoard(board, playerPos1, "player1")) {
+				TicTacToe2.displayBoard(board);
+//				System.out.println("---------------");
+				while (TicTacToe2.winner.length() == 0) {
+					System.out.println("Player2 (O):\nEnter the postition (1-9): ");
+					if (TicTacToe2.emptyPositions == 0) {
 						break;
 					}
-					Random rand = new Random();
-					int cpuPos = rand.nextInt(9) + 1;
-					if (TicTacToe.insertBoard(board, cpuPos, "cpu")) {
+					playerPos2 = sc.nextInt();
+					if (TicTacToe2.insertBoard(board, playerPos2, "player2")) {
+						TicTacToe2.displayBoard(board);
 						break;
 					}
 				}
-				TicTacToe.displayBoard(board);
 			}
 		}
-		if (TicTacToe.winner.length() > 0) {
-			System.out.println("Winner: " + TicTacToe.winner);
+		if (TicTacToe2.winner.length() > 0) {
+			System.out.println("Winner: " + TicTacToe2.winner);
 		} else {
 			System.out.println("No Winner");
 		}

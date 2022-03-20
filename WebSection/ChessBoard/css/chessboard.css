@@ -1,0 +1,23 @@
+
+table{
+    /* width: 100%;
+    height: 100%; */
+    border: 3px solid red;
+}
+
+td{
+    /* width:200px; */
+    /* border: 2px solid blue; */
+    padding: 50px 50px 50px 50px;
+    border: 1px solid blue;
+    /* margin: 0px 0px 0px 0px; */
+}
+
+
+td[id="b"]{
+    /* width:200px; */
+    border: 1px solid blue;
+    background-color: black;
+    padding: 50px 50px 50px 50px;
+    /* margin: 0px 0px 0px 0px; */
+}

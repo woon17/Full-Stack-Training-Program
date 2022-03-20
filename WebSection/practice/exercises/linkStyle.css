@@ -16,4 +16,7 @@ a:hover{
     background-color: tomato;
 }
 
-/* Active (used in navigation) */
+/* Active (most used in navigation) */
+a:active{
+    
+}

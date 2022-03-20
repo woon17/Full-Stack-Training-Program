@@ -1,0 +1,17 @@
+
+td[id="r-b"]{
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+td[id="r"]{
+    border-right: 1px solid black;
+}
+
+td[id="b"]{
+    border-bottom: 1px solid black;
+}
+
+td{
+    padding: 50px 50px 50px 50px;
+}
