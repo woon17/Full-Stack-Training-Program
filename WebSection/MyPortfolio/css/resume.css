@@ -1,0 +1,91 @@
+/* 
+table, th, td {
+    border: 1px solid black;
+  } */
+
+/* header section */
+header h1{
+    text-align: center;
+    margin: 0.67em 0em 0em 0em;
+}
+
+header ul{
+    list-style-type: none;
+    /* background-color: slategrey; */
+    margin:0;
+    padding: 0;
+    text-align: center;
+    font-size: small;
+}
+
+header li{
+    display: inline;
+    margin-right: 10px;
+}
+
+table tr td p{
+    color: blue;
+    text-transform: uppercase;
+    font-weight: 550;
+    margin-bottom: 0px;
+}
+
+.main-section-table{
+    margin-bottom: 0px;
+}
+
+span[class="bold-left-class"]{
+    font-weight: bold;
+    padding-left:0px;
+}
+
+span[id="job-title"]{
+    font-style: italic;
+    text-align: left;
+}
+
+span[class="date-class"]{
+    /* color: red; */
+    font-weight: bold;
+    float: right;
+}
+
+table{
+    width: 100%;
+    overflow-x: auto;
+}
+
+ul{
+    list-style-type: "-";
+    padding: 0px;
+    list-style-position: inside;
+    margin:0px;
+    margin-bottom: 10px;
+}
+
+ul li{
+    margin-left: 3px;
+}
+
+li span{
+    padding-left:1em;
+    word-wrap:break-word;
+    /* display:inline-flex; */
+    /* display:inline-block; */
+    margin: 0px;
+    /* width:100%; */
+    word-wrap:break-word;
+    white-space: normal
+    /* word-break:break-all; */
+}
+
+span[class="skill-class"]{
+    padding-left:4px;
+    /* color: red; */
+}
+
+ul[class="skill-class-ul"]{
+    list-style-type: none;
+    margin:0px;
+    padding: 0px;
+}
