@@ -3,98 +3,97 @@ package hotelManagement;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-class Menu{
+class Menu {
 	static ArrayList<Item> menuList = new ArrayList<>();
-	
-	static{
+
+	static {
 		menuList.add(new MenuItem(1, "water", 10));
 		menuList.add(new MenuItem(2, "coke", 20));
 		menuList.add(new MenuItem(3, "pizza", 100));
 		menuList.add(new MenuItem(4, "burger", 150));
 		menuList.add(new MenuItem(5, "fries", 75));
 	}
-	
+
 	public static Item getItemById(int id) {
 		return menuList.get(id - 1);
 	}
-	
+
 	public String toString() {
 		String header = String.format("%8s%16s%16s", "itemID", "itemName", "itemPrice") + "\n";
 		String body = "";
 		String line = "------------------------------------------\n";
-		
+
 		for (Item i : menuList) {
 			body += i + "\n";
 		}
-		
-		return line + header + line + body +line;
+
+		return line + header + line + body + line;
 	}
 }
 
-class Item{
+class Item {
 	int itemID;
 	String itemName;
 	int itemPrice;
-	
+
 	Item(int itemID, String itemName, int itemPrice) {
 		this.itemID = itemID;
 		this.itemName = itemName;
 		this.itemPrice = itemPrice;
 	}
-	
-	Item(Item item){
+
+	Item(Item item) {
 		this.itemID = item.itemID;
 		this.itemName = item.itemName;
 		this.itemPrice = item.itemPrice;
 	}
-	
+
 	public String toString() {
 		return String.format("%8s%16s%16s", itemID, itemName, itemPrice);
 	}
 
 }
 
-class MenuItem extends Item{
-	MenuItem(int itemID, String itemName, int itemPrice){
+class MenuItem extends Item {
+	MenuItem(int itemID, String itemName, int itemPrice) {
 		super(itemID, itemName, itemPrice);
 	}
 }
 
-class BillItem extends Item{
+class BillItem extends Item {
 	int itemQuantity;
 	int subTotal;
-	
+
 	BillItem(Item item, int itemQuantity) {
 		super(item);
 		this.itemQuantity = itemQuantity;
 		this.subTotal = item.itemPrice * itemQuantity;
 	}
-	
+
 	public String toString() {
 		return String.format("%8s%16s%16s", this.itemName, this.itemQuantity, this.subTotal);
 	}
 }
 
-class Bill{
-	ArrayList<BillItem> billList = new ArrayList<>(); 
-	
+class Bill {
+	ArrayList<BillItem> billList = new ArrayList<>();
+
 	void add(BillItem item) {
 		billList.add(item);
 	}
-	
+
 	public String toString() {
 		String header = String.format("%8s%16s%16s", "itemName", "itemPrice", "subtotal") + "\n";
 		String body = "";
 		String line = "------------------------------------------\n";
 		int total = 0;
-		for(BillItem i : billList) {
+		for (BillItem i : billList) {
 			body += i + "\n";
-			total +=i.subTotal;
+			total += i.subTotal;
 		}
-		return line + header + line + body +line + "total: " + total;
+		return line + header + line + body + line + "total: " + total;
 	}
 }
-
 
 public class HotelManagement {
 
@@ -105,7 +104,7 @@ public class HotelManagement {
 		int itemQuantity = 0;
 		boolean con = true;
 		String choice = "";
-		
+
 		System.out.println("Welcome to Hotel Paw Patrol");
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Enter your name:");
@@ -114,8 +113,8 @@ public class HotelManagement {
 		Menu menu = new Menu();
 		System.out.println(menu);
 		Bill bill = new Bill();
-		
-		while(con) {
+
+		while (con) {
 			System.out.println("Enter the ItemID:");
 			itemID = sc.nextInt();
 			System.out.println("Enter the quantity:");
@@ -129,9 +128,9 @@ public class HotelManagement {
 				con = true;
 				System.out.println("Bellow is the menu");
 				System.out.println(menu);
-			}else if(choice.equals("n")) {
+			} else if (choice.equals("n")) {
 				con = false;
-			}else {
+			} else {
 				System.out.println("Invaid choice and produce bill");
 				con = false;
 			}

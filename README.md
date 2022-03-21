@@ -17,7 +17,8 @@ Practice for Java Section:
 - [Practice problem 2](https://github.com/woon17/Full-Stack-Training-Program/blob/main/JavaSection/testproject/src/testproject/Problem2.java)
 - Other practice: [26 letters](https://github.com/woon17/Full-Stack-Training-Program/blob/main/JavaSection/testproject/src/testproject/letters.java)
 - [TicTacToe Game (Play1 & Computer)](https://github.com/woon17/Full-Stack-Training-Program/blob/main/JavaSection/testproject/src/TicTacToe/LaunchGames.java)     
-- [TicTacToe Game (Play1 & Play2)](https://github.com/woon17/Full-Stack-Training-Program/blob/main/JavaSection/testproject/src/TicTacToe/LaunchGamesTwoPlayers.java)     
+- [TicTacToe Game (Play1 & Play2)](https://github.com/woon17/Full-Stack-Training-Program/blob/main/JavaSection/testproject/src/TicTacToe/LaunchGamesTwoPlayers.java)    
+- [Hotel Bill Management](https://github.com/woon17/Full-Stack-Training-Program/blob/main/JavaSection/HotelManagement/src/hotelManagement/HotelManagement.java) 
   
 Practice for Web Section:
 - [Practice code for Web Section](https://github.com/woon17/Full-Stack-Training-Program/tree/main/WebSection/practice)
@@ -32,10 +33,39 @@ Practice for Web Section:
 - [live Portfolio by using CSS]()
 ***
 
-### Week 2
+### Week 3
+Practice for Java:
+- [Hotel Bill Management](https://github.com/woon17/Full-Stack-Training-Program/blob/main/JavaSection/HotelManagement/src/hotelManagement/HotelManagement.java) 
 
 Practice for Web:
-- [Sports activities website with CSS](https://github.com/woon17/Full-Stack-Training-Program/tree/main/WebSection/sportsActivities)
+
+
+
+- <strong><em>Day 1</em></strong>:
+    | Section        | topic          | task                                                                                                                                                                                                                                                                                                                                                                                   |
+    | -------------- | -------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+    | *Java Section* | `Overriding`   | [LaunchParent.java](https://github.com/woon17/Full-Stack-Training-Program/blob/main/JavaSection/testproject/src/testproject/LaunchParent.java)   ·  [LaunchDemo1.java](https://github.com/woon17/Full-Stack-Training-Program/blob/main/JavaSection/testproject/src/testproject/LaunchDemo1.java)                                                                                       |
+    | *Web Section*  | ` ·  ·  · ·  ` | [index2.html](https://github.com/woon17/Full-Stack-Training-Program/tree/main/WebSection/practice/exercises/index2.html) · [index1.html](https://github.com/woon17/Full-Stack-Training-Program/tree/main/WebSection/practice/exercises/index1.html) · [inputTypes.html](https://github.com/woon17/Full-Stack-Training-Program/tree/main/WebSection/practice/exercises/inputTypes.html) |
+
+1. Rules for overriding:
+	1. Cannot reduce the visibility of the inherited method from Exmp1; public(parent) reduced to default(child), which is not allowed.
+    1. Cannot change the return type of the override method, but if the return types are parent-child relationship and obey rule1 (not reduce the visibility), then it is allowed (Covariant return type).
+2. Covariant return type for overriding: Animal(for parent) - Tiger(for child) return type
+3. Accessibility: follow the order. Need to consider when overriding occurs
+	1. Public: most
+	2. Protected 
+	3. Default
+    4. Private: least
+### Week 2
+
+Practice for Java:
+- [TicTacToe Game (Play1 & Computer)](https://github.com/woon17/Full-Stack-Training-Program/blob/main/JavaSection/testproject/src/TicTacToe/LaunchGames.java)     
+- [TicTacToe Game (Play1 & Play2)](https://github.com/woon17/Full-Stack-Training-Program/blob/main/JavaSection/testproject/src/TicTacToe/LaunchGamesTwoPlayers.java)   
+
+
+Practice for Web:
+- [Board](https://github.com/woon17/Full-Stack-Training-Program/tree/main/WebSection/ChessBoard/board.html)
+- [Chessboard](https://github.com/woon17/Full-Stack-Training-Program/tree/main/WebSection/ChesssBoard/chessboard.html) 
 
 - <strong><em>Day 1</em></strong>:
     | Section        | topic                                                                    | task                                                                                                                                                                                                                                                                                                                                                                                   |
@@ -303,6 +333,7 @@ Universal selectors
 
 
 <hr>
+
 ### Week 1
 
 Practice for Java:
