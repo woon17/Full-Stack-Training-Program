@@ -148,7 +148,7 @@ class TicTacToe {
 	}
 }
 
-public class LaunchGames {
+public class LaunchGamesOnePlayer {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub

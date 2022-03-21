@@ -18,61 +18,61 @@ package testproject;
 // but if the return types are parent-child relationship and obey rule1 (not reduce the visibility), 
 // then it is allowed (Covariant return type).
 
-//class Animal1{
-//	
-//}
-//
-//class Tiger1 extends Animal1{
-//	
-//}
-
-//class Exmp1{
-//	Animal1 display() {
-//		System.out.println("display(): Exmp1");
-//		Animal1 a = new Animal1();
-//		return a;
-//	}
-//}
-//
-//class Exmp2 extends Exmp1{
-//	// The return type is incompatible with Exmp1.display()
-//	Tiger1 display() {
-//		System.out.println("display(): Exmp2");
-//		Tiger1 a = new Tiger1();
-//		return a;
-//	}
-//}
-
-
-//example3: the return types are parent-child relationship but does not obey rule1 (it reduces the visibility), 
-//then it is not allowed 
 class Animal1{
-
+	
 }
 
 class Tiger1 extends Animal1{
-
+	
 }
+
 class Exmp1{
-	Tiger1 display() {
+	Animal1 display() {
 		System.out.println("display(): Exmp1");
-		Tiger1 a = new Tiger1();
+		Animal1 a = new Animal1();
 		return a;
 	}
 }
 
 class Exmp2 extends Exmp1{
 	// The return type is incompatible with Exmp1.display()
-	Animal1 display() {
+	Tiger1 display() {
 		System.out.println("display(): Exmp2");
-		Animal1 a = new Animal1();
+		Tiger1 a = new Tiger1();
 		return a;
 	}
 }
 
 
-
-
+//example3: the return types are parent-child relationship but does not obey rule1 (it reduces the visibility), 
+//then it is not allowed 
+//class Animal1{
+//
+//}
+//
+//class Tiger1 extends Animal1{
+//
+//}
+//class Exmp1{
+//	Tiger1 display() {
+//		System.out.println("display(): Exmp1");
+//		Tiger1 a = new Tiger1();
+//		return a;
+//	}
+//}
+//
+//class Exmp2 extends Exmp1{
+//	// The return type is incompatible with Exmp1.display()
+//	Animal1 display() {
+//		System.out.println("display(): Exmp2");
+//		Animal1 a = new Animal1();
+//		return a;
+//	}
+//}
+//
+//
+//
+//
 public class LaunchDemo1 {
 
 	public static void main(String[] args) {
