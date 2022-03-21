@@ -1,4 +1,4 @@
-//package testproject;
+package testproject;
 
 class Demo1 {
 
