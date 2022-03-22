@@ -13,25 +13,6 @@ body {
     overflow: auto;
 }
 
-
-/* .sidebar a {
-    display: block;
-    color: black;
-    padding: 16px;
-    text-decoration: none;
-} */
-
-
-/* .sidebar a.active {
-    background-color: #04AA6D;
-    color: white;
-}
-
-.sidebar a:hover:not(.active) {
-    background-color: #555;
-    color: white;
-} */
-
 .sidenav-bottom {
     height: 100%;
     width: 200px;
@@ -103,46 +84,35 @@ a.main-section {
     display: block;
     font-weight: bold;
     text-align: left;
-    /* padding-left: 80px; */
     /* border-style: solid; */
 }
 
 .nav-area ul li {
-    height: 40px;
+    height: 50px;
     overflow: hidden;
     transition: all .3s;
     display: block;
-    /* background-color: rgb(88, 81, 179); */
 }
 
 .nav-area label,
 .main-section {
     font-size: 20px;
-    /* background: #219e27b4; */
+    padding: 10px 15px;
+    height: 50px;
+    cursor: pointer;
+    transition: all .25s;
+}
+
+.sub {
     padding: 10px 15px;
     cursor: pointer;
     transition: all .25s;
-    /* background-color: rgb(7, 197, 255); */
+    /* border-style: solid; */
 }
 
 .main-section {
     text-decoration: none;
 }
-
-
-/* label>a { */
-
-
-/* text-decoration: none; */
-
-
-/* display: block; */
-
-
-/* padding: 8px 25px; */
-
-
-/* } */
 
 .nav-area>ul>li>a {
     font-size: 15px;
@@ -156,7 +126,7 @@ a.main-section {
 .nav-area>ul>li>a:hover,
 .main-section:hover {
     background-color: gray;
-    /* height: 100px; */
+    /* height: auto; */
     /* text-decoration: none; */
 }
 
