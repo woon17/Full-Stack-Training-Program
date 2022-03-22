@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="trail.js" type="text/javascript">
+    </script><br>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS practice</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+
+<script type="text/javascript">
+    var a = 10;
+    var A = 20;
+    document.write(a);
+    document.write("<br>");
+    document.write(A + "<hr>");
+
+    // Primitive dataType
+    var a = 10;
+    document.write(a + "<br>");
+
+    var b = 100;
+    document.write(a + "<br>");
+
+    var c = "shufa";
+    document.write(c + "<br>");
+
+    var d = c + b;
+    document.write(d + "<br>");
+
+    var e = true;
+    document.write(e + "<br>");
+
+    var f = false;
+    document.write(f + "<br>");
+
+    var g;
+    document.write(g + "<br>");
+
+    var isLoggedIn = true;
+    document.write(isLoggedIn + "<hr>");
+
+    // Arithmetic operator
+    var a = 10;
+    var b = 20;
+    var res1 = a + b;
+    document.write(res1);
+    document.write("<br>");
+
+    var res2 = b - a;
+    document.write(res2);
+    document.write("<br>");
+
+    var res3 = a * b;
+    document.write(res3);
+    document.write("<br>");
+
+    var res4 = a / b;
+    document.write(res4);
+    document.write("<br>");
+
+    var res5 = b / 3;
+    document.write(res5);
+    document.write("<br>");
+    b++;
+    document.write(b);
+    document.write("<br>");
+    a--;
+    document.write(a);
+    document.write("<br>");
+
+    var i = 1;
+    i += 2; // i = i + 2;
+    document.write(i);
+
+
+    document.write("<hr>");
+    // Comparison operators
+    var x = 5;
+    document.write(x != "5");
+    document.write("<br>");
+    document.write(x > 3);
+    document.write("<br>");
+    document.write(x < 8);
+    document.write("<br>");
+    document.write(x >= 3);
+    document.write("<br>");
+    document.write(x <= 8);
+    document.write("<br>");
+    document.write("<hr>");
+
+    // Logical/relational operators
+    var x = 5;
+    var y = 6;
+    document.write((x == 5) && (y == 6));
+    document.write("<br>");
+    document.write((x == 6) && (y == 6));
+    document.write("<br>");
+    document.write((x == 5) || (y == 6));
+    document.write("<br>");
+    document.write((x == 6) || (y == 6));
+    document.write("<br>");
+    document.write(!(x == 5));
+    document.write("<br>");
+    document.write(!(x == 6));
+    document.write("<br>");
+
+    document.write(!(x == 5));
+    document.write("<br>");
+    document.write(!(x == 6));
+    document.write("<br>");
+    document.write("<hr>");
+
+    // Assignments operators
+    var x = 5;
+    document.write(x = 20);
+    document.write("<br>");
+    document.write(x += 10);
+    document.write("<br>");
+    document.write(x -= 10);
+    document.write("<br>");
+    document.write(x *= 10);
+    document.write("<br>");
+    document.write(x /= 10);
+    document.write("<br>");
+    document.write(x %= 3);
+    document.write("<br>");
+    document.write(x ^= 1);
+    document.write("<br>");
+    document.write("<hr>");
+
+    // type operator
+    var a = 10;
+    var b = "32";
+    var c = true;
+    document.write(typeof a);
+    document.write("<br>");
+    document.write(typeof b);
+    document.write("<br>");
+    document.write(typeof c);
+    document.write("<br>");
+
+    var str1 = new String("Hello");
+
+    class Car {
+        constructor(name, year) {
+            this.name = name;
+            this.year = year;
+        }
+    }
+
+    let c1 = new Car("shufa", "1992");
+
+    document.write(str1 instanceof String);
+    document.write("<br>");
+    document.write(c1 instanceof Car);
+    document.write("<br>");
+    document.write(c instanceof Number);
+    document.write("<br>");
+    document.write("<hr>");
+
+    // Bitwise
+    document.write(5 & 1);
+    document.write("<br>");
+    document.write(5 | 1);
+    document.write("<br>");
+    document.write(~5);
+    document.write("<br>");
+    document.write(5 ^ 1);
+    document.write("<br>");
+
+    document.write(5 << 1);
+    document.write("<br>");
+
+    document.write(5 >> 2);
+    document.write("<br>");
+    document.write("<hr>");
+    //Conditional statements
+    var a = 13;
+    if (a % 2 == 0) {
+        document.write(a + " is a even Number");
+    } else {
+        document.write(a + " is a odd Number");
+    }
+    document.write("<br>");
+</script>
