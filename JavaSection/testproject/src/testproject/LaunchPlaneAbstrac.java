@@ -1,20 +1,18 @@
 package testproject;
 
-class Plane {
+abstract class Plane1 {
 	void takeOff() {
 		System.out.println("takeOff(): Plane");
 	}
 
-	void fly() {
-		System.out.println("fly(): Plane");
-	}
+	abstract void fly();
 
 	void land() {
 		System.out.println("land(): Plane");
 	}
 }
 
-class PassengerPlane extends Plane {
+class PassengerPlane1 extends Plane1 {
 	void fly() {
 		System.out.println("fly(): PassengerPlane");
 	}
@@ -24,7 +22,7 @@ class PassengerPlane extends Plane {
 	}
 }
 
-class CargoPlane extends Plane {
+class CargoPlane1 extends Plane1 {
 	void fly() {
 		System.out.println("fly(): CargoPlane");
 	}
@@ -34,7 +32,7 @@ class CargoPlane extends Plane {
 	}
 }
 
-class FighterPlane extends Plane {
+class FighterPlane1 extends Plane1 {
 	void fly() {
 		System.out.println("fly(): FighterPlane");
 	}
@@ -44,41 +42,37 @@ class FighterPlane extends Plane {
 	}
 }
 
-class Airport {
-	void permit(Plane p) {
+class Airport1 {
+	void permit(Plane1 p) {
 		p.fly();
 		p.takeOff();
-		
-		if (p instanceof PassengerPlane) {
-			((PassengerPlane) p).carryPassenger();
-		} else if (p instanceof CargoPlane) {
-			((CargoPlane) p).carryCargo();
 
-		} else if (p instanceof FighterPlane) {
-			((FighterPlane) p).carryArms();
+		if (p instanceof PassengerPlane1) {
+			((PassengerPlane1) p).carryPassenger();
+		} else if (p instanceof CargoPlane1) {
+			((CargoPlane1) p).carryCargo();
+
+		} else if (p instanceof FighterPlane1) {
+			((FighterPlane1) p).carryArms();
 		}
 	}
 }
 
-public class LaunchPlane {
+public class LaunchPlaneAbstrac {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Airport a = new Airport();
-		Plane p = new Plane();
+		Plane1 p = new PassengerPlane1();
+		Airport1 a = new Airport1();
 		a.permit(p);
-		p = new PassengerPlane();
+
+		p = new PassengerPlane1();
+		p = new CargoPlane1();
 		a.permit(p);
-		p = new CargoPlane();
-		a.permit(p);
-		p = new FighterPlane();
+		 p = new FighterPlane1();
 		a.permit(p);
 //		p.takeOff();
 //		p.fly();
 //		p.land();
-
-
-
 	}
-
 }
