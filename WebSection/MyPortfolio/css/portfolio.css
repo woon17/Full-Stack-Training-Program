@@ -136,7 +136,7 @@ a.main-section {
 
 div.content {
     margin-left: 200px;
-    /* padding: 1px 16px; */
+    padding: 1px 16px;
     height: 1300px;
     /* max-height: max-content; */
     /* background-size: 80% auto; */
@@ -154,6 +154,7 @@ div.content #home {
     /* background-size: 80% auto; */
     /* /* background-color: black; */
     /* color: white; */
+    background-color: black;
 }
 
 .main {
@@ -161,21 +162,33 @@ div.content #home {
     border: solid rgb(89, 0, 255);
     background-color: silver;
     height: 100%;
-    width: 95%;
+    width: 105%;
 }
 
-.main p.center {
+.main p#name {
     /* max-width: 200px; */
     /* width: 60%; */
+    margin-top: 800px;
+    margin-bottom: 0px;
+    /* padding-right: 100px; */
     text-align: center;
     /* margin: 2px; */
     /* display: block; */
-    color: red;
-    /* border: 5px solid #fcfc02; */
+    color: white;
+    /* border: 1px solid #fcfc02; */
     /* padding-top: 20px; */
-    font-size: large;
+    font-size: 100px;
     /* float: center; */
     /* position: fixed; */
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.main p#jobTitle {
+    color: white;
+    font-size: 40px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    /* border: 1px solid #fcfc02; */
 }
 
 
