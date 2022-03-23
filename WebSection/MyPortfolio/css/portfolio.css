@@ -3,6 +3,9 @@ body {
     font-family: "Lato", sans-serif;
 }
 
+
+/* sidebar section */
+
 .sidebar {
     margin: 0;
     padding: 0;
@@ -128,6 +131,9 @@ a.main-section {
     /* width: 100%; */
 }
 
+
+/* right content section */
+
 div.content {
     margin-left: 200px;
     /* padding: 1px 16px; */
@@ -139,15 +145,15 @@ div.content {
 }
 
 div.content #home {
-    background: url(../images/hacker.webp) center;
+    background: url(../images/hacker.webp) center top;
     background-repeat: no-repeat;
     /* border-image: red solid 2px; */
     /* padding: 1px 16px; */
     /* height: 1300px; */
     /* max-height: max-content; */
     /* background-size: 80% auto; */
-    /* background-color: black;
-    color: white; */
+    /* /* background-color: black; */
+    /* color: white; */
 }
 
 .main {
@@ -158,8 +164,31 @@ div.content #home {
     width: 95%;
 }
 
+.main p.center {
+    /* max-width: 200px; */
+    /* width: 60%; */
+    text-align: center;
+    /* margin: 2px; */
+    /* display: block; */
+    color: red;
+    /* border: 5px solid #fcfc02; */
+    /* padding-top: 20px; */
+    font-size: large;
+    /* float: center; */
+    /* position: fixed; */
+}
+
+
+/* TODO */
+
+
+/* 
+* {
+    border-style: red solid;
+} */
+
 div:target {
-    border: 2px solid rgb(117, 236, 6);
+    border: 1px solid rgb(117, 236, 6);
     color: red;
     background-color: cyan;
 }
