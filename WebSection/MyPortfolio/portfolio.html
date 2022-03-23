@@ -3,6 +3,7 @@
 
 <head>
     <link href="css/portfolio.css" type="text/css" rel="stylesheet">
+    <link href="css/resume.css" type="text/css" rel="stylesheet">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,29 +19,29 @@
 
             <ul>
                 <!-- <input type="radio" name="nav-area" id="about"> -->
-                <a href="#" class="main-section">Home</a>
+                <a href="#home" class="main-section">Home</a>
                 <input type="radio" name="nav-area" id="about">
                 <li>
                     <label for="about" class="title">About</label>
-                    <a href="#" class="sub">Education</a>
-                    <a href="#" class="sub">Working Experience</a>
-                    <a href="#" class="sub">Skills</a>
-                    <a href="#" class="sub">Goal</a>
+                    <a href="#education" class="sub">Education</a>
+                    <a href="#work" class="sub">Working Experience</a>
+                    <a href="#skills" class="sub">Skills</a>
+                    <a href="#goal" class="sub">Goal</a>
                 </li>
                 <input type="radio" name="nav-area" id="services">
                 <li>
                     <label for="services">Java Section</label>
-                    <a href="#" class="sub">Projects</a>
-                    <a href="#" class="sub">Problems</a>
+                    <a href="#java-project" class="sub">Projects</a>
+                    <a href="#java-problems" class="sub">Problems</a>
                 </li>
                 <input type="radio" name="nav-area" id="portfolio">
                 <li>
                     <label for="portfolio">Web Section</label>
-                    <a href="#" class="sub">Projects</a>
-                    <a href="#" class="sub">Practices</a>
+                    <a href="#web-project" class="sub">Projects</a>
+                    <a href="#web-practice" class="sub">Practices</a>
                 </li>
-                <a href="#" class="main-section">Resume</a>
-                <a href="#" class="main-section">Contact</a>
+                <a href="resume.html" class="main-section">Resume</a>
+                <a href="#contactMe" class="main-section">Contact</a>
             </ul>
             <div class="sidenav-bottom">
                 <a href="#"><img src="images/github.png" title="github icons"></img>
@@ -49,15 +50,89 @@
                 </a>
             </div>
         </nav>
-
-
     </div>
 
     <div class="content">
-        <h2>Responsive Sidebar Example</h2>
+        <!-- <h2>Responsive Sidebar Example</h2>
         <p>This example use media queries to transform the sidebar to a top navigation bar when the screen size is 700px or less.</p>
         <p>We have also added a media query for screens that are 400px or less, which will vertically stack and center the navigation links.</p>
-        <h3>Resize the browser window to see the effect.</h3>
+        <h3>Resize the browser window to see the effect.</h3> -->
+        <div id="home" class="main">
+            <p>
+                This is the home page
+            </p>
+        </div>
+        <div id="aboutMe" class="main">
+            <p>
+                This is the about me page
+            </p>
+
+            <div id="education">
+                <table id="education-table">
+                    <tr id="education">
+                        <td>
+                            <p id="main-section">Education</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span>
+                            <span class="bold-left-class">National University of Singapore (NUS)</span>
+                            </span>
+                            <span class="date-class">Aug 2018 – Dec 2021</span>
+
+                            <ul>
+                                <li><span>Deep learning to detect cyber attacks and anomalies</span></li>
+                                <li><span>Data cleaning to get quality training data</span></li>
+                                <li><span>Image comparison to find the potential web defacement</span></li>
+                            </ul>
+                        </td>
+                    </tr>
+
+                </table>
+            </div>
+            <div id="work">
+                <p>This is working Experience</p>
+            </div>
+            <div id="skills">
+                <p>This is skills page</p>
+            </div>
+            <div id="goal">
+                <p>This is skills page</p>
+            </div>
+        </div>
+
+        <div id="java" class="main">
+            <p>
+                This is the list of java projects.
+            </p>
+            <div id="java-project">
+                <p>This is project page</p>
+            </div>
+            <div id="java-problems">
+                <p>This is problems page</p>
+            </div>
+        </div>
+
+        <div id="web" class="main">
+            <p>
+                This is the list of web development projects.
+            </p>
+            <div id="web-project">
+                <p>This is project page</p>
+            </div>
+            <div id="web-practice">
+                <p>This is practice page</p>
+            </div>
+        </div>
+
+        <div id="contactMe" class="main">
+            <p>
+                This is the contactMe details.
+            </p>
+        </div>
+
+
     </div>
 
 </body>
