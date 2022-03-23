@@ -35,19 +35,6 @@ body {
     /* text-align: center; */
 }
 
-div.content {
-    background: url(../images/hacker.webp) center;
-    background-repeat: no-repeat;
-    border-image: red solid 2px;
-    margin-left: 200px;
-    padding: 1px 16px;
-    height: 1300px;
-    max-height: max-content;
-    background-size: 80% auto;
-    background-color: black;
-    color: white;
-}
-
 img#icon {
     width: 200px;
     height: 200px;
@@ -139,6 +126,42 @@ a.main-section {
 #portfolio:checked+li {
     height: auto;
     /* width: 100%; */
+}
+
+div.content {
+    margin-left: 200px;
+    /* padding: 1px 16px; */
+    height: 1300px;
+    /* max-height: max-content; */
+    /* background-size: 80% auto; */
+    /* background-color: black; */
+    /* color: white; */
+}
+
+div.content #home {
+    background: url(../images/hacker.webp) center;
+    background-repeat: no-repeat;
+    /* border-image: red solid 2px; */
+    /* padding: 1px 16px; */
+    /* height: 1300px; */
+    /* max-height: max-content; */
+    /* background-size: 80% auto; */
+    /* background-color: black;
+    color: white; */
+}
+
+.main {
+    position: realtive;
+    border: solid rgb(89, 0, 255);
+    background-color: silver;
+    height: 100%;
+    width: 95%;
+}
+
+div:target {
+    border: 2px solid rgb(117, 236, 6);
+    color: red;
+    background-color: cyan;
 }
 
 @media screen and (max-width: 700px) {
