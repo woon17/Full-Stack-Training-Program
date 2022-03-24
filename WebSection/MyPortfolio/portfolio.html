@@ -3,6 +3,7 @@
 
 <head>
     <link href="css/portfolio.css" type="text/css" rel="stylesheet">
+    <link href="css/resume.css" type="text/css" rel="stylesheet">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,30 +18,29 @@
             <img id="icon" src="images/shufa_032022.JPG">
 
             <ul>
-                <!-- <input type="radio" name="nav-area" id="about"> -->
-                <a href="#" class="main-section">Home</a>
-                <input type="radio" name="nav-area" id="about">
+                <a href="#home" class="main-section">Home</a>
+                <!-- <input type="radio" name="nav-area" id="about">
                 <li>
                     <label for="about" class="title">About</label>
-                    <a href="#" class="sub">Education</a>
-                    <a href="#" class="sub">Working Experience</a>
-                    <a href="#" class="sub">Skills</a>
-                    <a href="#" class="sub">Goal</a>
-                </li>
+                    <a href="#education" class="sub">Education</a>
+                    <a href="#work" class="sub">Working Experience</a>
+                    <a href="#skills" class="sub">Skills</a>
+                    <a href="#goal" class="sub">Goal</a>
+                </li> -->
                 <input type="radio" name="nav-area" id="services">
                 <li>
                     <label for="services">Java Section</label>
-                    <a href="#" class="sub">Projects</a>
-                    <a href="#" class="sub">Problems</a>
+                    <a href="#java-project" class="sub">Projects</a>
+                    <a href="#java-problems" class="sub">Problems</a>
                 </li>
                 <input type="radio" name="nav-area" id="portfolio">
                 <li>
                     <label for="portfolio">Web Section</label>
-                    <a href="#" class="sub">Projects</a>
-                    <a href="#" class="sub">Practices</a>
+                    <a href="#web-project" class="sub">Projects</a>
+                    <a href="#web-practice" class="sub">Practices</a>
                 </li>
-                <a href="#" class="main-section">Resume</a>
-                <a href="#" class="main-section">Contact</a>
+                <a href="resume.html" class="main-section">Resume</a>
+                <a href="#contactMe" class="main-section">Contact</a>
             </ul>
             <div class="sidenav-bottom">
                 <a href="#"><img src="images/github.png" title="github icons"></img>
@@ -49,17 +49,107 @@
                 </a>
             </div>
         </nav>
-
-
     </div>
 
     <div class="content">
-        <h2>Responsive Sidebar Example</h2>
-        <p>This example use media queries to transform the sidebar to a top navigation bar when the screen size is 700px or less.</p>
-        <p>We have also added a media query for screens that are 400px or less, which will vertically stack and center the navigation links.</p>
-        <h3>Resize the browser window to see the effect.</h3>
-    </div>
+        <div id="home" class="main">
+            <!-- <img src="images/hacker.webp" alt="HH1 image missing" style="height: 100%; width: 100%; position: relative;"> -->
+            <div>
+                <!-- My name is Wen Shufa. My goal is to pursue this passion within the field of web development. -->
+                <p id="name">
+                    I'm Shufa
+                </p>
+                <p id="jobTitle">
+                    <em>Java Developer and Software Engineer</em>
+                </p>
+            </div>
+        </div>
+        <div id="java" class="main">
+            <p>
+                This is the list of java projects.
+            </p>
+            <div id="java-project">
+                <p>This is project page</p>
+            </div>
+            <div id="java-problems">
+                <p>This is problems page</p>
+            </div>
+        </div>
 
+        <div id="web" class="main">
+
+            <div id="web-project">
+                <p>This is project page</p>
+                <div class="wrapper">
+                    <div>One
+                        <div class="project-container project-card">
+                            <img src="images/resume.PNG" alt="expense-tracker" loading="lazy" class="project-pic" />
+                            <h3 class="project-title">My Resume</h3>
+                            <p class="project-details">
+                                This is my resume description
+                            </p>
+                            <p><a href="#" target="_blank" class="project-link">Check it Out</a></p>
+                        </div>
+                    </div>
+                    <div>Two</div>
+                    <div>Three</div>
+                    <div>Four
+                        <br>This cell
+                        <br>Has extra
+                        <br>content.
+                        <br>Max is auto
+                        <br>so the row expands.
+                    </div>
+                    <div>Five</div>
+                </div>
+            </div>
+
+            <section class="projects" id="projects">
+                <h2 class="projects-title">Some of my Recent Projects</h2>
+                <div class="projects-container">
+                    <div class="project-container project-card">
+                        <img src="images/resume.PNG" alt="expense-tracker" loading="lazy" class="project-pic" />
+                        <h3 class="project-title">My Resume</h3>
+                        <p class="project-details">
+                            This is my resume description
+                        </p>
+                        <p><a href="#" target="_blank" class="project-link">Check it Out</a></p>
+                    </div>
+                    <hr>
+                    <div class="project-container project-card">
+                        <img src="images/sportsActivitieService.PNG" alt="netflic-clone" loading="lazy" class="project-pic" />
+                        <h3 class="project-title">Sports Activities Service</h3>
+                        <p class="project-details">
+                            This is my Sports Activities Service description
+
+                        </p>
+                        <p>
+                            <a href="#" target="_blank" class="project-link">Check it Out</a>
+                        </p>
+
+                    </div>
+                    <!-- <div class="project-container project-card">
+                        <img src="assets/images/greenyEarth.png" alt="greeny-earth" loading="lazy" class="project-pic" />
+                        <h3 class="project-title">Greeny Earth</h3>
+                        <p class="project-details">
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quas ratione vel inventore labore commodi modi quos culpa aut saepe! Alias!
+                        </p>
+                        <a href="#" target="_blank" class="project-link">Check it Out</a>
+                    </div> -->
+                </div>
+            </section>
+            <div id="web-practice">
+                <p>This is practice page</p>
+            </div>
+        </div>
+        <div id="contactMe" class="main">
+            <h2><span>Contact Me</span></h2>
+            <p>Location: Singapore</p>
+            <p>Phone: +65 87271745</p>
+            <p>Email: shufa17@gmail.com</p>
+        </div>
+
+    </div>
 </body>
 
 </html>
