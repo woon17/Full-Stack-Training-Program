@@ -162,7 +162,9 @@ div.content>#home {
 
 .main {
     position: realtive;
-    border: solid rgb(89, 0, 255);
+    /* border: solid rgb(255, 166, 0); */
+    border: white solid;
+    /* border: none; */
     background-color: white;
     /* height: 100%;
     width: 100%; */
@@ -222,11 +224,12 @@ div.content>#home {
     border-style: red solid;
 } */
 
-div:target {
+
+/* div:target {
     border: 1px solid rgb(117, 236, 6);
     color: red;
     background-color: cyan;
-}
+} */
 
 
 /* .projects {
