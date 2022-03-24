@@ -264,6 +264,40 @@ div:target {
     }
 }
 
+.projects {
+    background-color: var(--bg-color);
+    /* padding: 32px 0; */
+    margin-top: 2rem;
+}
+
+.project-pic {
+    width: 65%;
+    height: 60%;
+    /* width: 400px;
+    height: 60px; */
+}
+
+.project-container p {
+    padding: 0.4rem;
+}
+
+.project-title {
+    margin-bottom: var(--bottom-margin);
+}
+
+.project-details {
+    margin-bottom: var(--bottom-margin);
+}
+
+.project-card {
+    background-color: white;
+    border-radius: 11px;
+    box-shadow: 0 3px 10px var(--primary-shadow);
+    padding: 20px;
+    margin: 10px;
+    /* width: 40%; */
+}
+
 
 /* @media screen and (max-width: 400px) {
     .sidebar a {
