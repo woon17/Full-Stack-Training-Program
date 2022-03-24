@@ -27,10 +27,8 @@ Practice for Web Section:
 - [board.html](https://github.com/woon17/Full-Stack-Training-Program/tree/main/WebSection/ChessBoard/board.html) · 
 - [chessboard.html](https://github.com/woon17/Full-Stack-Training-Program/blob/main/WebSection/ChessBoard/chessboard.html) 
 <!-- TODO: need to start to add different version of porfolio and deploy by github.io -->
-- [Portfolio with html only]()
-- [live Portfolio with html only]()
-- [Portfolio by using CSS]()
-- [live Portfolio by using CSS]()
+- [Portfolio](https://github.com/woon17/Full-Stack-Training-Program/blob/main/WebSection/MyPortfolio/portfolio.html)
+- [Resume](https://github.com/woon17/Full-Stack-Training-Program/blob/main/WebSection/MyResume/resume.html)
 ***
 
 ### Week 3
@@ -59,7 +57,7 @@ Practice for Web:
 ### Week 2
 
 Practice for Java:
-- [TicTacToe Game (Play1 & Computer)](https://github.com/woon17/Full-Stack-Training-Program/blob/main/JavaSection/TicTacToe/src/Games/LaunchGamesTwoPlayersOnePlayer.java)     
+- [TicTacToe Game (Play1 & Computer)](https://github.com/woon17/Full-Stack-Training-Program/blob/main/JavaSection/TicTacToe/src/Games/LaunchGamesOnePlayer.java)     
 - [TicTacToe Game (Play1 & Play2)](https://github.com/woon17/Full-Stack-Training-Program/blob/main/JavaSection/TicTacToe/src/Games/LaunchGamesTwoPlayers.java)   
 
 
