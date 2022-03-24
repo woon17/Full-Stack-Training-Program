@@ -27,10 +27,8 @@ Practice for Web Section:
 - [board.html](https://github.com/woon17/Full-Stack-Training-Program/tree/main/WebSection/ChessBoard/board.html) · 
 - [chessboard.html](https://github.com/woon17/Full-Stack-Training-Program/blob/main/WebSection/ChessBoard/chessboard.html) 
 <!-- TODO: need to start to add different version of porfolio and deploy by github.io -->
-- [Portfolio with html only]()
-- [live Portfolio with html only]()
-- [Portfolio by using CSS]()
-- [live Portfolio by using CSS]()
+- [Portfolio](https://github.com/woon17/Full-Stack-Training-Program/blob/main/WebSection/MyPortfolio/portfolio.html)
+- [Resume](https://github.com/woon17/Full-Stack-Training-Program/blob/main/WebSection/MyResume/resume.html)
 ***
 
 ### Week 3
@@ -44,8 +42,8 @@ Practice for Web:
 - <strong><em>Day 1</em></strong>:
     | Section        | topic          | task                                                                                                                                                                                                                                                                                                                                                                                   |
     | -------------- | -------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-    | *Java Section* | `Overriding`   | [LaunchParent.java](https://github.com/woon17/Full-Stack-Training-Program/blob/main/JavaSection/testproject/src/testproject/LaunchParent.java)   ·  [LaunchDemo1.java](https://github.com/woon17/Full-Stack-Training-Program/blob/main/JavaSection/testproject/src/testproject/LaunchDemo1.java)                                                                                       |
-    | *Web Section*  | ` ·  ·  · ·  ` | [index2.html](https://github.com/woon17/Full-Stack-Training-Program/tree/main/WebSection/practice/exercises/index2.html) · [index1.html](https://github.com/woon17/Full-Stack-Training-Program/tree/main/WebSection/practice/exercises/index1.html) · [inputTypes.html](https://github.com/woon17/Full-Stack-Training-Program/tree/main/WebSection/practice/exercises/inputTypes.html) |
+    | *Java Section* | `Overriding`   | [LaunchParent.java](https://github.com/woon17/Full-Stack-Training-Program/blob/main/JavaSection/testproject/src/testproject/LaunchParent.java)   ·  [LaunchDemo1.java](https://github.com/woon17/Full-Stack-Training-Program/blob/main/JavaSection/testproject/src/testproject/LaunchDemo1.java) · [Hotel Bill Management](https://github.com/woon17/Full-Stack-Training-Program/blob/main/JavaSection/HotelManagement/src/hotelManagement/HotelManagement.java)                                                                                      |
+    | *Web Section*  | ` JavaScript · Navigation bar ·  · ·  ` | [SimpleNavigationBar ](https://github.com/woon17/Full-Stack-Training-Program/tree/main/WebSection/practice/exercises/index2.html) · [index1.html](https://github.com/woon17/Full-Stack-Training-Program/tree/main/WebSection/practice/exercises/index1.html) · [inputTypes.html](https://github.com/woon17/Full-Stack-Training-Program/tree/main/WebSection/practice/exercises/inputTypes.html) |
 
 1. Rules for overriding:
 	1. Cannot reduce the visibility of the inherited method from Exmp1; public(parent) reduced to default(child), which is not allowed.
@@ -59,7 +57,7 @@ Practice for Web:
 ### Week 2
 
 Practice for Java:
-- [TicTacToe Game (Play1 & Computer)](https://github.com/woon17/Full-Stack-Training-Program/blob/main/JavaSection/TicTacToe/src/Games/LaunchGamesTwoPlayersOnePlayer.java)     
+- [TicTacToe Game (Play1 & Computer)](https://github.com/woon17/Full-Stack-Training-Program/blob/main/JavaSection/TicTacToe/src/Games/LaunchGamesOnePlayer.java)     
 - [TicTacToe Game (Play1 & Play2)](https://github.com/woon17/Full-Stack-Training-Program/blob/main/JavaSection/TicTacToe/src/Games/LaunchGamesTwoPlayers.java)   
 
 
