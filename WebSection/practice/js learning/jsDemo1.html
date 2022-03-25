@@ -369,4 +369,38 @@
     console.log("after the if condition");
 
     document.write("<hr>");
+    document.write(parseInt(15)); // 15
+    document.write("<br>");
+    document.write(parseInt(15 + 15)); // 30
+    document.write("<br>");
+    document.write(parseInt(3.1234)); // 3
+    document.write("<br>");
+    document.write(parseInt(1.1 + 1.2)); // 2
+    document.write("<br>");
+    document.write(typeof("1234"));
+    document.write("<br>");
+    document.write(typeof parseInt("1234"));
+    document.write("<br>");
+    document.write(parseInt("12345SHUFA"));
+    document.write("<br>");
+    document.write(parseInt("WEN12345SHUFA")); // NaN
+    document.write("<hr>");
+    var arr = ["red", "green", "blue"];
+    for (var n in arr) {
+        document.write(arr[n]);
+        document.write("<br>");
+    }
+    var arr1 = new Array(1, 2, 3, 4, 5);
+    for (var n in arr1) {
+        document.write(arr1[n]);
+        document.write("<br>");
+    }
+
+    var a = 1;
+    var b = 2;
+    var arr2 = new Array(a, b, 3, 4, 5, "wen", 9.7);
+    for (var n in arr2) {
+        document.write(arr2[n] + ": " + typeof arr2[n]);
+        document.write("<br>");
+    }
 </script>
