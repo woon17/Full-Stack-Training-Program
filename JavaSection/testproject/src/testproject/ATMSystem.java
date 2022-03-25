@@ -1,9 +1,8 @@
 package testproject;
 
-
 import java.util.Scanner;
 
-class InvalidCredentialsException extends Exception{
+class InvalidCredentialsException extends Exception {
 	@Override
 	public String getMessage() {
 		return "Invalid credential";
@@ -29,7 +28,6 @@ class ATM {
 			System.out.println("Collect money");
 		} else {
 			InvalidCredentialsException ice = new InvalidCredentialsException();
-			
 			throw ice;
 		}
 	}
@@ -38,17 +36,13 @@ class ATM {
 class Bank {
 	void func() {
 		ATM atm = new ATM();
+
 		try {
-			atm.acceptInput();	
-		}catch(Exception e){
-			
-		}
-		try {
+			atm.acceptInput();
 			atm.verify();
-		}catch (InvalidCredentialsException ice) {
+		} catch (InvalidCredentialsException ice) {
 			System.out.println("Bank catch InvalidCredentialsException: " + ice.getMessage());
 		}
-		
 	}
 }
 

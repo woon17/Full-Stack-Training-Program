@@ -1,9 +1,10 @@
 package testproject;
 
 import java.util.Scanner;
+import java.util.InputMismatchException; 
 
 class InvalidAgeException extends Exception {
-	@Override
+
 	public String getMessage() {
 		return "your age < 18";
 	}
@@ -40,6 +41,9 @@ class TP {
 		} catch (InvalidAgeException ia) {
 			System.out.println("TP: " + ia);
 		}
+//		catch (InputMismatchException e) {
+//			
+//		}
 	}
 }
 
