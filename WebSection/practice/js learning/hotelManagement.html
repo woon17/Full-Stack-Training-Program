@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS version Hotel Management</title>
+</head>
+
+<body>
+</body>
+
+</html>
+<script>
+    function print(a) {
+        document.write(a + "<br>")
+    }
+
+    String.format = function() {
+        var s = arguments[0];
+        for (var i = 0; i < arguments.length - 1; i++) {
+            var reg = new RegExp("\\{" + i + "\\}", "gm");
+            s = s.replace(reg, arguments[i + 1]);
+        }
+        return s;
+    }
+
+    class Item {
+
+        constructor(itemID, itemName, itemPrice) {
+            this.itemID = itemID;
+            this.itemName = itemName;
+            this.itemPrice = itemPrice;
+        }
+
+        // constructor(item) {
+        //     this.itemID = item.itemID;
+        //     this.itemName = item.itemName;
+        //     this.itemPrice = item.itemPrice;
+        // }
+
+        toString = () => String.format("%8s%16s%16s", itemID, itemName, itemPrice);
+
+    }
+
+    class MenuItem extends Item {
+        // MenuItem(itemID, itemName, itemPrice) {
+        //     super(itemID, itemName, itemPrice);
+        // }
+    }
+
+    class Menu {
+        static menuList;
+        static {
+            menuList[0] = (new MenuItem(1, "water", 10));
+            menuList[1] = (new MenuItem(2, "coke", 20));
+            menuList[2] = (new MenuItem(3, "pizza", 100));
+            menuList[3] = (new MenuItem(4, "burger", 150));
+            menuList[4] = (new MenuItem(5, "fries", 75));
+        }
+        constructor() {
+
+        }
+    }
+
+    var visitorName, itemID, itemQuantity, choice;
+    var con = true;
+
+    // visitorName = prompt("Welcome to Hotel Paw Patrol\nEnter your name:")
+    // console.log("visitorName: " + visitorName);
+    // alert("You can check the menu bellow to Bill your food");
+    print("hello shufa");
+</script>

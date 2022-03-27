@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Object</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+
+<script>
+    function print(a) {
+        document.write(a + "<br>")
+    }
+
+    // 1. using Object Literal
+    var car = {
+        brand: "BMW",
+        model: "530d",
+        color: "white",
+        year: 2018
+    }
+    print("<hr>");
+    print("car1");
+    print(car.brand);
+    print(car.model);
+    print(car.color);
+    print(car.year);
+    print("<hr>");
+    // 2. using instance of object
+    var car2 = new Object();
+    car2.brand = "BMW";
+    car2.model = "530d";
+    car2.color = "black";
+    car2.year = 2018;
+    print("car2");
+    print(car2.brand);
+    print(car2.model);
+    print(car2.color);
+    print(car2.year);
+    print("<hr>");
+    // 3. using constructor
+    // class Car {
+    //     constructor(brand, model, color, year) {
+    //         this.brand = brand;
+    //         this.model = model;
+    //         this.color = color;
+    //         this.year = yeat;
+    //     }
+    // }
+
+    // var car3 = new Car(brand, model, color, year);
+    function Car(brand, model, color, year) {
+        this.brand = brand;
+        this.model = model;
+        this.color = color;
+        this.year = year;
+    }
+    print("car3");
+
+    var car3 = new Car("BMW", "530d", "red", 2018);
+    print(car3.brand);
+    print(car3.model);
+    print(car3.color);
+    print(car3.year);
+    print("<hr>");
+
+    function trainerObj(name, skill, location) {
+        this.name = name;
+        this.skill = skill;
+        this.location = location;
+
+        // set setLocation(value) {
+        //     this.location = location;
+        // }
+        // get locationInfo() {
+        //     return this.location;
+        // }
+        this.setLocation = function(location) {
+            this.location = location;
+        }
+
+        this.getlocationInfo = function() {
+            return this.location;
+        }
+        this.toString = function() {
+            return this.name + " " + this.skill + " " + this.location;
+        }
+    }
+    var trainer = new trainerObj("shufa", "FullStack", "NIL");
+    // trainer.setLocation("Singapore");
+    trainer.getlocationInfo();
+    print(trainer.name);
+    print(trainer.skill);
+    print(trainer.location);
+    trainer.setLocation("Singapore");
+    print(trainer.location);
+    print(trainer.toString());
+
+    print("<hr>");
+    // arrow operator
+
+    var a = function() {
+        print("hello");
+        return 1;
+    }
+    print(a());
+    var myFunction = (input) => {
+        print("Welcome to js, " + input);
+        return 1;
+    }
+    print(myFunction("shufa"));
+
+    print("<hr>");
+
+    function rect(width, height) {
+        this.width = width;
+        this.height = height;
+
+        this.getArea = function() {
+            return this.width * this.height;
+        }
+
+        this.getArea1 = () => {
+                return this.width * this.height;
+            }
+            // this.getArea2 = () => this.width * this.height;
+        this.getArea2 = (width, height) => width * height;
+
+    }
+    var rect1 = new rect(6, 4);
+    print(rect1.getArea());
+    var rect2 = new rect(60, 40);
+    print(rect2.getArea());
+    print(rect2.getArea1());
+    print("<hr>");
+    print(rect2.getArea2());
+    print(rect2.getArea2(100, 1000));
+    print("<hr>");
+    // Number property and methods
+    let x = 100;
+    let y = 2000;
+    let z = new Number(300);
+
+    print(x);
+    print(y);
+    print(z);
+    print(typeof x.toString());
+    print(typeof y.toExponential() + ": " + y.toExponential()); //2e+3: 2 x 10^3
+    print(typeof z);
+    let w = 50 / 3;
+    print(w); //16.666666666666668
+    print(w.toFixed(4)); //16.6667
+    print(w.toPrecision(4)); //16.67
+    print("<hr>")
+    let s = "10";
+    let f = "shufa";
+    print(typeof s);
+    print(typeof Number(s) + ": " + Number(s))
+    print(f);
+    print(typeof Number(f) + ": " + Number(f)) //number: NaN
+    print(Number.MAX_VALUE); //1.7976931348623157e+308
+    print(Number.MIN_VALUE); //5e-324
+    let a1 = 100;
+    let b1 = -100;
+    print(Number.isFinite(a1));
+    print(Number.isFinite(b1));
+    print(Number.isFinite(a1 / 0));
+    let m = Number.POSITIVE_INFINITY;
+    let n = Number.NEGATIVE_INFINITY;
+    print(typeof Number(m) + ": " + m);
+    print(typeof Number(n) + ": " + n);
+    print("<hr>");
+    print(typeof z.valueOf() + ": " + z.valueOf());
+</script>

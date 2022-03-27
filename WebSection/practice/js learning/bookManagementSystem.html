@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Management System</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+
+<script>
+    alert("Welcome to the Book Management System");
+    var books = [];
+
+    var input = prompt("What operation do u wnat to perform? \n- add\n- view\n- del\n- exit");
+    while (input != "exit") {
+        if (input == "add") {
+            addBook();
+        } else if (input == "view") {
+            viewBook();
+        } else if (input == "del") {
+            deleteBook();
+        }
+        input = prompt("What other operation do u want to do? \n- add\n- view\n- del\n- exit");
+
+    }
+
+
+    alert("Hey!! Thank you for using our System!!");
+
+    function addBook() {
+        var book = prompt("Enter the name of the book");
+        books.push(book);
+        console.log("book:" + book + " is added");
+    }
+
+    function viewBook() {
+        console.log("The available books are: ");
+
+        for (var x in books) {
+            console.log("index " + x + ": " + books[x]);
+        }
+    }
+
+    function deleteBook() {
+        var name = prompt("Enter the name of the book to be deleted");
+        var index = books.indexOf(name);
+        if (index == -1) {
+            console.log("Specified book is not present");
+        } else {
+            var delBook = books[index];
+            var choice = confirm("Do you want to delete " + "book:" + books[index]);
+            if (choice) {
+                books.splice(index, 1);
+                console.log("book:" + delBook + " is deleted");
+            }
+        }
+    }
+</script>
