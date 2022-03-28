@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+
+<script>
+    function print(a) {
+        document.write(a + "<br>")
+    }
+    var string = "Hello everyone,<br>Wecome to JavaScript section.<br>Learning is too fun";
+    print(string);
+    // var pattern = /to/g;
+    // var pattern = /Javascript/g;
+    var pattern = /Javascript/i; // case insensitive
+    var pattern = /to/m; // 
+    var res = string.match(pattern);
+    print(res);
+
+    var newString = "This is course 123: JS, 100% hands-on";
+
+    print(newString);
+    // var newPattern = /[a-z]/g; //h,i,s,i,s,c,o,u,r,s,e,h,a,n,d,s,o,n
+    var newPattern = /[^a-z]/g; //T, , , ,1,2,3,:, ,J,S,,, ,1,0,0,%, ,-
+    var newPattern = /[course]/g; //s,s,c,o,u,r,s,e,s,o
+    var newRes = newString.match(newPattern);
+    print(newRes);
+</script>
