@@ -26,49 +26,86 @@
         return s;
     }
 
-    class Item {
+    function Item(itemID, itemName, itemPrice) {
+        this.itemID = itemID;
+        this.itemName = itemName;
+        this.itemPrice = itemPrice;
 
-        constructor(itemID, itemName, itemPrice) {
-            this.itemID = itemID;
-            this.itemName = itemName;
-            this.itemPrice = itemPrice;
-        }
-
-        // constructor(item) {
-        //     this.itemID = item.itemID;
-        //     this.itemName = item.itemName;
-        //     this.itemPrice = item.itemPrice;
-        // }
-
-        toString = () => String.format("%8s%16s%16s", itemID, itemName, itemPrice);
-
-    }
-
-    class MenuItem extends Item {
-        // MenuItem(itemID, itemName, itemPrice) {
-        //     super(itemID, itemName, itemPrice);
-        // }
-    }
-
-    class Menu {
-        static menuList;
-        static {
-            menuList[0] = (new MenuItem(1, "water", 10));
-            menuList[1] = (new MenuItem(2, "coke", 20));
-            menuList[2] = (new MenuItem(3, "pizza", 100));
-            menuList[3] = (new MenuItem(4, "burger", 150));
-            menuList[4] = (new MenuItem(5, "fries", 75));
-        }
-        constructor() {
-
+        this.toString = () => {
+            return this.itemID + " " + this.itemName + " " + this.itemPrice;
         }
     }
 
-    var visitorName, itemID, itemQuantity, choice;
-    var con = true;
+    function BillItem(itemID, itemName, inputItemQuality, totalPrice) {
+        this.itemID = itemID;
+        this.itemName = itemName;
+        this.inputItemQuality = inputItemQuality;
+        this.totalPrice = totalPrice;
 
-    // visitorName = prompt("Welcome to Hotel Paw Patrol\nEnter your name:")
-    // console.log("visitorName: " + visitorName);
-    // alert("You can check the menu bellow to Bill your food");
-    print("hello shufa");
+        this.toString = () => {
+            return this.itemID + " " + this.itemName + " " + this.inputItemQuality + " " + totalPrice;
+        }
+    }
+
+    // function Bill(itemID, itemName, billList) {
+    //     this.billList = [];
+    //     // this
+
+    //     // this.add(itemID, itemName, inputItemQuality, totalPrice) {
+    //     //     this.billList
+    //     // }
+
+    //     this.toString = () => {
+    //         return this.itemID + " " + this.itemName + " " + this.itemPrice;
+    //     }
+
+    // }
+
+    var i1 = new Item(1, "water", 10);
+    var i2 = new Item(2, "coke", 20);
+    var i3 = new Item(3, "pizza", 100);
+    var i4 = new Item(4, "burger", 150);
+    var i5 = new Item(5, "fries", 75);
+
+    var menu = [i1,
+        i2,
+        i3,
+        i4,
+        i5
+    ]
+
+    function Menu(menu) {
+        this.menu = menu;
+        this.getPrice = (itemId) => {
+            console.log("this.menu[itemId]: " + this.menu[itemId]);
+            return this.menu[itemId].itemPrice;
+        }
+
+        this.getName = (itemId) => {
+            console.log("this.menu[itemId]: " + this.menu[itemId]);
+            return this.menu[itemId].itemName;
+        }
+
+    }
+
+    // prompt(menu);
+    var string = "ID  Item   price\n";
+    var newMenu = new Menu(menu);
+
+    for (var i in newMenu.menu) {
+        console.log("i: " + i);
+        var item = newMenu.menu[i].toString()
+        console.log(item);
+        string += item + "\n";
+    }
+    // print(string);
+    var inputItemId = prompt(string + "\nEnter the ItemID:");
+    console.log("inputItemId: " + inputItemId);
+    // var currentitemName =
+    var inputItemQuality = prompt("Enter the quantity:");
+    console.log("inputItemQuality: " + inputItemQuality);
+    var itemPrice = newMenu.getPrice(inputItemId - 1);
+    console.log("itemPrice: " + itemPrice);
+    var oneBillItem = new BillItem(inputItemId, newMenu.getName(inputItemId - 1), inputItemQuality, itemPrice * inputItemQuality);
+    alert("ID name quality totalPrice\n" + oneBillItem.toString());
 </script>
