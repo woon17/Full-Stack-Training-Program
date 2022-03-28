@@ -54,6 +54,30 @@ class StudentNotExistException extends Exception {
 	}
 }
 
+class InvalidSalaryRangeException extends Exception {
+	public String getMessage() {
+		String line = String.format("%60s\n", " ").replace(" ", "*");
+		String warning = "Waining: choose from 1000-10000\n";
+		return line + warning + line;
+	}
+}
+
+class TeacherAlredyExistException extends Exception {
+	public String getMessage() {
+		String line = String.format("%60s\n", " ").replace(" ", "*");
+		String warning = "Waining: cannot add as current teacher is alredy exsiting\n";
+		return line + warning + line;
+	}
+}
+
+class TeacherNotExistException extends Exception {
+	public String getMessage() {
+		String line = String.format("%60s\n", " ").replace(" ", "*");
+		String warning = "Waining: This teacher does not exist\n";
+		return line + warning + line;
+	}
+}
+
 interface PersonInterface {
 	void enrol(School school);
 
@@ -219,15 +243,15 @@ class School implements SummaryInterface {
 		}
 		return student;
 	}
-//
-//	public boolean getByName(Teacher teacher) {
-//		for (Teacher s : teachers) {
-//			if (s.getName().equals(teacher.getName())) {
-//				return true;
-//			}
-//		}
-//		return false;
-//	}
+	
+	public Teacher getByName(Teacher teacher) {
+		for (Teacher s : teachers) {
+			if (s.getName().equals(teacher.getName())) {
+				return s;
+			}
+		}
+		return teacher;
+	}
 
 	public void showPersonInfoByName(Student student) {
 		System.out.println(String.format("%8s%16s", "Student", "GPA"));
@@ -319,6 +343,22 @@ class Admin {
 			throw new StudentNotExistException();
 		}
 	}
+	
+	void verifyTeacherNotExist(String name, int crud) throws TeacherAlredyExistException {
+		Person person;
+		person = new Teacher(name);
+		if (person.isExistingIn(school)) {
+			throw new TeacherAlredyExistException();
+		}
+	}
+
+	void verifyTeacherExist(String name, int crud) throws TeacherNotExistException {
+		Person person;
+		person = new Teacher(name);
+		if (!person.isExistingIn(school)) {
+			throw new TeacherNotExistException();
+		}
+	}
 
 	void ansCrudQn(int personType) {
 //		System.out.println("ansCrudQn()");
@@ -348,6 +388,14 @@ class Admin {
 //		System.out.println("verifyCrudAns()");
 		if (gpa < 0 || gpa > 5) {
 			InvalidGpaRangeException e = new InvalidGpaRangeException();
+			throw e;
+		}
+	}
+	
+	void verifySalary(int salary) throws InvalidSalaryRangeException {
+//		System.out.println("verifyCrudAns()");
+		if (salary < 1000 || salary > 10000) {
+			InvalidSalaryRangeException e = new InvalidSalaryRangeException();
 			throw e;
 		}
 	}
@@ -382,12 +430,27 @@ class Admin {
 				}
 
 			} else {
-				System.out.println(
-						String.format("Enter the Salary for %s (teacher). %s", name, "choose from 1000-10000"));
-				int salary = sc.nextInt();
-				person = new Teacher(name, salary);
-				person.enrol(this.school);
-				school.showPersonInfoByName((Teacher) person);
+				try {
+					System.out.println(
+							String.format("Enter the Salary for %s (teacher). %s", name, "choose from 1000-10000"));
+					verifyTeacherNotExist(name, crudQnAns);
+					int salary = sc.nextInt();
+					verifySalary(salary);
+					person = new Teacher(name, salary);
+					person.enrol(school);
+					school.showPersonInfoByName((Teacher) person);
+				} catch (InvalidSalaryRangeException e) {
+					// TODO: handle exception
+					System.out.println(e.getMessage());
+					performCrud(name, crudQnAns, personType);
+				} catch (InputMismatchException e) {
+					InputInputTypeException exception = new InputInputTypeException();
+					System.out.println(exception.getMessage());
+					performCrud(name, crudQnAns, personType);
+				} catch (TeacherAlredyExistException e) {
+					System.out.println(e.getMessage());
+					ansCrudQn(1);
+				}
 			}
 			break;
 		case 2:
@@ -405,11 +468,14 @@ class Admin {
 				}
 
 			} else {
-				person = new Teacher(name);
-				if (person.isExistingIn(school)) {
+				try {
+					verifyTeacherExist(name, crudQnAns);
+					person = new Teacher(name);
 					school.showPersonInfoByName((Teacher) person);
-				} else {
-					System.out.println("Input the correct name");
+				} catch (TeacherNotExistException e) {
+					// TODO Auto-generated catch block
+					System.out.println(e.getMessage());
+					ansCrudQn(1);
 				}
 			}
 
@@ -442,14 +508,26 @@ class Admin {
 				}
 
 			} else {
-				System.out.println(
-						String.format("Enter the new salary for %s (teacher). %s", name, "choose from 1000-10000"));
-				int salary = sc.nextInt();
-				person = new Teacher(name);
-				if (person.isExistingIn(school)) {
+				try {
+					verifyTeacherExist(name, crudQnAns);
+					person = school.getByName(new Teacher(name));
+					school.showPersonInfoByName((Teacher) person);
+					System.out.println(
+							String.format("Enter the new salary for %s (teacher). %s", name, "choose from 1000-10000"));
+					int salary = sc.nextInt();
+					verifySalary(salary);
 					((Teacher) person).setSalary(salary);
-				} else {
-					System.out.println("Input the correct name");
+					school.showPersonInfoByName((Teacher) person);
+				} catch (InvalidSalaryRangeException e) {
+					System.out.println(e.getMessage());
+					performCrud(name, crudQnAns, personType);
+				} catch (InputMismatchException e) {
+					InputInputTypeException exception = new InputInputTypeException();
+					System.out.println(exception.getMessage());
+					performCrud(name, crudQnAns, personType);
+				} catch (TeacherNotExistException e) {
+					System.out.println(e.getMessage());
+					ansCrudQn(1);
 				}
 			}
 			break;
@@ -458,7 +536,8 @@ class Admin {
 			if (personType == 1) {
 				try {
 					verifyStudentExist(name, crudQnAns);
-					person = new Student(name);
+					person = school.getByName(new Student(name));
+					
 					person.leave(school);
 					System.out.println(String.format("%s (student) is deleted\n", name));
 				} catch (StudentNotExistException e) {
@@ -466,18 +545,20 @@ class Admin {
 					ansCrudQn(1);
 				}
 			} else {
-				person = new Teacher(name);
-				if (person.isExistingIn(school)) {
+				try {
+					verifyTeacherExist(name, crudQnAns);
+					person = school.getByName(new Teacher(name));
 					person.leave(school);
-				} else {
-					System.out.println("Input the correct name");
+					System.out.println(String.format("%s (teacher) is deleted\n", name));
+				} catch (TeacherNotExistException e) {
+					System.out.println(e.getMessage());
+					ansCrudQn(1);
 				}
 			}
 			break;
 		default:
 			break;
 		}
-
 	}
 }
 
