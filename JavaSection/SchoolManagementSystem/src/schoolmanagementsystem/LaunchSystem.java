@@ -131,6 +131,10 @@ class Student extends Person {
 
 	}
 
+	public static int getNoOfStudents() {
+		return numOfStudents;
+	}
+
 	public float getGpa() {
 		return gpa;
 	}
@@ -180,6 +184,10 @@ class Teacher extends Person {
 
 	public Teacher(String name) {
 		super(name);
+	}
+
+	public static int getNoOfTeachers() {
+		return numOfTeachers;
 	}
 
 	public int getSalary() {
@@ -243,7 +251,7 @@ class School implements SummaryInterface {
 		}
 		return student;
 	}
-	
+
 	public Teacher getByName(Teacher teacher) {
 		for (Teacher s : teachers) {
 			if (s.getName().equals(teacher.getName())) {
@@ -274,13 +282,21 @@ class School implements SummaryInterface {
 	@Override
 	public void showStudentsSummary() {
 		// TODO Auto-generated method stub
-
+		System.out.println(String.format("%8s%16s", "Student", "GPA"));
+		for (Student s : students) {
+			System.out.println(String.format("%8s%16s", s.getName(), s.getGpa()));
+		}
+		System.out.println(String.format("Total students: %s\n", Student.getNoOfStudents()));
 	}
 
 	@Override
 	public void showTeachersSummary() {
 		// TODO Auto-generated method stub
-
+		System.out.println(String.format("%8s%16s", "teacher", "Salary"));
+		for (Teacher s : teachers) {
+			System.out.println(String.format("%8s%16s", s.getName(), s.getSalary()));
+		}
+		System.out.println(String.format("Total teachers: %s\n", Teacher.getNoOfTeachers()));
 	}
 
 }
@@ -294,7 +310,7 @@ class Admin {
 	}
 
 	void verifyStAns(int stQnAns) throws InvalidStAnsException {
-		if (stQnAns != 1 && stQnAns != 2) {
+		if (stQnAns < 1 && stQnAns > 4) {
 			InvalidStAnsException e = new InvalidStAnsException();
 			throw e;
 		}
@@ -302,7 +318,8 @@ class Admin {
 
 	void ansStQn() {
 //		System.out.println("ansStQn()");
-		String stQn = String.format("%8s%16s", "Student(1)", "Teacher(2)");
+		String stQn = String.format("%8s%16s%20s%20s", "Student(1)", "Teacher(2)", "Show-student(3)",
+				"Show-teachers(4)");
 		System.out.println("For student or teach? Choose a number\n" + stQn);
 		try {
 			Scanner sc = new Scanner(System.in);
@@ -311,7 +328,14 @@ class Admin {
 			verifyStAns(stQnAns);
 //			System.out.println("--------------------------");
 //			ansNameQn();
-			ansCrudQn(stQnAns);
+			if (stQnAns == 3) {
+				school.showStudentsSummary();
+			} else if (stQnAns == 4) {
+				school.showTeachersSummary();
+			} else {
+				ansCrudQn(stQnAns);
+			}
+
 		} catch (InvalidStAnsException e) {
 			System.out.println(e.getMessage());
 		} catch (InputMismatchException e) {
@@ -322,7 +346,7 @@ class Admin {
 
 	void verifyCrudAns(int crudQnAns) throws InvalidCrudAnsException {
 //		System.out.println("verifyCrudAns()");
-		if (crudQnAns != 1 && crudQnAns != 2 && crudQnAns != 3 && crudQnAns != 4) {
+		if (crudQnAns < 1 || crudQnAns > 4) {
 			InvalidCrudAnsException e = new InvalidCrudAnsException();
 			throw e;
 		}
@@ -343,7 +367,7 @@ class Admin {
 			throw new StudentNotExistException();
 		}
 	}
-	
+
 	void verifyTeacherNotExist(String name, int crud) throws TeacherAlredyExistException {
 		Person person;
 		person = new Teacher(name);
@@ -391,7 +415,7 @@ class Admin {
 			throw e;
 		}
 	}
-	
+
 	void verifySalary(int salary) throws InvalidSalaryRangeException {
 //		System.out.println("verifyCrudAns()");
 		if (salary < 1000 || salary > 10000) {
@@ -485,7 +509,7 @@ class Admin {
 			if (personType == 1) {
 				try {
 					verifyStudentExist(name, crudQnAns);
-					
+
 					person = school.getByName(new Student(name));
 					school.showPersonInfoByName((Student) person);
 					System.out
@@ -537,7 +561,7 @@ class Admin {
 				try {
 					verifyStudentExist(name, crudQnAns);
 					person = school.getByName(new Student(name));
-					
+
 					person.leave(school);
 					System.out.println(String.format("%s (student) is deleted\n", name));
 				} catch (StudentNotExistException e) {
