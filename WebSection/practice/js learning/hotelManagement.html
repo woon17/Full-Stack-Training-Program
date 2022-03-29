@@ -100,7 +100,12 @@
     }
     // print(string);
     var inputItemId = prompt(string + "\nEnter the ItemID:");
-    console.log("inputItemId: " + inputItemId);
+    while (inputItemId < 1 || inputItemId > newMenu.menu.length) {
+        console.log("inputItemId: " + inputItemId);
+        console.log("inputItemId type: " + typeof inputItemId);
+        inputItemId = prompt(string + "\nEnter the ItemID:");
+    }
+
     // var currentitemName =
     var inputItemQuality = prompt("Enter the quantity:");
     console.log("inputItemQuality: " + inputItemQuality);
