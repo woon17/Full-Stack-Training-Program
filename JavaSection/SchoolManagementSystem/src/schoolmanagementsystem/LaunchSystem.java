@@ -5,7 +5,6 @@ import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 
-
 interface PersonInterface {
 	void enrol(School school);
 
@@ -124,7 +123,8 @@ class Admin {
 	}
 
 	void verifyStAns(int stQnAns) throws InvalidStAnsException {
-		if (stQnAns < 1 && stQnAns > 4) {
+		System.out.println("stQnAns: "+ stQnAns);
+		if (stQnAns < 1 || stQnAns > 4) {
 			InvalidStAnsException e = new InvalidStAnsException();
 			throw e;
 		}
@@ -146,7 +146,7 @@ class Admin {
 				school.showStudentsSummary();
 			} else if (stQnAns == 4) {
 				school.showTeachersSummary();
-			} else {
+			} else {// 1 or 2
 				ansCrudQn(stQnAns);
 			}
 
@@ -166,33 +166,25 @@ class Admin {
 		}
 	}
 
-	void verifyStudentNotExist(String name, int crud) throws StudentAlredyExistException {
-		Person person;
-		person = new Student(name);
+	void verifyStudentNotExist(Person person) throws StudentAlredyExistException {
 		if (person.isExistingIn(school)) {
 			throw new StudentAlredyExistException();
 		}
 	}
 
-	void verifyStudentExist(String name, int crud) throws StudentNotExistException {
-		Person person;
-		person = new Student(name);
+	void verifyStudentExist(Person person) throws StudentNotExistException {
 		if (!person.isExistingIn(school)) {
 			throw new StudentNotExistException();
 		}
 	}
 
-	void verifyTeacherNotExist(String name, int crud) throws TeacherAlredyExistException {
-		Person person;
-		person = new Teacher(name);
+	void verifyTeacherNotExist(Person person) throws TeacherAlredyExistException {
 		if (person.isExistingIn(school)) {
 			throw new TeacherAlredyExistException();
 		}
 	}
 
-	void verifyTeacherExist(String name, int crud) throws TeacherNotExistException {
-		Person person;
-		person = new Teacher(name);
+	void verifyTeacherExist(Person person) throws TeacherNotExistException {
 		if (!person.isExistingIn(school)) {
 			throw new TeacherNotExistException();
 		}
@@ -207,10 +199,20 @@ class Admin {
 			System.out.println(crudQn);
 			int crudQnAns = sc.nextInt();
 			verifyCrudAns(crudQnAns);
-			System.out.println("Enter the person's name: ");
-			String name = sc.next();
-//			verifyName(name, personType);
-			performCrud(name, crudQnAns, personType);
+			String name;
+			Person dummyPerson;
+			if (personType == 1) {
+				// create a dummy student instance by name
+				System.out.println("Enter the student's name: ");
+				name = sc.next();
+				dummyPerson = new Student(name);
+			} else {
+				System.out.println("Enter the teacher's name: ");
+				name = sc.next();
+				dummyPerson = new Teacher(name);
+			}
+//			performCrud(name, crudQnAns, personType);
+			performCrudPerson(dummyPerson, crudQnAns);
 		} catch (InvalidCrudAnsException e) {
 			System.out.println(e.getMessage());
 			ansCrudQn(personType);
@@ -223,7 +225,6 @@ class Admin {
 
 //	TODO:
 	void verifyGpa(float gpa) throws InvalidGpaRangeException {
-//		System.out.println("verifyCrudAns()");
 		if (gpa < 0 || gpa > 5) {
 			InvalidGpaRangeException e = new InvalidGpaRangeException();
 			throw e;
@@ -231,167 +232,130 @@ class Admin {
 	}
 
 	void verifySalary(int salary) throws InvalidSalaryRangeException {
-//		System.out.println("verifyCrudAns()");
 		if (salary < 1000 || salary > 10000) {
 			InvalidSalaryRangeException e = new InvalidSalaryRangeException();
 			throw e;
 		}
 	}
 
-	void performCrud(String name, int crudQnAns, int personType) {
-//		System.out.println("performCrud()crudQnAns:" + crudQnAns);
+	void performCrudPerson(Person person, int crudQnAns) {
 		Scanner sc = new Scanner(System.in);
-		Person person;
 		switch (crudQnAns) {
-		case 1:
-			// create person: need name + gpa or name + salary
-			if (personType == 1) {
-				try {
-					System.out.println(String.format("Enter the GPA for %s (Student). %s", name, "choose from 0-5"));
-					verifyStudentNotExist(name, crudQnAns);
+		case 1:// Create(1)
+			try {
+				if (person instanceof Student) {
+					verifyStudentNotExist(person);
+					System.out.println(
+							String.format("Enter the GPA for %s (Student). %s", person.getName(), "choose from 0-5"));
 					float gpa = sc.nextFloat();
 					verifyGpa(gpa);
-					person = new Student(name, gpa);
+					((Student) person).setGpa(gpa);
 					person.enrol(this.school);
 					school.showPersonInfoByName((Student) person);
-				} catch (InvalidGpaRangeException e) {
-					// TODO: handle exception
-					System.out.println(e.getMessage());
-					performCrud(name, crudQnAns, personType);
-				} catch (InputMismatchException e) {
-					InputInputTypeException exception = new InputInputTypeException();
-					System.out.println(exception.getMessage());
-					performCrud(name, crudQnAns, personType);
-				} catch (StudentAlredyExistException e) {
-					System.out.println(e.getMessage());
-					ansCrudQn(1);
-				}
-
-			} else {
-				try {
-					System.out.println(
-							String.format("Enter the Salary for %s (teacher). %s", name, "choose from 1000-10000"));
-					verifyTeacherNotExist(name, crudQnAns);
+				} else {
+					verifyTeacherNotExist(person);
+					System.out.println(String.format("Enter the Salary for %s (teacher). %s", person.getName(),
+							"choose from 1000-10000"));
 					int salary = sc.nextInt();
 					verifySalary(salary);
-					person = new Teacher(name, salary);
+					((Teacher) person).setSalary(salary);
 					person.enrol(school);
 					school.showPersonInfoByName((Teacher) person);
-				} catch (InvalidSalaryRangeException e) {
-					// TODO: handle exception
-					System.out.println(e.getMessage());
-					performCrud(name, crudQnAns, personType);
-				} catch (InputMismatchException e) {
-					InputInputTypeException exception = new InputInputTypeException();
-					System.out.println(exception.getMessage());
-					performCrud(name, crudQnAns, personType);
-				} catch (TeacherAlredyExistException e) {
-					System.out.println(e.getMessage());
-					ansCrudQn(1);
 				}
+			} catch (InvalidGpaRangeException e) {
+				System.out.println(e.getMessage());
+				performCrudPerson(person, crudQnAns);
+			} catch (InputMismatchException e) {
+				InputInputTypeException exception = new InputInputTypeException();
+				System.out.println(exception.getMessage());
+				performCrudPerson(person, crudQnAns);
+			} catch (InvalidSalaryRangeException e) {
+				System.out.println(e.getMessage());
+				performCrudPerson(person, crudQnAns);
+			} catch (StudentAlredyExistException e) {
+				System.out.println(e.getMessage());
+				ansCrudQn(1);
+			} catch (TeacherAlredyExistException e) {
+				System.out.println(e.getMessage());
+				ansCrudQn(1);
 			}
 			break;
-		case 2:
-			// Read Person
-			// dummy instance
-			if (personType == 1) {
-				try {
-					verifyStudentExist(name, crudQnAns);
-					person = new Student(name);
+		case 2:// Read(2)
+			try {
+				if (person instanceof Student) {
+					verifyStudentExist(person);
 					school.showPersonInfoByName((Student) person);
-				} catch (StudentNotExistException e) {
-					// TODO Auto-generated catch block
-					System.out.println(e.getMessage());
-					ansCrudQn(1);
-				}
-
-			} else {
-				try {
-					verifyTeacherExist(name, crudQnAns);
-					person = new Teacher(name);
+				} else {
+					verifyTeacherExist(person);
 					school.showPersonInfoByName((Teacher) person);
-				} catch (TeacherNotExistException e) {
-					// TODO Auto-generated catch block
-					System.out.println(e.getMessage());
-					ansCrudQn(1);
 				}
+			} catch (StudentNotExistException e) {
+				System.out.println(e.getMessage());
+				ansCrudQn(1);
+			} catch (TeacherNotExistException e) {
+				System.out.println(e.getMessage());
+				ansCrudQn(1);
 			}
-
 			break;
-		case 3:
-			// update person
-			if (personType == 1) {
-				try {
-					verifyStudentExist(name, crudQnAns);
-
-					person = school.getByName(new Student(name));
+		case 3:// Update(3)
+			try {
+				if (person instanceof Student) {
+					verifyStudentExist(person);
 					school.showPersonInfoByName((Student) person);
-					System.out
-							.println(String.format("Enter the new GPA for %s (Student). %s", name, "choose from 0-5"));
+					System.out.println(String.format("Enter the new GPA for %s (Student). %s", person.getName(),
+							"choose from 0-5"));
 					float gpa = sc.nextFloat();
 					verifyGpa(gpa);
 					((Student) person).setGpa(gpa);
 					school.showPersonInfoByName((Student) person);
-				} catch (InvalidGpaRangeException e) {
-					// TODO: handle exception
-					System.out.println(e.getMessage());
-					performCrud(name, crudQnAns, personType);
-				} catch (InputMismatchException e) {
-					InputInputTypeException exception = new InputInputTypeException();
-					System.out.println(exception.getMessage());
-					performCrud(name, crudQnAns, personType);
-				} catch (StudentNotExistException e) {
-					System.out.println(e.getMessage());
-					ansCrudQn(1);
-				}
-
-			} else {
-				try {
-					verifyTeacherExist(name, crudQnAns);
-					person = school.getByName(new Teacher(name));
+				} else {
+					verifyTeacherExist(person);
 					school.showPersonInfoByName((Teacher) person);
-					System.out.println(
-							String.format("Enter the new salary for %s (teacher). %s", name, "choose from 1000-10000"));
+					System.out.println(String.format("Enter the new salary for %s (teacher). %s", person.getName(),
+							"choose from 1000-10000"));
 					int salary = sc.nextInt();
 					verifySalary(salary);
 					((Teacher) person).setSalary(salary);
 					school.showPersonInfoByName((Teacher) person);
-				} catch (InvalidSalaryRangeException e) {
-					System.out.println(e.getMessage());
-					performCrud(name, crudQnAns, personType);
-				} catch (InputMismatchException e) {
-					InputInputTypeException exception = new InputInputTypeException();
-					System.out.println(exception.getMessage());
-					performCrud(name, crudQnAns, personType);
-				} catch (TeacherNotExistException e) {
-					System.out.println(e.getMessage());
-					ansCrudQn(1);
 				}
+			} catch (InvalidGpaRangeException e) {
+				System.out.println(e.getMessage());
+				performCrudPerson(person, crudQnAns);
+			} catch (InvalidSalaryRangeException e) {
+				System.out.println(e.getMessage());
+				performCrudPerson(person, crudQnAns);
+			} catch (InputMismatchException e) {
+				InputInputTypeException exception = new InputInputTypeException();
+				System.out.println(exception.getMessage());
+				performCrudPerson(person, crudQnAns);
+			} catch (StudentNotExistException e) {
+				System.out.println(e.getMessage());
+				ansCrudQn(1);
+			} catch (TeacherNotExistException e) {
+				System.out.println(e.getMessage());
+				ansCrudQn(1);
 			}
 			break;
-		case 4:
-			// delete person
-			if (personType == 1) {
-				try {
-					verifyStudentExist(name, crudQnAns);
-					person = school.getByName(new Student(name));
+		case 4:// Delte(4)
+			try {
 
+				if (person instanceof Student) {
+					verifyStudentExist(person);
+					person = school.getByName((Student) person);
 					person.leave(school);
-					System.out.println(String.format("%s (student) is deleted\n", name));
-				} catch (StudentNotExistException e) {
-					System.out.println(e.getMessage());
-					ansCrudQn(1);
+					System.out.println(String.format("%s (student) is deleted\n", person.getName()));
+				} else {
+					verifyTeacherExist(person);
+					person = school.getByName((Teacher) person);
+					System.out.println(String.format("%s (teacher) is deleted\n", person.getName()));
 				}
-			} else {
-				try {
-					verifyTeacherExist(name, crudQnAns);
-					person = school.getByName(new Teacher(name));
-					person.leave(school);
-					System.out.println(String.format("%s (teacher) is deleted\n", name));
-				} catch (TeacherNotExistException e) {
-					System.out.println(e.getMessage());
-					ansCrudQn(1);
-				}
+
+			} catch (StudentNotExistException e) {
+				System.out.println(e.getMessage());
+				ansCrudQn(1);
+			} catch (TeacherNotExistException e) {
+				System.out.println(e.getMessage());
+				ansCrudQn(1);
 			}
 			break;
 		default:
@@ -404,9 +368,6 @@ public class LaunchSystem {
 
 	public static void main(String[] args) {
 		Admin admin = new Admin();
-
-		String crudQn = String.format("%8s%16s%16s%16s", "Create(1)", "Read(2)", "Update(3)", "Delte(4)");
-
 		while (!admin.isExit) {
 			admin.ansStQn();
 		}

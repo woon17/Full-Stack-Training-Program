@@ -1,4 +1,5 @@
 package schoolmanagementsystem;
+
 class Teacher extends Person {
 	private static int numOfTeachers;
 	private int salary;
@@ -18,6 +19,10 @@ class Teacher extends Person {
 
 	public int getSalary() {
 		return salary;
+	}
+
+	public void setSalary() {
+		this.salary = salary;
 	}
 
 	public String toString() {
