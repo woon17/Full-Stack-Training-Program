@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+    function print(a) {
+        document.write(a + "<br>")
+    }
+    print("Hello world");
+    class Car {
+
+        constructor(carModel, carBrand, carYear) {
+            this.carModel = carModel;
+            this.carBrand = carBrand;
+            this.carYear = carYear;
+        }
+
+        DisplayCarInfo = () => {
+            print(this.carModel + " " + this.carBrand + " " + this.carYear);
+        }
+
+        get getCarModel() {
+            return this.carModel;
+        }
+        set setCarModel(carModel) {
+            this.carModel = carModel;
+        }
+
+        set setCarColor(color) {
+            this.carColor = color;
+        }
+
+        toString = () => {
+            return this.carModel + " " + this.carBrand + " " + this.carYear + " " + this.color;
+        }
+    };
+
+    let car = new Car("520", "BMW", 2020);
+    car.DisplayCarInfo();
+    car.carBrand = "newBMW";
+    print(car);
+    car.DisplayCarInfo();
+    print(car.getCarModel)
+    car.setCarModel = "shufa";
+    print(car);
+    // car.setCarColor("red");
+    // print(car);
+    car.color = "red";
+    print(car);
+
+
+    class BMWCar extends Car {
+
+        toString = () => {
+            return "BMWCar";
+        }
+    };
+
+    class NiceCar extends Car {
+
+        toString = () => {
+            return "NiceCar";
+        }
+    };
+
+    class PoorCar extends Car {
+
+        toString = () => {
+            return "PoorCar";
+        }
+    };
+
+    let bmwCar = new BMWCar();
+    print(bmwCar);
+    let niceCar = new NiceCar();
+    print(niceCar);
+    let poorCar = new PoorCar();
+    print(poorCar);
+
+    // function constructor
+    function CarTypeA(model, name, avg) {
+        this.model = model;
+        this.name = name;
+        this.avg = avg;
+        this.toString = () => {
+            return "info: " + this.model + " " + this.name + " " + this.avg;
+        }
+        let diff = 6;
+
+        let display = () => {
+            return "display method " + diff;
+        }
+
+        this.getDiff = () => {
+            return diff;
+        }
+
+        this.getDisplay = () => {
+            return display();
+        }
+
+    }
+
+    // use let to hide variable and method. similar to private access modifier.
+    let cartypeA = new CarTypeA("a", "b", 100);
+    print(cartypeA.diff); ////undefined as it use let keyword
+    print(cartypeA.display()); //undefined as it use let keyword
+    print(cartypeA.getDiff());
+    print(cartypeA.getDisplay());
+</script>

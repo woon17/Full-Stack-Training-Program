@@ -33,6 +33,45 @@
     // var newPattern = /[a-z]/g; //h,i,s,i,s,c,o,u,r,s,e,h,a,n,d,s,o,n
     var newPattern = /[^a-z]/g; //T, , , ,1,2,3,:, ,J,S,,, ,1,0,0,%, ,-
     var newPattern = /[course]/g; //s,s,c,o,u,r,s,e,s,o
+    var newPattern = /[a-zA-Z0-9]/g; //T,h,i,s,i,s,c,o,u,r,s,e,1,2,3,J,S,1,0,0,h,a,n,d,s,o,n
+
     var newRes = newString.match(newPattern);
     print(newRes);
+
+    print("<hr>")
+    print("<em>Mega character</em>")
+    var str = "Web-Tech is 100% fun to learn. Enjoy the course 123: JS";
+    print(str);
+    var pattern = /\w/g;
+    var res = str.match(pattern); //W,e,b,T,e,c,h,i,s,1,0,0,f,u,n,t,o,l,e,a,r,n,E,n,j,o,y,t,h,e,c,o,u,r,s,e,1,2,3,J,S
+    var pattern = /\W/g;
+    var res = str.match(pattern); //-, , ,%, , , ,., , , , ,:,
+    var pattern = /\d/g;
+    var res = str.match(pattern); //1,0,0,1,2,3
+    var pattern = /\D/g;
+    var res = str.match(pattern); //W,e,b,-,T,e,c,h, ,i,s, ,%, ,f,u,n, ,t,o, ,l,e,a,r,n,., ,E,n,j,o,y, ,t,h,e, ,c,o,u,r,s,e, ,:, ,J,S
+    var pattern = /\s/g;
+    var res = str.match(pattern); //, , , , , , , , ,
+    var pattern = /\S/g;
+    var res = str.match(pattern); //W,e,b,-,T,e,c,h,i,s,1,0,0,%,f,u,n,t,o,l,e,a,r,n,.,E,n,j,o,y,t,h,e,c,o,u,r,s,e,1,2,3,:,J,S
+    var pattern = /\bfun/g;
+    var res = str.search(pattern) //17
+    var pattern = /Web\B/;
+    var pattern = /\BWeb/;
+    var res = str.search(pattern) //-1
+    var text = "HELLO, LOOK AT YOU! Okay";
+    var pattern = /\BOK/;
+    var res = text.search(pattern) //9
+
+    var text = "Visit W3Schools.\rLearn Javascript.";
+    var pattern = /\r/;
+    var res = text.search(pattern)
+
+    var pattern = /e+/g;
+    var res = str.match(pattern); //e,e,e,e,e
+
+    var pattern = /e*/g;
+    var res = str.match(pattern); //,e,,,,e,,,,,,,,,,,,,,,,,,,,e,,,,,,,,,,,,,,e,,,,,,,e,,,,,,,,,
+
+    print(res);
 </script>
