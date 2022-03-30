@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+
+<script>
+    function print(a) {
+        document.write(a + "<br>")
+    }
+    print("---------------------------------------------------");
+    let cars = {
+        carModel: ["Seltos", "Sonet", "Carnival"],
+        carColor: ["White", "Black", "Red"],
+        driveMode: ["Automatic transmission", "Manual transmission"]
+    };
+    let is_showroom_open = true;
+    let order = (time, work) => {
+        return new Promise((resolve, reject) => {
+            if (is_showroom_open) {
+                //order etc...
+                setTimeout(() => {
+                    resolve(work());
+                }, time)
+
+            } else {
+                reject(print("Our showroom is closed"));
+            }
+        })
+    }
+    order(5000, () => {
+        print(`The customer has book ${cars.carModel[1]}`);
+    })
+
+    .then(
+        () => {
+            return order(1000, () => {
+                print("Production has stared");
+            })
+        }
+    )
+
+    .then(
+        () => {
+            return order(3000, () => {
+                print(`Customer has selected ${cars.driveMode[1]}`);
+            })
+        }
+    )
+
+
+    .then(
+            () => {
+                return order(4000, () => {
+                    print("The car parts are assembled based on the drive mode selected");
+                })
+            }
+        )
+        .then(
+            () => {
+                return order(5000, () => {
+                    print(`Customer has choosen ${cars.carColor[0]}`);
+                })
+            }
+        )
+
+    .then(
+        () => {
+            return order(10000, () => {
+                print("Car is colored and the car is delivered");
+            })
+        }
+    )
+
+    .catch(
+        () => {
+            print("Hence, customer left")
+        }
+    )
+
+    .finally(
+        () => {
+            print("Late evening the showroom is closed")
+        }
+    );
+    print("here");
+</script>
