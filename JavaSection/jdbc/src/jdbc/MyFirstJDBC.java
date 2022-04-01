@@ -6,6 +6,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Scanner;
 
@@ -13,7 +14,7 @@ import oracle.jdbc.OracleDriver;
 
 public class MyFirstJDBC {
 
-	public static void showTableByFullQuery(Connection con) {
+	public static void showTableByFullQuery(Connection con){
 		try {
 			Statement stmt = con.createStatement();
 			ResultSet res = stmt.executeQuery("select * from STUDENT");
@@ -36,7 +37,7 @@ public class MyFirstJDBC {
 
 	}
 
-	public static void getTableColumnInfo(Connection con) {
+	public static void getTableColumnInfo(Connection con) throws SQLException {
 		try {
 
 			Statement stmt = con.createStatement();
@@ -51,11 +52,13 @@ public class MyFirstJDBC {
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
+		} finally {
+			con.close();
 		}
 
 	}
 
-	public static void tryCreate(Connection con) {
+	public static void tryCreate(Connection con) throws SQLException {
 		try {
 			System.out.println("Create:");
 			PreparedStatement pstmt = con.prepareStatement("insert into STUDENT values(?,?,?,?,?)");
@@ -82,11 +85,13 @@ public class MyFirstJDBC {
 
 		} catch (Exception e) {
 			e.printStackTrace();
+		} finally {
+			con.close();
 		}
 
 	}
 
-	public static void tryRead(Connection con) {
+	public static void tryRead(Connection con) throws SQLException {
 		try {
 			System.out.println("Read:");
 			System.out.println("Enter the student id: ");
@@ -113,11 +118,13 @@ public class MyFirstJDBC {
 		} catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();
+		} finally {
+			con.close();
 		}
 
 	}
 
-	public static void tryUpdate(Connection con) {
+	public static void tryUpdate(Connection con) throws SQLException {
 		try {
 			System.out.println("Update:");
 			PreparedStatement pstmt = con.prepareStatement("update STUDENT set marks1 =? where id =?");
@@ -135,11 +142,13 @@ public class MyFirstJDBC {
 
 		} catch (Exception e) {
 			e.printStackTrace();
+		} finally {
+			con.close();
 		}
 
 	}
 
-	public static void tryDelete(Connection con) {
+	public static void tryDelete(Connection con) throws SQLException {
 		try {
 			System.out.println("Delete: ");
 			PreparedStatement pstmt = con.prepareStatement("delete STUDENT where id =?");
@@ -154,11 +163,13 @@ public class MyFirstJDBC {
 
 		} catch (Exception e) {
 			e.printStackTrace();
+		} finally {
+			con.close();
 		}
 
 	}
 
-	public static void tryUpdateTwoRowsByCommit(Connection con) {
+	public static void tryUpdateTwoRowsByCommit(Connection con) throws SQLException {
 		try {
 			System.out.println("tryUpdateTwoRowsByCommit:");
 //			PreparedStatement pstmt = con.prepareStatement("update STUDENT set marks1 =? where id =? or id =?");
@@ -172,7 +183,7 @@ public class MyFirstJDBC {
 
 			pstmt.setInt(1, inputmarks1);
 			pstmt.setInt(2, inputId1);
-			pstmt.executeUpdate();
+			int row1 = pstmt.executeUpdate();
 
 			pstmt = con.prepareStatement("update STUDENT set marks2 =? where id =?");
 			System.out.println("Enter the student2 id: ");
@@ -181,11 +192,19 @@ public class MyFirstJDBC {
 			int inputmarks2 = sc.nextInt();
 			pstmt.setInt(1, inputmarks2);
 			pstmt.setInt(2, inputId2);
-			pstmt.executeUpdate();
-			con.commit();
+			int row2 = pstmt.executeUpdate();
+
+			if (row1 > 0 && row2 > 0) {
+				con.commit();
+			}
+
 			showTableByFullQuery(con);
 		} catch (Exception e) {
+			con.rollback();
+			System.out.println("All the changes has been rolled back");
 			e.printStackTrace();
+		}  finally {
+			con.close();
 		}
 	}
 
@@ -194,13 +213,11 @@ public class MyFirstJDBC {
 		try {
 			System.out.println("tryUpdateTwoRowsAddBatch:");
 
-			PreparedStatement pstmt = con.prepareStatement("update STUDENT set marks1 = 1 where id=1");
-			pstmt.addBatch();
-			
-			pstmt = con.prepareStatement("update STUDENT set marks1 = 2 where id=2");
-			pstmt.addBatch();
-			
-			pstmt.executeBatch();
+			Statement stmt = con.createStatement();
+			stmt.addBatch("update STUDENT set marks3=1 where id=1");
+			stmt.addBatch("update STUDENT set marks3=2 where id=2");
+			stmt.addBatch("update STUDENT set marks3=3 where id=3");
+			stmt.executeBatch();
 			showTableByFullQuery(con);
 
 		} catch (Exception e) {
@@ -208,13 +225,14 @@ public class MyFirstJDBC {
 		}
 
 	}
-	
-	public static void tryUpdateTwoRows(Connection con) {
-		try {
-			System.out.println("tryUpdateTwoRows:");
 
-			PreparedStatement pstmt = con.prepareStatement("update STUDENT set marks1 = case when id=1 then 3 when id = 2 then 4 end");
-			
+	public static void tryUpdateTwoRowsByOneQuery(Connection con) {
+		try {
+			System.out.println("tryUpdateTwoRowsByOneQuery:");
+
+			PreparedStatement pstmt = con
+					.prepareStatement("update STUDENT set marks1 = case when id=1 then 3 when id = 2 then 4 end");
+
 			pstmt.executeUpdate();
 			showTableByFullQuery(con);
 
@@ -224,12 +242,9 @@ public class MyFirstJDBC {
 
 	}
 
-
-	public static void main(String[] args) {
+	public static void main(String[] args){
 		// TODO Auto-generated method stub
 		Connection con;
-		Statement stmt;
-		ResultSet res;
 		try {
 			DriverManager.registerDriver(new OracleDriver());
 			System.out.println("Driver is registered successfully");
@@ -245,12 +260,13 @@ public class MyFirstJDBC {
 //			tryDelete(con);
 
 //			tryUpdateTwoRowsAddBatch(con);
-			tryUpdateTwoRows(con);
-//			tryUpdateTwoRowsByCommit(con);
+//			tryUpdateTwoRowsByOneQuery(con);
+			tryUpdateTwoRowsByCommit(con);
+//			tryUpdateTwoRowsAddBatch(con);
 
 		} catch (Exception e) {
 			e.printStackTrace();
-		}
+		} 
 
 	}
 
