@@ -21,10 +21,12 @@ Practice for Java Section:
 - [TicTacToe Game (Play1 & Play2)](https://github.com/woon17/Full-Stack-Training-Program/blob/main/JavaSection/TicTacToe/src/Games/LaunchGamesTwoPlayers.java)    
 - [Hotel Bill Management](https://github.com/woon17/Full-Stack-Training-Program/blob/main/JavaSection/HotelManagement/src/hotelManagement/HotelManagement.java) 
 - [Guess Game](https://github.com/woon17/Full-Stack-Training-Program/blob/main/JavaSection/HotelManagement/src/hotelManagement/HotelManagement.java) 
-  
+- [Java simple Web Application with database](https://github.com/woon17/Full-Stack-Training-Program/tree/main/Result1)
+
+
 Practice for Web Section:
 - [Practice code for Web Section](https://github.com/woon17/Full-Stack-Training-Program/tree/main/WebSection/practice)
-- [Sports activities website by HTML only](https://github.com/woon17/Full-Stack-Training-Program/tree/HtmlOnly/WebSection/sportsActivities)
+- [Sports activities website](https://github.com/woon17/Full-Stack-Training-Program/tree/HtmlOnly/WebSection/sportsActivities)
 <!-- - [Sports activities website by HTML only](https://github.com/woon17/Full-Stack-Training-Program/tree/HtmlOnly/WebSection/sportsActivities)
 - [Sports activities website with CSS](https://github.com/woon17/Full-Stack-Training-Program/tree/main/WebSection/sportsActivities) -->
 - [board.html](https://github.com/woon17/Full-Stack-Training-Program/tree/main/WebSection/ChessBoard/board.html) · 
@@ -62,7 +64,7 @@ Practice for Web:
 - <strong><em>Day 2</em></strong>:
     | Section        | topic                                                                         | task                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
     | -------------- | ----------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-    | *Java Section* | `Inheritance · Abstraction · Static method override · Final · Abstract class` | [LaunchArea.java](https://github.com/woon17/Full-Stack-Training-Program/blob/main/JavaSection/testproject/src/testproject/LaunchArea.java)   ·  [LaunchBird.java](https://github.com/woon17/Full-Stack-Training-Program/blob/main/JavaSection/testproject/src/testproject/LaunchBird.java) · [Hotel Bill Management](https://github.com/woon17/Full-Stack-Training-Program/blob/main/JavaSection/HotelManagement/src/hotelManagement/HotelManagement.java) |
+    | *Java Section* | `Inheritance · Abstraction · Static method override · Final · Abstract class` | [LaunchArea.java](https://github.com/woon17/Full-Stack-Training-Program/blob/main/JavaSection/testproject/src/testproject/LaunchArea.java)   ·  [LaunchBird.java](https://github.com/woon17/Full-Stack-Training-Program/blob/main/JavaSection/testproject/src/testproject/LaunchBird.java) · [LaunchDemo3.java](https://github.com/woon17/Full-Stack-Training-Program/blob/main/JavaSection/testproject/src/testproject/LaunchDemo3.java) · [LaunchDemo4.java](https://github.com/woon17/Full-Stack-Training-Program/blob/main/JavaSection/testproject/src/testproject/LaunchDemo4.java) · [LaunchPlane.java](https://github.com/woon17/Full-Stack-Training-Program/blob/main/JavaSection/testproject/src/testproject/LaunchDemo3.java) |
     | *Web Section*  | ` JavaScript Datatype  · JavaScript Operators · JavaScript control stmt · Type operator `                                       | [SimpleNavigationBar ](https://github.com/woon17/Full-Stack-Training-Program/tree/main/WebSection/practice/exercises/index2.html) · [index1.html](https://github.com/woon17/Full-Stack-Training-Program/tree/main/WebSection/practice/exercises/index1.html) · [inputTypes.html](https://github.com/woon17/Full-Stack-Training-Program/tree/main/WebSection/practice/exercises/inputTypes.html)                                                                  |
 
 1. For static inheritance, if parent method is static, child must be static.
