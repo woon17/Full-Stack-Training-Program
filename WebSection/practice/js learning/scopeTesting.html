@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testing</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+
+<script>
+    function print(a) {
+        document.write(a + "<br>")
+    }
+
+
+
+    function add(a, b) {
+        c = a + b;
+        return c;
+    }
+    print(add(1, 2));
+    print(c);
+    print("<hr>");
+    // Closures in JavaScript:
+
+    function outer() {
+        print("start the outer()");
+        var n = 30;
+
+        function inner() {
+            print("start the inner()");
+            return n;
+        }
+        return inner();
+    }
+    print(outer());
+    print("<hr>")
+        // scope chaining in js
+    var x = 10;
+
+    function sum1(a) {
+        return function sum2(b) {
+            return function sum3(c) {
+                return function sum4(d) {
+                    return a + b + c + d + x;
+                }
+            }
+        }
+    }
+    z = 10;
+    print("z: " + z);
+
+    x1 = sum1(10);
+    x2 = x1(20);
+    x3 = x2(30);
+    x4 = x3(40);
+    print("x1: " + x1);
+    print("x2: " + x2);
+    print("x3: " + x3);
+    print("x4: " + x4);
+</script>

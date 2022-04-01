@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async & Await</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+
+<script>
+    function print(a) {
+        document.write(a + "<br>")
+    }
+
+    // async function order() {
+    //     try {
+    //         await xyz;
+
+    //     } catch {
+    //         print("xyz is not existing");
+
+    //     } finally {
+    //         print("This block will be execute");
+    //     }
+    // }
+    // order();
+    print("---------------------------------------------------");
+    let cars = {
+        carModel: ["Seltos", "Sonet", "Carnival"],
+        carColor: ["White", "Black", "Red"],
+        driveMode: ["Automatic transmission", "Manual transmission"]
+    };
+    let is_showroom_open = true;
+    let choose_driveMode = () => {
+        return new Promise(
+            (resolve, reject) => {
+                setTimeout(
+                    () => {
+                        resolve(print(
+                            `which driveMode do u want to choose? <br>Customer has choose ${cars.driveMode[0]}`
+                        ))
+                    }, 1000);
+
+            }
+        );
+    };
+    async function orderCar() {
+        print("Customer has to order");
+        print("Production has started");
+        await choose_driveMode();
+        print("Customer will choose the driveMode");
+        print("Showroom is assembling the car for the dribeMode selected");
+        print("Customer choose the color");
+        print("Car is ready for delivery");
+    }
+
+    orderCar();
+    print("***Some other customer has booked a car***");
+    print("***Some other customer has requested a car clean***");
+    print("***Some other customer wants a car paint***");
+    print("***Some other customer wants water wash***");
+    print("***Some other customer wants to make the payment***");
+</script>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async & Await</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+
+<script>
+    function print(a) {
+        document.write(a + "<br>")
+    }
+    print("---------------------------------------------------");
+    let cars = {
+        carModel: ["Seltos", "Sonet", "Carnival"],
+        carColor: ["White", "Black", "Red"],
+        driveMode: ["Automatic transmission", "Manual transmission"]
+    };
+
+    function test() {
+        return "this is test()";
+    }
+    let is_showroom_open = true;
+
+
+    // task(ms) used to create a promise, inside the resolve, we can do what action we want. eg, return a string or call other function.
+    let task = (ms) => {
+        return new Promise(
+            (resolve, reject) => {
+                if (is_showroom_open) {
+                    // setTimeout(resolve("this is testing"), ms);
+                    setTimeout(resolve(test()), ms);
+                } else {
+                    reject(print("Showroom is closed. Hence promise rejected!"));
+                }
+            }
+        );
+    };
+    async function orderCar() {
+        try {
+
+            // await task(ms) function. by waiting the promise, we can get the action which is defined in resolve(...)
+            let r = await task(2000);
+            print(r);
+            print(`Customer has choosen ${cars.carModel[1]} mode`);
+            await task(3000);
+            print("order is received. Production has started");
+            await task(4000);
+            print(`Customer has choosen ${cars.driveMode[0]} mode`);
+            await task(5000);
+            print(`Showroom is assembling the car for the dribeMode selected`);
+            await task(5000);
+            print(`Customer has choosen ${cars.carColor[0]} color`);
+            await task(5000);
+            print("Car is ready for delivery");
+
+        } catch {
+            print("This is the catch block");
+
+        } finally {
+            print("This block will finally be executed");
+
+        }
+
+    }
+
+    orderCar();
+</script>

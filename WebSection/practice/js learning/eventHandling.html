@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Handling</title>
+</head>
+
+<body>
+    <form>
+        <p>Welcome to the JS session</p>
+        <!-- <p onmouseover="mouseOver()">Please bring mouse over me</p> -->
+        <input type="text" id="a" onfocus="myFocusA()"><br>
+        <input type="text" id="b" onfocus="myFocusB()"><br>
+        <input type="text" id="c" onfocus="myFocusC()"><br>
+        <input type="text" id="d" onfocus="myFocusD()"><br>
+        <p id="myP1" onmousedown="mouseDown()" onmouseup="mouseUp()">
+            Click the text! The mouseDown() function is triggered when the mouse button is pressed down over this paragraph, and sets the color of the text to red. The mouseUp() function is triggered when the mouse button is released, and sets the color of the text
+            to green.
+        </p>
+        <p id="myP2" onmouseout="pTagmouseOut()" onmouseover="pTagmouseOver()">
+            Click the text! The mouseDown() function is triggered when the mouse button is pressed down over this paragraph, and sets the color of the text to red. The mouseUp() function is triggered when the mouse button is released, and sets the color of the text
+            to green.
+        </p>
+        <input type="text" id="fname" onkeyup="myFunction()">
+        <input type="button" value="Click for magic" onclick="mouseClicked()">
+    </form>
+</body>
+
+</html>
+<script>
+    function print(a) {
+        document.write(a + "<br>")
+    }
+
+    function mouseClicked() {
+        print("Enjoy Learning");
+    }
+
+    // function mouseOver() {
+    //     print("The mouse went over a line");
+    // }
+
+
+    // https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_onfocus: way 2(using this as a parameter)
+    function myFocusA() {
+        document.getElementById("a").style.background = "yellow";
+    }
+
+    function myFocusB() {
+        document.getElementById("b").style.background = "red";
+    }
+
+    function myFocusC() {
+        document.getElementById("c").style.background = "cyan";
+    }
+
+    function myFocusD() {
+        document.getElementById("d").style.background = "orange";
+    }
+
+    function mouseDown() {
+        document.getElementById("myP1").style.color = "red";
+    }
+
+    function mouseUp() {
+        document.getElementById("myP1").style.color = "green";
+    }
+
+    function pTagmouseOver() {
+        document.getElementById("myP2").style.fontSize = "300%";
+    }
+
+    function pTagmouseOut() {
+        document.getElementById("myP2").style.fontSize = "100%";
+    }
+
+    function myFunction() {
+        var x = document.getElementById("fname");
+        x.value = x.value.toUpperCase();
+    }
+</script>
