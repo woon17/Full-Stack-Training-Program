@@ -123,7 +123,7 @@ class Admin {
 	}
 
 	void verifyStAns(int stQnAns) throws InvalidStAnsException {
-		System.out.println("stQnAns: "+ stQnAns);
+//		System.out.println("stQnAns: "+ stQnAns);
 		if (stQnAns < 1 || stQnAns > 4) {
 			InvalidStAnsException e = new InvalidStAnsException();
 			throw e;
