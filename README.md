@@ -15,20 +15,23 @@ Practice for Java Section:
 - [Practice code for Java](https://github.com/woon17/Full-Stack-Training-Program/tree/main/JavaSection/testproject/src/testproject)
 - [Practice problem 1](https://github.com/woon17/Full-Stack-Training-Program/blob/main/JavaSection/testproject/src/testproject/Problem1.java)
 - [Practice problem 2](https://github.com/woon17/Full-Stack-Training-Program/blob/main/JavaSection/testproject/src/testproject/Problem2.java)
+- [Practice problem 3](https://github.com/woon17/Full-Stack-Training-Program/blob/main/JavaSection/testproject/src/testproject/LaunchArrayList.java)
 - Other practice: [26 letters](https://github.com/woon17/Full-Stack-Training-Program/blob/main/JavaSection/testproject/src/testproject/letters.java)
 - [TicTacToe Game (Play1 & Computer)](https://github.com/woon17/Full-Stack-Training-Program/blob/main/JavaSection/TicTacToe/src/Games/LaunchGamesOnePlayer.java)     
 - [TicTacToe Game (Play1 & Play2)](https://github.com/woon17/Full-Stack-Training-Program/blob/main/JavaSection/TicTacToe/src/Games/LaunchGamesTwoPlayers.java)    
 - [Hotel Bill Management](https://github.com/woon17/Full-Stack-Training-Program/blob/main/JavaSection/HotelManagement/src/hotelManagement/HotelManagement.java) 
+- [Guess Game](https://github.com/woon17/Full-Stack-Training-Program/blob/main/JavaSection/HotelManagement/src/hotelManagement/HotelManagement.java) 
   
 Practice for Web Section:
 - [Practice code for Web Section](https://github.com/woon17/Full-Stack-Training-Program/tree/main/WebSection/practice)
 - [Sports activities website by HTML only](https://github.com/woon17/Full-Stack-Training-Program/tree/HtmlOnly/WebSection/sportsActivities)
-- [Sports activities website with CSS](https://github.com/woon17/Full-Stack-Training-Program/tree/main/WebSection/sportsActivities)
+<!-- - [Sports activities website by HTML only](https://github.com/woon17/Full-Stack-Training-Program/tree/HtmlOnly/WebSection/sportsActivities)
+- [Sports activities website with CSS](https://github.com/woon17/Full-Stack-Training-Program/tree/main/WebSection/sportsActivities) -->
 - [board.html](https://github.com/woon17/Full-Stack-Training-Program/tree/main/WebSection/ChessBoard/board.html) · 
 - [chessboard.html](https://github.com/woon17/Full-Stack-Training-Program/blob/main/WebSection/ChessBoard/chessboard.html) 
 <!-- TODO: need to start to add different version of porfolio and deploy by github.io -->
 - [Portfolio](https://github.com/woon17/Full-Stack-Training-Program/blob/main/WebSection/MyPortfolio/portfolio.html)
-- [Resume](https://github.com/woon17/Full-Stack-Training-Program/blob/main/WebSection/MyResume/resume.html)
+- [Resume](https://github.com/woon17/Full-Stack-Training-Program/tree/main/JavaSection/MiniProject/src/MiniProject)
 ***
 
 ### Week 3
@@ -40,10 +43,10 @@ Practice for Web:
 
 
 - <strong><em>Day 1</em></strong>:
-    | Section        | topic          | task                                                                                                                                                                                                                                                                                                                                                                                   |
-    | -------------- | -------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-    | *Java Section* | `Overriding`   | [LaunchParent.java](https://github.com/woon17/Full-Stack-Training-Program/blob/main/JavaSection/testproject/src/testproject/LaunchParent.java)   ·  [LaunchDemo1.java](https://github.com/woon17/Full-Stack-Training-Program/blob/main/JavaSection/testproject/src/testproject/LaunchDemo1.java) · [Hotel Bill Management](https://github.com/woon17/Full-Stack-Training-Program/blob/main/JavaSection/HotelManagement/src/hotelManagement/HotelManagement.java)                                                                                      |
-    | *Web Section*  | ` JavaScript · Navigation bar ·  · ·  ` | [SimpleNavigationBar ](https://github.com/woon17/Full-Stack-Training-Program/tree/main/WebSection/practice/exercises/index2.html) · [index1.html](https://github.com/woon17/Full-Stack-Training-Program/tree/main/WebSection/practice/exercises/index1.html) · [inputTypes.html](https://github.com/woon17/Full-Stack-Training-Program/tree/main/WebSection/practice/exercises/inputTypes.html) |
+    | Section        | topic                                   | task                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+    | -------------- | --------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+    | *Java Section* | `Overriding`                            | [LaunchParent.java](https://github.com/woon17/Full-Stack-Training-Program/blob/main/JavaSection/testproject/src/testproject/LaunchParent.java)   ·  [LaunchDemo1.java](https://github.com/woon17/Full-Stack-Training-Program/blob/main/JavaSection/testproject/src/testproject/LaunchDemo1.java) · [Hotel Bill Management](https://github.com/woon17/Full-Stack-Training-Program/blob/main/JavaSection/HotelManagement/src/hotelManagement/HotelManagement.java) |
+    | *Web Section*  | ` JavaScript · Navigation bar ·  · ·  ` | [SimpleNavigationBar ](https://github.com/woon17/Full-Stack-Training-Program/tree/main/WebSection/practice/exercises/index2.html) · [index1.html](https://github.com/woon17/Full-Stack-Training-Program/tree/main/WebSection/practice/exercises/index1.html) · [inputTypes.html](https://github.com/woon17/Full-Stack-Training-Program/tree/main/WebSection/practice/exercises/inputTypes.html)                                                                  |
 
 1. Rules for overriding:
 	1. Cannot reduce the visibility of the inherited method from Exmp1; public(parent) reduced to default(child), which is not allowed.
@@ -54,6 +57,26 @@ Practice for Web:
 	2. Protected 
 	3. Default
     4. Private: least
+
+<!-- TODO: need to update the day2 links -->
+- <strong><em>Day 2</em></strong>:
+    | Section        | topic                                                                         | task                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+    | -------------- | ----------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+    | *Java Section* | `Inheritance · Abstraction · Static method override · Final · Abstract class` | [LaunchArea.java](https://github.com/woon17/Full-Stack-Training-Program/blob/main/JavaSection/testproject/src/testproject/LaunchArea.java)   ·  [LaunchBird.java](https://github.com/woon17/Full-Stack-Training-Program/blob/main/JavaSection/testproject/src/testproject/LaunchBird.java) · [Hotel Bill Management](https://github.com/woon17/Full-Stack-Training-Program/blob/main/JavaSection/HotelManagement/src/hotelManagement/HotelManagement.java) |
+    | *Web Section*  | ` JavaScript Datatype  · JavaScript Operators · JavaScript control stmt · Type operator `                                       | [SimpleNavigationBar ](https://github.com/woon17/Full-Stack-Training-Program/tree/main/WebSection/practice/exercises/index2.html) · [index1.html](https://github.com/woon17/Full-Stack-Training-Program/tree/main/WebSection/practice/exercises/index1.html) · [inputTypes.html](https://github.com/woon17/Full-Stack-Training-Program/tree/main/WebSection/practice/exercises/inputTypes.html)                                                                  |
+
+1. For static inheritance, if parent method is static, child must be static.
+2. If parent method is not static, child method must not be static
+3. method hiding: override static method. (LaunchDemo3.java)
+4. Final class: no one can inheritance the final class
+5. Final method: can inheritance the final method, but cannot override/modify the final method
+6. Abstract class: like an incomplete class, so we cannot create instance for abstract class(cannot 
+    instantiation). But we can create reference of the abstract class. 
+7. There is constructor in abstract class as its child has constructor and the first line is super(). It means there is constructor in abstract class
+8. Rules for abstract class:
+	1. Final and abstract cannot used together.  "final abstract" is contradiction. Final means no body can modify. Abstract means need to implement the method body 
+	2. It is okay if abstract class contains only concrete methods. 
+	3. All abstract methods in the abstract class must be implements by its children
 ### Week 2
 
 Practice for Java:
