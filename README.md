@@ -34,6 +34,10 @@ Practice for Web Section:
 <!-- TODO: need to start to add different version of porfolio and deploy by github.io -->
 - [Portfolio](https://github.com/woon17/Full-Stack-Training-Program/blob/main/WebSection/MyPortfolio/portfolio.html)
 - [Resume](https://github.com/woon17/Full-Stack-Training-Program/tree/main/JavaSection/MiniProject/src/MiniProject)
+
+Practice for JavaScript section:
+- [Practice code for JavaScript](https://github.com/woon17/Full-Stack-Training-Program/tree/main/WebSection/practice/js%20learning)
+
 ***
 
 ### Week 3
