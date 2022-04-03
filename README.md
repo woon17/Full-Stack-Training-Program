@@ -41,6 +41,135 @@ Practice for JavaScript section:
 
 ***
 
+### Week 4
+Practice for Java:
+- [Hotel Bill Management](https://github.com/woon17/Full-Stack-Training-Program/blob/main/JavaSection/HotelManagement/src/hotelManagement/HotelManagement.java) 
+- [School Management System](https://github.com/woon17/Full-Stack-Training-Program/tree/main/JavaSection/SchoolManagementSystem/src/schoolmanagementsystem)
+
+Practice for Web:
+
+
+
+- <strong><em>Day 1</em></strong>:
+    | Section        | topic                                                                                                            | task                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+    | -------------- | ---------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+    | *Java Section* | `Multiple Thread · runnable interface · Producer and consumer problem`                                           | [LaunchBathroomWithoutLock.java](https://github.com/woon17/Full-Stack-Training-Program/blob/main/JavaSection/testproject/src/testproject/LaunchBathroomWithoutLock.java)   ·  [LaunchBathroomWithLock.java](https://github.com/woon17/Full-Stack-Training-Program/blob/main/JavaSection/testproject/src/testproject/LaunchBathroomWithLock.java) ·  [LaunchLockThreeResources.java](https://github.com/woon17/Full-Stack-Training-Program/blob/main/JavaSection/testproject/src/testproject/LaunchLockThreeResources.java) ·  [LaunchProducerConsumer.java](https://github.com/woon17/Full-Stack-Training-Program/blob/main/JavaSection/testproject/src/testproject/LaunchProducerConsumer.java)              |
+    | *Web Section*  | ` JavaScript Date object· JavaScript String object · JavaScript Maths object · JavaScript regularExpression ·  ` | [hotelManagement.html ](https://github.com/woon17/Full-Stack-Training-Program/blob/main/WebSection/practice/js%20learning/hotelManagement.html) · [regularExpression.html ](https://github.com/woon17/Full-Stack-Training-Program/blob/main/WebSection/practice/js%20learning/regularExpression.html) · [jsDemo3.html ](https://github.com/woon17/Full-Stack-Training-Program/blob/main/WebSection/practice/js%20learning/jsDemo3.html) · [mathObj.html ](https://github.com/woon17/Full-Stack-Training-Program/blob/main/WebSection/practice/js%20learning/mathObj.html) · [sringObj.html ](https://github.com/woon17/Full-Stack-Training-Program/blob/main/WebSection/practice/js%20learning/sringObj.html) |
+
+1. Dead lock: a condition when two or more threads try to access the same resources at the same time
+2. Regular expression: (https://regex101.com/)
+
+
+- <strong><em>Day 2</em></strong>:
+    | Section        | topic                                                                                                                                              | task                                                                                                                                                                                                                                                                                               |
+    | -------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+    | *Java Section* | `File handling · Serialisation · deserialization`                                                                                                  | [LaunchFileHandling.java](https://github.com/woon17/Full-Stack-Training-Program/blob/main/JavaSection/testproject/src/testproject/LaunchFileHandling.java)   ·  [LaunchActor.java](https://github.com/woon17/Full-Stack-Training-Program/blob/main/JavaSection/testproject/src/testproject/LaunchActor.java) |
+    | *Web Section*  | ` JavaScript Regular expression · Regular expression MetaCharacters · Regular expression Quantifiers · JavaScript Object oriented programming ·  ` | [regularExpression.html ](https://github.com/woon17/Full-Stack-Training-Program/blob/main/WebSection/practice/js%20learning/regularExpression.html) · [classOOP.html.html ](https://github.com/woon17/Full-Stack-Training-Program/blob/main/WebSection/practice/js%20learning/classOOP.html)       |
+
+1. MetaCharacters
+	- w -> will only look for words in the given string (without special symbols)
+	- W -> it will only look for characters apart from words/alphabets (choose digits, special symbols)
+	- d -> will only find numbers in the string
+	- D -> will find everything apart from digits in a string
+	- s -> will find the white space in a string 
+	- S -> will find everything apart from whitespace
+	- b -> find matches that have beginning/end of the word 
+	- B -> find matches that do not have the beginning/end of a word
+	- f -> find the form feed character
+	- r -> find a carriage return character.
+	- t -> find a tab character
+2. Quantifiers:(n can be any character)
+	- n+  -> any string that contains at least one n
+	- n* -> string a with zero or more occurrence of n  
+	- n? -> string with zero or more occurrence of n
+	- n{X} -> sequence of x no of n's
+	- n(x,y) -> x-y n's
+	- n{x, } -> minimum x no of n's 
+n$ -> a word that has n in the end
+3. Object oriented programming:
+	- Encapsulation: 
+	- Polymorphism
+	- Inheritance: 
+	    - ingle inheritance
+		- Multi-level inheritance
+		- Hierarchal inheritance
+		- Not support multiple inheritance 
+	- Overriding
+	- abstraction
+
+- <strong><em>Day 3</em></strong>:
+    | Section        | topic                                                                                                      | task                                                                                                                                                                                                                                                                                                                                                                                                  |
+    | -------------- | ---------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+    | *Java Section* | `Framework · collection  · Wrapper class · bubble sorts`                                                   | [LaunchArrayList.java](https://github.com/woon17/Full-Stack-Training-Program/blob/main/JavaSection/testproject/src/testproject/LaunchArrayList.java)                                                                                                                                                                                                                                                  |
+    | *Web Section*  | ` JavaScript Call back · JavaScript Template literals  · JavaScript promise ·  JavaScript form validation` | [callBack.html ](https://github.com/woon17/Full-Stack-Training-Program/blob/main/WebSection/practice/js%20learning/callBack.html) · [promiseCar.html ](https://github.com/woon17/Full-Stack-Training-Program/blob/main/WebSection/practice/js%20learning/promiseCar.html) · [form.html ](https://github.com/woon17/Full-Stack-Training-Program/blob/main/WebSection/practice/js%20learning/learn%20validation/form.html) |
+
+1. Diadvantage: aList.add(1, "index1"), all index >1, need to shift to right one index. If there are 10000 element, means 10000 need to shift, time consumer. That is why we use collection linkedlist
+2. linkedList and priorityQueue is good for insetion and deletion, but not good at seaching
+TreeSet is good for searching.
+3. Promise: resolve, .then, rejected, .catch
+
+- <strong><em>Day 4</em></strong>:
+    | Section        | topic                                                                                                                                                | task                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+    | -------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+    | *Java Section* | `Jdbc`                                                                                                                                               | [MyFirstJDBC.java](https://github.com/woon17/Full-Stack-Training-Program/blob/main/JavaSection/jdbc/src/jdbc/MyFirstJDBC.java)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+    | *Web Section*  | ` JavaScript Async & await  · JavaScript Local and global variable · JavaScript scope chaining  · JavaScript Closures  ·  JavaScript Event handling` | [asyncAwaitForPromiseCar.html ](https://github.com/woon17/Full-Stack-Training-Program/blob/main/WebSection/practice/js%20learning/asyncAwaitForPromiseCar.html) · [asyncAwaitForPromise.html ](https://github.com/woon17/Full-Stack-Training-Program/blob/main/WebSection/practice/js%20learning/asyncAwaitForPromise.html) · [eventHandling.html ](https://github.com/woon17/Full-Stack-Training-Program/blob/main/WebSection/practice/js%20learning/eventHandling.html) · [scopeTesting.html ](https://github.com/woon17/Full-Stack-Training-Program/blob/main/WebSection/practice/js%20learning/scopeTesting.html) |
+
+1. Async can be used in order to create a promise.
+Await can be used whenever we use .then 
+2. Async format:
+    ```
+    Async function order(){
+        Try{
+            Await xyz; 
+        
+        } catch(error){
+            document.write("xyz does not exist <br>")
+        } finally{
+            document.write("This block will execute <br>");
+        }
+    }
+    Order() ; 
+    ```
+3. Promise learning resources: [Resource1](https://ponyfoo.com/articles/es6-promises-in-depth) [Resource2](http://bevacqua.github.io/promisees/)
+4. Closures in JavaScript: A function is declared with in another function
+    ```
+    function a(){
+        function b(){
+        }
+        return b();
+    }
+    ```
+5. Event handling in JS:
+   - click
+   - Mouse over
+   - mouseout
+   - mousedown
+   - mouseup
+   - mousemove
+   - Keydown/keyup
+   - focus
+   - submit
+   - change
+
+- <strong><em>Day 5</em></strong>:
+    | Section        | topic                                                                | task                                                                                                                                                                                                                                                                                                                                                                              |
+    | -------------- | -------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+    | *Java Section* | `Batch  · Rollback `                                                 | [FirstProject](https://github.com/woon17/Full-Stack-Training-Program/tree/main/FirstProject)  · [SecondProject](https://github.com/woon17/Full-Stack-Training-Program/tree/main/SecondProject)· [ThirdProject](https://github.com/woon17/Full-Stack-Training-Program/tree/main/ThirdProject) · [Result1](https://github.com/woon17/Full-Stack-Training-Program/tree/main/Result1) |
+    | *Web Section*  | ` TypeScript  · TypeScript Global scope · TypeScript function scope` | [test.ts ](https://github.com/woon17/Full-Stack-Training-Program/blob/main/WebSection/TypeScript%20learning/test.ts) · [testFunc.ts ](https://github.com/woon17/Full-Stack-Training-Program/blob/main/WebSection/TypeScript%20learning/testFunc.ts)                                                                                                                               |
+
+1. Different projects for simple practice:
+   - [FirstProject](https://github.com/woon17/Full-Stack-Training-Program/tree/main/FirstProject): Request to connect to server by HTML(only using hello.html)
+   - [SecondProject](https://github.com/woon17/Full-Stack-Training-Program/tree/main/SecondProject): Request to connect to server (uDemo.java -> hello.html)
+   - [ThirdProject](https://github.com/woon17/Full-Stack-Training-Program/tree/main/ThirdProject): Request to connect to server by Servlet(only using Display.java)
+   - [Result1](https://github.com/woon17/Full-Stack-Training-Program/tree/main/Result1): Request to connect to server with jdbc(getDisplay.java -> display.html)
+2. Run file.ts:
+	1. Compile: `tsc file.ts` or `tsc.cmd test.ts`  ---> get file.js
+	2. Execute: `node file.js`
+    3. `tsc file --watch`
+3. Typescript:
+   - Global scope and function scope
+   - No block scope for type script
+
 ### Week 3
 Practice for Java:
 - [Hotel Bill Management](https://github.com/woon17/Full-Stack-Training-Program/blob/main/JavaSection/HotelManagement/src/hotelManagement/HotelManagement.java) 
