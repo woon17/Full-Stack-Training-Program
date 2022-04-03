@@ -11,6 +11,7 @@ How to preview github HTML files:
 ```
 add: https://htmlpreview.github.io/?
 ```
+
 Practice for Java Section:
 - [Practice code for Java](https://github.com/woon17/Full-Stack-Training-Program/tree/main/JavaSection/testproject/src/testproject)
 - [Practice problem 1](https://github.com/woon17/Full-Stack-Training-Program/blob/main/JavaSection/testproject/src/testproject/Problem1.java)
@@ -27,13 +28,13 @@ Practice for Java Section:
 
 Practice for Web Section:
 - [Practice code for Web Section](https://github.com/woon17/Full-Stack-Training-Program/tree/main/WebSection/practice)
-- [Sports activities website](https://github.com/woon17/Full-Stack-Training-Program/tree/HtmlOnly/WebSection/sportsActivities)
+- [Sports activities website](https://github.com/woon17/sports-activities-system)
 <!-- - [Sports activities website by HTML only](https://github.com/woon17/Full-Stack-Training-Program/tree/HtmlOnly/WebSection/sportsActivities)
 - [Sports activities website with CSS](https://github.com/woon17/Full-Stack-Training-Program/tree/main/WebSection/sportsActivities) -->
 - [board.html](https://github.com/woon17/Full-Stack-Training-Program/tree/main/WebSection/ChessBoard/board.html) · 
 - [chessboard.html](https://github.com/woon17/Full-Stack-Training-Program/blob/main/WebSection/ChessBoard/chessboard.html) 
 <!-- TODO: need to start to add different version of porfolio and deploy by github.io -->
-- [Portfolio](https://github.com/woon17/Full-Stack-Training-Program/blob/main/WebSection/MyPortfolio/portfolio.html)
+- [Portfolio](https://github.com/woon17/portfolio)
 - [Resume](https://github.com/woon17/Full-Stack-Training-Program/tree/main/JavaSection/MiniProject/src/MiniProject)
 
 Practice for JavaScript section:
