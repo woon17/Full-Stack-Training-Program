@@ -261,7 +261,7 @@ public class MyFirstJDBC {
 
 //			tryUpdateTwoRowsAddBatch(con);
 //			tryUpdateTwoRowsByOneQuery(con);
-			tryUpdateTwoRowsByCommit(con);
+//			tryUpdateTwoRowsByCommit(con);
 //			tryUpdateTwoRowsAddBatch(con);
 
 		} catch (Exception e) {

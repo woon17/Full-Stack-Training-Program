@@ -16,9 +16,9 @@ import javax.servlet.http.HttpServletResponse;
 import oracle.jdbc.driver.OracleDriver;
 
 /**
- * Servlet implementation class GetResult
+ * Servlet implementation class InsertData
  */
-public class GetResult extends HttpServlet {
+public class InsertData extends HttpServlet {
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		Connection con;
 		PreparedStatement pstmt;
@@ -29,40 +29,29 @@ public class GetResult extends HttpServlet {
 			con = DriverManager.getConnection("jdbc:oracle:thin:@//localhost:1521/XE", "SYSTEM", "shufa");
 			System.out.println("Connection is established successfully");
 
-			System.out.println("Read:");
-			System.out.println("Enter the student id: ");
-			pstmt = con.prepareStatement("select * from STUDENT where id = ?");
+			pstmt = con.prepareStatement("insert into STUDENT values(?,?,?,?,?)");
+
 			int inputId = Integer.parseInt(req.getParameter("id"));
-			
-			
+			String inputName = req.getParameter("name");
+			int inputmarks1 = Integer.parseInt(req.getParameter("marks1"));
+			int inputmarks2 = Integer.parseInt(req.getParameter("marks2"));
+			int inputmarks3 = Integer.parseInt(req.getParameter("marks3"));
 			pstmt.setInt(1, inputId);
-			System.out.println(pstmt);
-			System.out.println(pstmt.toString());
-			res = pstmt.executeQuery();
-
-//			String line = String.format("%70s", " ").replace(" ", "*");
-//			System.out.println(line);
-//			System.out.println(String.format("%10s %10s %10s %10s", "name", "marks1", "marks2", "marks3"));
-			String name;
-			int marks1;
-			int marks2;
-			int marks3;
-			
-			while (res.next()) {
-				int id = res.getInt(1);
-				name = res.getString(2);
-				marks1 = res.getInt(3);
-				marks2 = res.getInt(4);
-				marks3 = res.getInt(5);
-//				System.out.println(String.format("%s %10s %10s %10s %10s", id, name, marks1, marks2, marks3));
-				PrintWriter pw = resp.getWriter();
-				pw.println(String.format("%s %10s %10s %10s %10s", id, name, marks1, marks2, marks3));
-
+			pstmt.setString(2, inputName);
+			pstmt.setInt(3, inputmarks1);
+			pstmt.setInt(4, inputmarks2);
+			pstmt.setInt(5, inputmarks3);
+			int rowUpdated = pstmt.executeUpdate();
+			System.out.println("rowUpdated: " + rowUpdated);
+			if (rowUpdated == 0) {
+				resp.sendRedirect("/InsertionToDatabase/failure.html");
+			} else {
+				resp.sendRedirect("/InsertionToDatabase/success.html");
 			}
-
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
+
 }

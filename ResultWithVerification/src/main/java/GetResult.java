@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import oracle.jdbc.driver.OracleDriver;
+import oracle.jdbc.OracleDriver;
 
 /**
  * Servlet implementation class GetResult
@@ -33,8 +33,7 @@ public class GetResult extends HttpServlet {
 			System.out.println("Enter the student id: ");
 			pstmt = con.prepareStatement("select * from STUDENT where id = ?");
 			int inputId = Integer.parseInt(req.getParameter("id"));
-			
-			
+
 			pstmt.setInt(1, inputId);
 			System.out.println(pstmt);
 			System.out.println(pstmt.toString());
@@ -47,7 +46,7 @@ public class GetResult extends HttpServlet {
 			int marks1;
 			int marks2;
 			int marks3;
-			
+
 			while (res.next()) {
 				int id = res.getInt(1);
 				name = res.getString(2);
@@ -57,6 +56,7 @@ public class GetResult extends HttpServlet {
 //				System.out.println(String.format("%s %10s %10s %10s %10s", id, name, marks1, marks2, marks3));
 				PrintWriter pw = resp.getWriter();
 				pw.println(String.format("%s %10s %10s %10s %10s", id, name, marks1, marks2, marks3));
+//				pw.println(id + " " + name + " " + marks1 + " " + marks2 + " " + marks3);
 
 			}
 
