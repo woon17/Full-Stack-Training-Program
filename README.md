@@ -42,14 +42,54 @@ Practice for JavaScript section:
 
 ***
 
+### Week 5
+- <strong><em>Day 1</em></strong>:
+    | Section        | topic                                                                                                                                                                         | task                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+    | -------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+    | *Java Section* | `Servlet · JSP · Session`                                                                                                                                                     | [ResultWithVerification](https://github.com/woon17/Full-Stack-Training-Program/tree/main/ResultWithVerification)   ·  [Result1](https://github.com/woon17/Full-Stack-Training-Program/tree/main/Result1) ·  [ResultWithVerificationWithSession](https://github.com/woon17/Full-Stack-Training-Program/tree/main/ResultWithVerificationWithSession) ·  [InsertionToDatabase](https://github.com/woon17/Full-Stack-Training-Program/tree/main/InsertionToDatabase) |
+    | *Web Section*  | ` TypeScript Interface · TypeScript optional field · TypeScript inheritance · TypeScript method overriding · TypeScript access modifier · TypeScript extends class · Angular` | [testClass.ts](https://github.com/woon17/Full-Stack-Training-Program/blob/main/WebSection/practice/js%20learning/hotelManagement.html) · [testFunc.ts ](https://github.com/woon17/Full-Stack-Training-Program/blob/main/WebSection/TypeScript%20learning/testFunc.ts) · [Angular demo-proj ](https://github.com/woon17/Full-Stack-Training-Program/tree/main/WebSection/Angular/demo-proj)                                                                       |
+
+1. 	Interface example:
+	```
+    interface LabeledValue {
+	  label: string;
+	}
+	 
+	function printLabel(labeledObj: LabeledValue) {
+	  console.log(labeledObj.label);
+	}
+	 
+	let myObj = { size: 10, label: "Size 10 Object" };
+    printLabel(myObj);
+    ``` 
+2.  Use the extends keyword to allow a class to inherit from another class. Use super() in the constructor of the child class to call the constructor of the parent class. Also, use the super.methodInParentClass() syntax to invoke the methodInParentClass() in the method of the child class.
+
+3. Access modifier: 	
+    - private : The private modifier limits the visibility to the same-class only.
+	- public： The public modifier allows class properties and methods to be accessible from all locations.
+    - protected: The protected modifier allows properties and methods of a class to be accessible within same class and within subclasses.
+
+4. Angula:
+    1. Modular approach - Modular approach for angular project: every feature is treated as a separate/individual modular
+    2. Re-usable code - Angular is famous as it is re-usable code
+    3. Quick and easy development - Less time to develop and easier to develop 
+    4. Unit testable - unit level test
+    5. If ur application is depends on more on js, it is a good  choice to use angular framework
+    6. Angular will help website to load fast. Like only load necessary data. 
+
+5. Prerequisites: HTML, CSS, JS
+	1. Node.js - www.nodejs.com
+	2. Npm - npm install -g @angular/cli
+	3. Angular cli
+	4. Vs cide
+6. Command used:
+	1. ng -v
+	2. Ng new projectName
+    3. Ng serve
 ### Week 4
 Practice for Java:
 - [Hotel Bill Management](https://github.com/woon17/Full-Stack-Training-Program/blob/main/JavaSection/HotelManagement/src/hotelManagement/HotelManagement.java) 
 - [School Management System](https://github.com/woon17/Full-Stack-Training-Program/tree/main/JavaSection/SchoolManagementSystem/src/schoolmanagementsystem)
-
-Practice for Web:
-
-
 
 - <strong><em>Day 1</em></strong>:
     | Section        | topic                                                                                                            | task                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
@@ -62,10 +102,10 @@ Practice for Web:
 
 
 - <strong><em>Day 2</em></strong>:
-    | Section        | topic                                                                                                                                              | task                                                                                                                                                                                                                                                                                               |
-    | -------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+    | Section        | topic                                                                                                                                              | task                                                                                                                                                                                                                                                                                                         |
+    | -------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
     | *Java Section* | `File handling · Serialisation · deserialization`                                                                                                  | [LaunchFileHandling.java](https://github.com/woon17/Full-Stack-Training-Program/blob/main/JavaSection/testproject/src/testproject/LaunchFileHandling.java)   ·  [LaunchActor.java](https://github.com/woon17/Full-Stack-Training-Program/blob/main/JavaSection/testproject/src/testproject/LaunchActor.java) |
-    | *Web Section*  | ` JavaScript Regular expression · Regular expression MetaCharacters · Regular expression Quantifiers · JavaScript Object oriented programming ·  ` | [regularExpression.html ](https://github.com/woon17/Full-Stack-Training-Program/blob/main/WebSection/practice/js%20learning/regularExpression.html) · [classOOP.html.html ](https://github.com/woon17/Full-Stack-Training-Program/blob/main/WebSection/practice/js%20learning/classOOP.html)       |
+    | *Web Section*  | ` JavaScript Regular expression · Regular expression MetaCharacters · Regular expression Quantifiers · JavaScript Object oriented programming ·  ` | [regularExpression.html ](https://github.com/woon17/Full-Stack-Training-Program/blob/main/WebSection/practice/js%20learning/regularExpression.html) · [classOOP.html.html ](https://github.com/woon17/Full-Stack-Training-Program/blob/main/WebSection/practice/js%20learning/classOOP.html)                 |
 
 1. MetaCharacters
 	- w -> will only look for words in the given string (without special symbols)
@@ -99,9 +139,9 @@ n$ -> a word that has n in the end
 	- abstraction
 
 - <strong><em>Day 3</em></strong>:
-    | Section        | topic                                                                                                      | task                                                                                                                                                                                                                                                                                                                                                                                                  |
-    | -------------- | ---------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-    | *Java Section* | `Framework · collection  · Wrapper class · bubble sorts`                                                   | [LaunchArrayList.java](https://github.com/woon17/Full-Stack-Training-Program/blob/main/JavaSection/testproject/src/testproject/LaunchArrayList.java)                                                                                                                                                                                                                                                  |
+    | Section        | topic                                                                                                      | task                                                                                                                                                                                                                                                                                                                                                                                                                     |
+    | -------------- | ---------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+    | *Java Section* | `Framework · collection  · Wrapper class · bubble sorts`                                                   | [LaunchArrayList.java](https://github.com/woon17/Full-Stack-Training-Program/blob/main/JavaSection/testproject/src/testproject/LaunchArrayList.java)                                                                                                                                                                                                                                                                     |
     | *Web Section*  | ` JavaScript Call back · JavaScript Template literals  · JavaScript promise ·  JavaScript form validation` | [callBack.html ](https://github.com/woon17/Full-Stack-Training-Program/blob/main/WebSection/practice/js%20learning/callBack.html) · [promiseCar.html ](https://github.com/woon17/Full-Stack-Training-Program/blob/main/WebSection/practice/js%20learning/promiseCar.html) · [form.html ](https://github.com/woon17/Full-Stack-Training-Program/blob/main/WebSection/practice/js%20learning/learn%20validation/form.html) |
 
 1. Diadvantage: aList.add(1, "index1"), all index >1, need to shift to right one index. If there are 10000 element, means 10000 need to shift, time consumer. That is why we use collection linkedlist
