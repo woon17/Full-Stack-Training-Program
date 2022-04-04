@@ -33,3 +33,24 @@ var p = {
     country: "Singapore"
 };
 disp(p);
+console.log("*****************************************");
+var p1 = {
+    name: "shufa"
+};
+function disp1(person) {
+    console.log("".concat(person.name, " live in ").concat(person.country));
+}
+disp1(p1);
+console.log("*****************************************");
+function createSquare(config) {
+    var newSquare = { color: "white", area: 100 };
+    if (config.color) {
+        newSquare.color = config.color;
+    }
+    if (config.width) {
+        newSquare.area = config.width * config.width;
+    }
+    return newSquare;
+}
+var mySquare = createSquare({ color: "black" });
+console.log(mySquare);
