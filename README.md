@@ -107,6 +107,8 @@ Practice for JavaScript section:
     - Class selector: [test.component.ts](https://github.com/woon17/Full-Stack-Training-Program/blob/main/WebSection/Angular/demo-proj/src/app/test/test.component.ts) -> .app-test
     - Enclose it in [ ] as attribute: [demo.component.ts](https://github.com/woon17/Full-Stack-Training-Program/blob/main/WebSection/Angular/demo-proj/src/app/demo/demo.component.ts) -> app-demo
 7. [component & module](https://stackoverflow.com/questions/40073941/whats-the-difference-between-an-angular-component-and-module)
+8. Create test component: `ng g c test`
+9. start application: `ng serve`
 ### Week 4
 Practice for Java:
 - [Hotel Bill Management](https://github.com/woon17/Full-Stack-Training-Program/blob/main/JavaSection/HotelManagement/src/hotelManagement/HotelManagement.java) 
