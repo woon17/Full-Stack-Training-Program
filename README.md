@@ -86,6 +86,27 @@ Practice for JavaScript section:
 	1. ng -v
 	2. Ng new projectName
     3. Ng serve
+
+- <strong><em>Day 2</em></strong>:
+    | Section        | topic                                                                                            | task                                                                                                                                                                                                                                                 |
+    | -------------- | ------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+    | *Java Section* | `Web.xml for v2.4 · MVC`                                                                         | [InsertionAndSelection](https://github.com/woon17/Full-Stack-Training-Program/tree/main/InsertionAndSelection/src/main)   ·  [InsertionSelectionMVC](https://github.com/woon17/Full-Stack-Training-Program/tree/main/InsertionSelectionMVC/src/main) |
+    | *Web Section*  | ` Angular modules · Angular components · Angular Selector · Angular templates  · Angular styles` | [demo-proj](https://github.com/woon17/Full-Stack-Training-Program/tree/main/WebSection/Angular/demo-proj) · [Test ](https://github.com/woon17/Full-Stack-Training-Program/tree/main/WebSection/Angular/Test)                                         |
+
+1. MVC example:
+    - Client<-->view: Client visit index.html, index.html shows the form 
+    - View -> controller: once submit, input.java(sevlet controller) collect data from view
+    - Controller -> model: give value to model.java though setter (use getter to get information from model)
+    - Model -> controller: give 0, 1 to controller by call model.java getter 
+2. only view interact with client; only model interact with database; only use controller to talk with view and model, no direct access from model to view
+3. An angular application is a collection of individual modules
+4. Modules Is a feature in Angular application. It is a collection of one (or more) components and services
+5. Component - consist of HTML template, class
+6. Selector options: [app.component.html](https://github.com/woon17/Full-Stack-Training-Program/blob/main/WebSection/Angular/demo-proj/src/app/app.component.html)
+    - Custom tag: [demo123.component.ts ](https://github.com/woon17/Full-Stack-Training-Program/blob/main/WebSection/Angular/demo-proj/src/app/demo123/demo123.component.ts) -> app-demo123
+    - Class selector: [test.component.ts](https://github.com/woon17/Full-Stack-Training-Program/blob/main/WebSection/Angular/demo-proj/src/app/test/test.component.ts) -> .app-test
+    - Enclose it in [ ] as attribute: [demo.component.ts](https://github.com/woon17/Full-Stack-Training-Program/blob/main/WebSection/Angular/demo-proj/src/app/demo/demo.component.ts) -> app-demo
+7. [component & module](https://stackoverflow.com/questions/40073941/whats-the-difference-between-an-angular-component-and-module)
 ### Week 4
 Practice for Java:
 - [Hotel Bill Management](https://github.com/woon17/Full-Stack-Training-Program/blob/main/JavaSection/HotelManagement/src/hotelManagement/HotelManagement.java) 
