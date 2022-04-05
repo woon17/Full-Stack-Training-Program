@@ -1,0 +1,12 @@
+div {
+    background-color: aqua;
+}
+
+p,
+h1 {
+    color: blue;
+}
+
+h1 {
+    text-align: center
+}
