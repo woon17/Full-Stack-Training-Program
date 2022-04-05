@@ -14,6 +14,7 @@ public class Verification extends HttpServlet {
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
 
 		String id = req.getParameter("id");
+		System.out.println("Id: " + id);
 
 
 		if (id.length() == 0) {

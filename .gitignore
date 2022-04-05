@@ -4,5 +4,5 @@
 .classpath
 .prefs
 .settings/
-
+*.gitignore
 Servers/Tomcat v7.0 Server at localhost-config/

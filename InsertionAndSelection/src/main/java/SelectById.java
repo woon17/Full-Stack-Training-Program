@@ -19,7 +19,7 @@ import oracle.jdbc.OracleDriver;
 /**
  * Servlet implementation class GetResult
  */
-public class GetResult extends HttpServlet {
+public class SelectById extends HttpServlet {
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		Connection con;
 		PreparedStatement pstmt;
@@ -62,7 +62,7 @@ public class GetResult extends HttpServlet {
 				session.setAttribute("marks1", marks1);
 				session.setAttribute("marks2", marks2);
 				session.setAttribute("marks3", marks3);
-				resp.sendRedirect("/ResultWithVerificationWithSession/PrintResult.jsp");
+				resp.sendRedirect("/InsertionAndSelection/displayResult.jsp");
 				return;
 
 			}
