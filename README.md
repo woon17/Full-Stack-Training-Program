@@ -109,6 +109,9 @@ Practice for JavaScript section:
 7. [component & module](https://stackoverflow.com/questions/40073941/whats-the-difference-between-an-angular-component-and-module)
 8. Create test component: `ng g c test`
 9. start application: `ng serve`
+
+<hr>
+
 ### Week 4
 Practice for Java:
 - [Hotel Bill Management](https://github.com/woon17/Full-Stack-Training-Program/blob/main/JavaSection/HotelManagement/src/hotelManagement/HotelManagement.java) 
@@ -234,6 +237,8 @@ Await can be used whenever we use .then
    - Global scope and function scope
    - No block scope for type script
 
+<hr>
+
 ### Week 3
 Practice for Java:
 - [Hotel Bill Management](https://github.com/woon17/Full-Stack-Training-Program/blob/main/JavaSection/HotelManagement/src/hotelManagement/HotelManagement.java) 
@@ -326,6 +331,9 @@ Practice for Web:
 1. Single thread: have the dependency, need to do one subtask one by one. 
 2. Sub class of Thread class, override run(). Call subclass with start(), then thread scheduler will arrange different threads to execute.
 3. Using threadNames to do multiThread
+
+<hr>
+
 ### Week 2
 
 Practice for Java:
@@ -541,7 +549,6 @@ Universal selectors
     ```
 7. - Siblings: children who have the same parent
    - Adjacent Siblings: same parent and adjacent to each other
-<hr>
 
 - <strong><em>Day 5</em></strong>:
     | Section        | topic                                       | task                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
@@ -678,12 +685,3 @@ tags:
     | -------------- | ------------------------------------ |
     | *Java Section* | `Scanner Class · Arrays`             |
     | *Web Section*  | `HTML · forms · responsive web page` |
-
-
-***
-
-
-<hr>
-
-    1. update resume related description
-    2. update portfolio related description
