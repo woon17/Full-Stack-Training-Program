@@ -94,7 +94,6 @@ class School implements SummaryInterface {
 
 	@Override
 	public void showStudentsSummary() {
-		// TODO Auto-generated method stub
 		if (students.size() != 0) {
 			System.out.println(String.format("%8s%16s", "Student", "GPA"));
 		}
@@ -107,7 +106,6 @@ class School implements SummaryInterface {
 
 	@Override
 	public void showTeachersSummary() {
-		// TODO Auto-generated method stub
 		if (teachers.size() != 0) {
 			System.out.println(String.format("%8s%16s", "teacher", "Salary"));
 		}
@@ -129,7 +127,6 @@ class Admin {
 	}
 
 	void ansStQn() {
-//		System.out.println("ansStQn()");
 		String stQn = String.format("%8s%16s%20s%20s", "Student(1)", "Teacher(2)", "Show-student(3)",
 				"Show-teachers(4)");
 		System.out.println("For student or teach? Choose a number\n" + stQn);
@@ -138,8 +135,6 @@ class Admin {
 			int stQnAns = sc.nextInt();
 
 			verifyStAns(stQnAns);
-//			System.out.println("--------------------------");
-//			ansNameQn();
 			if (stQnAns == 3) {
 				school.showStudentsSummary();
 			} else if (stQnAns == 4) {
@@ -157,7 +152,6 @@ class Admin {
 	}
 
 	void verifyStAns(int stQnAns) throws InvalidStAnsException {
-		// System.out.println("stQnAns: "+ stQnAns);
 		if (stQnAns < 1 || stQnAns > 4) {
 			InvalidStAnsException e = new InvalidStAnsException();
 			throw e;
@@ -165,7 +159,6 @@ class Admin {
 	}
 
 	void ansCrudQn(int personType) {
-		// System.out.println("ansCrudQn()");
 		String crudQn = String.format("%8s%16s%16s%16s", "Create(1)", "Read(2)", "Update(3)", "Delte(4)");
 		try {
 			Scanner sc = new Scanner(System.in);
@@ -176,7 +169,6 @@ class Admin {
 			String name;
 			Person dummyPerson;
 			if (personType == 1) {
-				// create a dummy student instance by name
 				System.out.println("Enter the student's name: ");
 				name = sc.next();
 				dummyPerson = new Student(name);
@@ -185,7 +177,6 @@ class Admin {
 				name = sc.next();
 				dummyPerson = new Teacher(name);
 			}
-			// performCrud(name, crudQnAns, personType);
 			performCrudPerson(dummyPerson, crudQnAns);
 		} catch (InvalidCrudAnsException e) {
 			System.out.println(e.getMessage());
@@ -198,7 +189,6 @@ class Admin {
 	}
 
 	void verifyCrudAns(int crudQnAns) throws InvalidCrudAnsException {
-//		System.out.println("verifyCrudAns()");
 		if (crudQnAns < 1 || crudQnAns > 4) {
 			InvalidCrudAnsException e = new InvalidCrudAnsException();
 			throw e;
@@ -306,7 +296,7 @@ class Admin {
 				ansCrudQn(1);
 			}
 			break;
-		case 4:// Delte(4)
+		case 4:// Delete(4)
 			try {
 
 				if (person instanceof Student) {
@@ -357,7 +347,6 @@ class Admin {
 		}
 	}
 
-	// TODO:
 	void verifyGpa(float gpa) throws InvalidGpaRangeException {
 		if (gpa < 0 || gpa > 5) {
 			InvalidGpaRangeException e = new InvalidGpaRangeException();

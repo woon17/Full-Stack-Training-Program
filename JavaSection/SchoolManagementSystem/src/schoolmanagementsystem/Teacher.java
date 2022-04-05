@@ -21,28 +21,18 @@ class Teacher extends Person {
 		return salary;
 	}
 
-	public void setSalary() {
-		this.salary = salary;
-	}
-
-	public String toString() {
-		return "Teacher's name: " + this.getName() + "; salary: " + this.salary;
-	}
-
 	public void setSalary(int salary) {
 		this.salary = salary;
 	}
 
 	@Override
 	public void enrol(School school) {
-		// TODO Auto-generated method stub
 		school.getTeachers().add(this);
 		numOfTeachers++;
 	}
 
 	@Override
 	public void leave(School school) {
-		// TODO Auto-generated method stub
 		school.getTeachers().remove(this);
 		numOfTeachers--;
 
@@ -58,5 +48,9 @@ class Teacher extends Person {
 			}
 		}
 		return false;
+	}
+
+	public String toString() {
+		return "Teacher's name: " + this.getName() + "; salary: " + this.salary;
 	}
 }

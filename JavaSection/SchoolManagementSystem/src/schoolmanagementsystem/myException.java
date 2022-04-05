@@ -9,7 +9,6 @@ class InvalidStAnsException extends Exception {
 }
 
 class InvalidCrudAnsException extends Exception {
-
 	public String getMessage() {
 		String line = String.format("%70s\n", " ").replace(" ", "*");
 		String warning = "Waining: Choose Create(1) Read(2) Update(3) Delte(4)\n";

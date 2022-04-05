@@ -1,4 +1,5 @@
 package schoolmanagementsystem;
+
 class Student extends Person {
 	private static int numOfStudents;
 	private float gpa;
@@ -28,14 +29,12 @@ class Student extends Person {
 
 	@Override
 	public void enrol(School school) {
-		// TODO Auto-generated method stub
 		school.getStudents().add(this);
 		numOfStudents++;
 	}
 
 	@Override
 	public void leave(School school) {
-		// TODO Auto-generated method stub
 		school.getStudents().remove(this);
 		numOfStudents--;
 
