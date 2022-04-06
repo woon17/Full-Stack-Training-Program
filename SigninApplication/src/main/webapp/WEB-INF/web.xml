@@ -17,10 +17,6 @@
 	</filter>
 	<filter-mapping>
 		<filter-name>CreateAccountFilter</filter-name>
-		<url-pattern>/CreateAccountFilter</url-pattern>
-	</filter-mapping>
-	<filter-mapping>
-		<filter-name>CreateAccountFilter</filter-name>
 		<servlet-name>CreateAccount</servlet-name>
 		<dispatcher>REQUEST</dispatcher>
 	</filter-mapping>
@@ -30,7 +26,7 @@
 	</filter-mapping>
 	<filter-mapping>
 		<filter-name>SigninFilter</filter-name>
-		<servlet-name>SIgnin</servlet-name>
+		<servlet-name>Signin</servlet-name>
 		<dispatcher>REQUEST</dispatcher>
 	</filter-mapping>
 	<servlet>
@@ -43,17 +39,17 @@
 	<servlet>
 		<description>
 		</description>
-		<display-name>SIgnin</display-name>
-		<servlet-name>SIgnin</servlet-name>
-		<servlet-class>SIgnin</servlet-class>
+		<display-name>Signin</display-name>
+		<servlet-name>Signin</servlet-name>
+		<servlet-class>Signin</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>CreateAccount</servlet-name>
 		<url-pattern>/CreateAccount</url-pattern>
 	</servlet-mapping>
 	<servlet-mapping>
-		<servlet-name>SIgnin</servlet-name>
-		<url-pattern>/SIgnin</url-pattern>
+		<servlet-name>Signin</servlet-name>
+		<url-pattern>/Signin</url-pattern>
 	</servlet-mapping>
 	<welcome-file-list>
 		<welcome-file>index.html</welcome-file>

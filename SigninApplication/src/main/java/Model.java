@@ -79,26 +79,29 @@ public class Model {
 			con = DriverManager.getConnection("jdbc:oracle:thin:@//localhost:1521/XE", "SYSTEM", "shufa");
 			System.out.println("Connection is established successfully");
 
-			pstmt = con.prepareStatement("select * from USERDETAILS where id = ?");
-
+			pstmt = con.prepareStatement("select * from USERDETAILS where USERNAME = ?");
 			pstmt.setString(1, this.username);
+
 			ResultSet res = pstmt.executeQuery();
-			String username;
-			String password;
+
+			String usernameFromRes = "";
+			String passwordFromRes = "";
 			while (res.next()) {
-				username = res.getString(2);
-				password = res.getString(3);
+				usernameFromRes = res.getString(2);
+				passwordFromRes = res.getString(3);
 			}
-			if(username.length() == 0) {
+
+			System.out.println("usernameFromRes: " + usernameFromRes + "; passwordFromRes:" + passwordFromRes);
+			if(usernameFromRes.length() == 0) {// username is invalid
 				return -1;
-			}else if(password.length() == 0) {
-				return 0;
+			}else if (!passwordFromRes.equals(this.password)) {
+				return 0;// username is valid but password is invalid
 			}
 			return 1;
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
-
+		
 		return 0;
 
 	}
