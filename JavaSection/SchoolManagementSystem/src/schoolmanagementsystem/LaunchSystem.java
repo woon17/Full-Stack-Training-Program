@@ -127,7 +127,7 @@ class Admin {
 	}
 
 	void ansStQn() {
-		String stQn = String.format("%8s%16s%20s%20s", "Student(1)", "Teacher(2)", "Show-student(3)",
+		String stQn = String.format("%8s%16s%20s%20s", "Student(1)", "Teacher(2)", "Show-students(3)",
 				"Show-teachers(4)");
 		System.out.println("For student or teach? Choose a number\n" + stQn);
 		try {
@@ -307,6 +307,7 @@ class Admin {
 				} else {
 					verifyTeacherExist(person);
 					person = school.getPerson((Teacher) person);
+					person.leave(school);
 					System.out.println(String.format("%s (teacher) is deleted\n", person.getName()));
 				}
 
