@@ -40,6 +40,9 @@ Practice for Web Section:
 Practice for JavaScript section:
 - [Practice code for JavaScript](https://github.com/woon17/Full-Stack-Training-Program/tree/main/WebSection/practice/js%20learning)
 
+Practice for Angular section:
+- [Practice code for Angular](https://github.com/woon17/Full-Stack-Training-Program/tree/main/WebSection/Angular)
+
 ***
 
 ### Week 5
