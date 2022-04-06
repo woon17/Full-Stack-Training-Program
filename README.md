@@ -44,10 +44,10 @@ Practice for JavaScript section:
 
 ### Week 5
 - <strong><em>Day 1</em></strong>:
-    | Section        | topic                                                                                                                                                                         | task                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
-    | -------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-    | *Java Section* | `Servlet · JSP · Session`                                                                                                                                                     | [ResultWithVerification](https://github.com/woon17/Full-Stack-Training-Program/tree/main/ResultWithVerification)   ·  [Result1](https://github.com/woon17/Full-Stack-Training-Program/tree/main/Result1) ·  [ResultWithVerificationWithSession](https://github.com/woon17/Full-Stack-Training-Program/tree/main/ResultWithVerificationWithSession) ·  [InsertionToDatabase](https://github.com/woon17/Full-Stack-Training-Program/tree/main/InsertionToDatabase) |
-    | *Web Section*  | ` TypeScript Interface · TypeScript optional field · TypeScript inheritance · TypeScript method overriding · TypeScript access modifier · TypeScript extends class · Angular` | [testClass.ts](https://github.com/woon17/Full-Stack-Training-Program/blob/main/WebSection/practice/js%20learning/hotelManagement.html) · [testFunc.ts ](https://github.com/woon17/Full-Stack-Training-Program/blob/main/WebSection/TypeScript%20learning/testFunc.ts) · [Angular demo-proj ](https://github.com/woon17/Full-Stack-Training-Program/tree/main/WebSection/Angular/demo-proj)                                                                       |
+    | Section        | topic                                                                                                                                                                         | task                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+    | -------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+    | *Java Section* | `Servlet · JSP · Session`                                                                                                                                                     | [ResultWithVerification](https://github.com/woon17/Full-Stack-Training-Program/tree/main/ResultWithVerification)   ·  [Result1](https://github.com/woon17/Full-Stack-Training-Program/tree/60b2348562ccc8a43cc06f38d29a3c10cae1ad9c/Result1) ·  [ResultWithVerificationWithSession](https://github.com/woon17/Full-Stack-Training-Program/tree/main/ResultWithVerificationWithSession) ·  [InsertionToDatabase](https://github.com/woon17/Full-Stack-Training-Program/tree/main/InsertionToDatabase) |
+    | *Web Section*  | ` TypeScript Interface · TypeScript optional field · TypeScript inheritance · TypeScript method overriding · TypeScript access modifier · TypeScript extends class · Angular` | [testClass.ts](https://github.com/woon17/Full-Stack-Training-Program/blob/main/WebSection/practice/js%20learning/hotelManagement.html) · [testFunc.ts ](https://github.com/woon17/Full-Stack-Training-Program/blob/main/WebSection/TypeScript%20learning/testFunc.ts) · [Angular demo-proj ](https://github.com/woon17/Full-Stack-Training-Program/tree/d21c2c82477ad6dfaa60889d0851be41ea84c29e/WebSection/Angular/demo-proj)                                                                       |
 
 1. 	Interface example:
 	```
@@ -88,10 +88,10 @@ Practice for JavaScript section:
     3. Ng serve
 
 - <strong><em>Day 2</em></strong>:
-    | Section        | topic                                                                                            | task                                                                                                                                                                                                                                                 |
-    | -------------- | ------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-    | *Java Section* | `Web.xml for v2.4 · MVC`                                                                         | [InsertionAndSelection](https://github.com/woon17/Full-Stack-Training-Program/tree/main/InsertionAndSelection/src/main)   ·  [InsertionSelectionMVC](https://github.com/woon17/Full-Stack-Training-Program/tree/main/InsertionSelectionMVC/src/main) |
-    | *Web Section*  | ` Angular modules · Angular components · Angular Selector · Angular templates  · Angular styles` | [demo-proj](https://github.com/woon17/Full-Stack-Training-Program/tree/main/WebSection/Angular/demo-proj) · [Test ](https://github.com/woon17/Full-Stack-Training-Program/tree/main/WebSection/Angular/Test)                                         |
+    | Section        | topic                                                                                            | task                                                                                                                                                                                                                                                                                 |
+    | -------------- | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+    | *Java Section* | `Web.xml for v2.4 · MVC`                                                                         | [InsertionAndSelection](https://github.com/woon17/Full-Stack-Training-Program/tree/main/InsertionAndSelection/src/main)   ·  [InsertionSelectionMVC](https://github.com/woon17/Full-Stack-Training-Program/tree/main/InsertionSelectionMVC/src/main)                                 |
+    | *Web Section*  | ` Angular modules · Angular components · Angular Selector · Angular templates  · Angular styles` | [demo-proj](https://github.com/woon17/Full-Stack-Training-Program/tree/bf2711687c921bc8278943c44f5d51f11185fdf7/WebSection/Angular/demo-proj) · [Test ](https://github.com/woon17/Full-Stack-Training-Program/tree/bf2711687c921bc8278943c44f5d51f11185fdf7/WebSection/Angular/Test) |
 
 1. MVC example:
     - Client<-->view: Client visit index.html, index.html shows the form 
@@ -109,6 +109,52 @@ Practice for JavaScript section:
 7. [component & module](https://stackoverflow.com/questions/40073941/whats-the-difference-between-an-angular-component-and-module)
 8. Create test component: `ng g c test`
 9. start application: `ng serve`
+
+- <strong><em>Day 3</em></strong>:
+    | Section        | topic                                                                                                                                                                                               | task                                                                                                                                                                                                                                                                                        |
+    | -------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+    | *Java Section* | `filter · MVC`                                                                                                                                                                                      | [Result1 with filter](https://github.com/woon17/Full-Stack-Training-Program/tree/cd7f433425af6942e625f8a51f14582b3b84de09/Result1)   ·  [SigninApplication](https://github.com/woon17/Full-Stack-Training-Program/tree/d607fe7eda2ae40dcd470b3d58aea5c45260af08/SigninApplication/src/main) |
+    | *Web Section*  | ` Angular Interpolation  · Angular Property binding · Angular Class binding (ngClass) · Angular Style binding (ngStyle) · Angular Event binding · Angular two-way binding · attribute and property` | [demo-proj](https://github.com/woon17/Full-Stack-Training-Program/tree/91cb0bdf1af6743a1f4709635553ee5c74600428/WebSection/Angular/demo-proj) · [Test ](https://github.com/woon17/Full-Stack-Training-Program/tree/91cb0bdf1af6743a1f4709635553ee5c74600428/WebSection/Angular/Test)        |
+
+
+1. Interpolation is used display a component property in the respective view template with double curly braces syntax
+2. Interpolation moves data in one direction from our components to HTML
+    - example:
+        ```
+        <input disabled={{false}} type="text" value="shufa">
+        ```
+3. Property(DOM) vs attribute(HTML)
+    - Attribute is the predefined value: $0.getAttribute("value"); Property is current entered data: $0.value
+        ```
+        $0.getAttribute("value")
+        'shufa'
+        $0.value
+        'wen'
+        ```
+    - attributes are always defined by HTML
+    - Properties are always defined by the DOM
+    - Attributes initialize the DOM properties
+    - Attributes do not change once initialized 
+    - property values can change 
+    - value remains same in attributes
+    - property values change
+4. Property binding: [app.component.ts](https://github.com/woon17/Full-Stack-Training-Program/blob/91cb0bdf1af6743a1f4709635553ee5c74600428/WebSection/Angular/Test/src/app/app.component.ts)
+    - way 1, using [...]; way 2, using bind-…
+    ```
+    <input [disabled]="isDisabled" type="text" value="shufa">
+    ```
+    Or 
+    ```
+    <input bind-disabled="isDisabled" type="text" value="shufa">
+    ```
+5. Class binding: [demo1.component.ts](https://github.com/woon17/Full-Stack-Training-Program/blob/91cb0bdf1af6743a1f4709635553ee5c74600428/WebSection/Angular/demo-proj/src/app/demo1/demo1.component.ts)
+    - ngClass
+6. Style binding: [demo123.component.ts](https://github.com/woon17/Full-Stack-Training-Program/blob/91cb0bdf1af6743a1f4709635553ee5c74600428/WebSection/Angular/demo-proj/src/app/demo123/demo123.component.ts)
+    - ngStyle
+7. Event binding: [test.component.ts](https://github.com/woon17/Full-Stack-Training-Program/blob/91cb0bdf1af6743a1f4709635553ee5c74600428/WebSection/Angular/demo-proj/src/app/test/test.component.ts)
+    - example: `<button (click)="OnClick($event)">`
+8. Two-way binding: [demo](https://github.com/woon17/Full-Stack-Training-Program/blob/91cb0bdf1af6743a1f4709635553ee5c74600428/WebSection/Angular/demo-proj/src/app/demo/demo.component.ts)
+    - example: `<p>Demo component</p><input [(ngModel)]="name" type="text">{{name}}`
 
 <hr>
 
