@@ -5,6 +5,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  * Servlet implementation class Signin
@@ -25,7 +26,17 @@ public class Signin extends HttpServlet {
 			resp.sendRedirect("/SigninApplication/invalidUserName.html");
 		}
 		else {
-			resp.sendRedirect("/SigninApplication/loginSuccess.html");
+//			resp.sendRedirect("/SigninApplication/loginSuccess.html");
+			// put into session
+			
+			HttpSession session = req.getSession(true);// create a new session
+			session.setAttribute("un", model.getUsername());
+			session.setAttribute("email", model.getEmail());
+			
+			System.out.println("singin.java: " + model);
+			
+			resp.sendRedirect("/SigninApplication/validUser.jsp");
+			return;
 		}
 	}
 }

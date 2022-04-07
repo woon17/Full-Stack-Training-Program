@@ -37,17 +37,12 @@ public class SigninFilter implements Filter {
 		// pass the request along the filter chain
 		String username = request.getParameter("un");
 		String password = request.getParameter("pwd");
-//		boolean isExistingUsername = false;
-//		if()
 
-		if (username.length() == 0 || password.length() == 0) {
-			((HttpServletResponse) response).sendRedirect("/SigninApplication/signinIncomplete.html");
+		if (username.length() == 0) {
+			((HttpServletResponse) response).sendRedirect("/SigninApplication/usernameEmpty.html");
+		}else if (password.length() == 0) {
+			((HttpServletResponse) response).sendRedirect("/SigninApplication/passwordEmpty.html");
 		}
-//		else if(!password.equals("")) {//password is not matched
-//			((HttpServletResponse) response).sendRedirect("/SigninApplication/invalidPassword.html");
-//		}else if(!isExistingUsername) {//username is not in database
-//			((HttpServletResponse) response).sendRedirect("/SigninApplication/invalidUser.html");
-//		}
 		else {
 			chain.doFilter(request, response);
 		}

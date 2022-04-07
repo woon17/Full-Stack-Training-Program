@@ -84,26 +84,59 @@ public class Model {
 
 			ResultSet res = pstmt.executeQuery();
 
-			String usernameFromRes = "";
 			String passwordFromRes = "";
-			while (res.next()) {
-				usernameFromRes = res.getString(2);
+			if (res.next()) {
 				passwordFromRes = res.getString(3);
-			}
-
-			System.out.println("usernameFromRes: " + usernameFromRes + "; passwordFromRes:" + passwordFromRes);
-			if(usernameFromRes.length() == 0) {// username is invalid
+				this.email = res.getString(4);
+				
+				if(this.password.equals(passwordFromRes)) {
+					return 1;
+				}else {
+					return 0;
+				}
+			}else {
 				return -1;
-			}else if (!passwordFromRes.equals(this.password)) {
-				return 0;// username is valid but password is invalid
 			}
-			return 1;
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
 		
 		return 0;
 
+	}
+	
+
+	public int changeEmail() {
+		Connection con;
+		PreparedStatement pstmt;
+		try {
+			DriverManager.registerDriver(new OracleDriver());
+			System.out.println("Driver is registered successfully");
+			con = DriverManager.getConnection("jdbc:oracle:thin:@//localhost:1521/XE", "SYSTEM", "shufa");
+			System.out.println("Connection is established successfully");
+
+			pstmt = con.prepareStatement("update USERDETAILS set EMAIL=? where USERNAME = ?");
+			pstmt.setString(1, this.email);
+			pstmt.setString(2, this.username);
+	
+			ResultSet res = pstmt.executeQuery();
+
+			if (res.next()) {
+				
+				return 1;
+			}else {
+				return -1;
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		
+		return 0;
+
+	}
+	
+	public String toString() {
+		return "name: " + this.name + " ; username: " + this.username + " ; password: " + this.password +" ; email: " + this.email;
 	}
 
 }

@@ -16,7 +16,7 @@ class InvalidCrudAnsException extends Exception {
 	}
 }
 
-class InputInputTypeException extends Exception {
+class InvalidInputTypeException extends Exception {
 	public String getMessage() {
 		String line = String.format("%70s\n", " ").replace(" ", "*");
 		String warning = "Waring: Choose a number\n";

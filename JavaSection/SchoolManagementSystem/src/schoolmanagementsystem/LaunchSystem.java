@@ -146,7 +146,7 @@ class Admin {
 		} catch (InvalidStAnsException e) {
 			System.out.println(e.getMessage());
 		} catch (InputMismatchException e) {
-			InputInputTypeException exception = new InputInputTypeException();
+			InvalidInputTypeException exception = new InvalidInputTypeException();
 			System.out.println(exception.getMessage());
 		}
 	}
@@ -182,7 +182,7 @@ class Admin {
 			System.out.println(e.getMessage());
 			ansCrudQn(personType);
 		} catch (InputMismatchException e) {
-			InputInputTypeException exception = new InputInputTypeException();
+			InvalidInputTypeException exception = new InvalidInputTypeException();
 			System.out.println(exception.getMessage());
 			ansCrudQn(personType);
 		}
@@ -223,7 +223,7 @@ class Admin {
 				System.out.println(e.getMessage());
 				performCrudPerson(person, crudQnAns);
 			} catch (InputMismatchException e) {
-				InputInputTypeException exception = new InputInputTypeException();
+				InvalidInputTypeException exception = new InvalidInputTypeException();
 				System.out.println(exception.getMessage());
 				performCrudPerson(person, crudQnAns);
 			} catch (InvalidSalaryRangeException e) {
@@ -285,7 +285,7 @@ class Admin {
 				System.out.println(e.getMessage());
 				performCrudPerson(person, crudQnAns);
 			} catch (InputMismatchException e) {
-				InputInputTypeException exception = new InputInputTypeException();
+				InvalidInputTypeException exception = new InvalidInputTypeException();
 				System.out.println(exception.getMessage());
 				performCrudPerson(person, crudQnAns);
 			} catch (StudentNotExistException e) {
