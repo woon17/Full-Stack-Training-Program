@@ -1,0 +1,16 @@
+<p>test works!</p>
+
+<!-- show index, only display odd index participants -->
+<div *ngFor="let item of participants; index as i; odd as o">
+  <h2 *ngIf="o;">{{i}} {{o}} {{item}}</h2>
+</div>
+<hr>
+<!-- show index, show if index are even for its participant -->
+<div *ngFor="let item of participants; index as i; even as e">
+  <h2 *ngIf="e;">{{i}} {{e}} {{item}}</h2>
+</div>
+<hr>
+<!-- show index, check if its index is the last participant index-->
+<div *ngFor="let item of participants; index as i; last as e">
+  <h2>{{i}} {{e}} {{item}}</h2>
+</div>

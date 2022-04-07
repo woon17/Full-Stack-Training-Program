@@ -1,0 +1,17 @@
+<p>test works!</p>
+
+<h2 *ngIf="disp; else elseBlock">Hello</h2>
+<h2 *ngIf="true">Wen shufa</h2>
+<ng-template #elseBlock>
+  <h2>Bye</h2>
+</ng-template>
+
+<hr>
+
+<div *ngIf="disp; then valueTrue; else valueFalse"></div>
+<ng-template #valueTrue>
+  <h2>Hello</h2>
+</ng-template>
+<ng-template #valueFalse>
+  <h2>Bye</h2>
+</ng-template>

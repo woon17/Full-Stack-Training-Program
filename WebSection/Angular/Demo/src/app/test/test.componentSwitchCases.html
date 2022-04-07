@@ -1,0 +1,13 @@
+<p>test works!</p>
+<div [ngSwitch]="day">
+  <div *ngSwitchCase="'mon'">You have choose monday</div>
+  <div *ngSwitchCase="'tue'">You have choose tuesday</div>
+  <div *ngSwitchCase="'wed'">You have choose wednesday</div>
+  <div *ngSwitchCase="'thur'">You have choose thursday</div>
+  <div *ngSwitchCase="'fri'">You have choose friday</div>
+  <div *ngSwitchCase="'sat'">You have choose saturday</div>
+  <div *ngSwitchCase="'sun'">You have choose sunday</div>
+  <div *ngSwitchDefault>
+    You have choosen a wrong day!! pls choose correctly
+  </div>
+</div>
