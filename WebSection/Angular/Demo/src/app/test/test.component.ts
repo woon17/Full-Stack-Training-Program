@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-test',
@@ -13,6 +13,7 @@ export class TestComponent implements OnInit {
   public disp = true; //used for if else test
   public day = 'mon';
   public participants = ['wen', 'shu', 'fa', 'wu'];
+  @Input() public dataFromParent = "";
   constructor() {}
 
   ngOnInit(): void {}
