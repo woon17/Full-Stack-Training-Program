@@ -7,8 +7,8 @@
 <!-- * * * * * * * to get started with your project! * * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <p>This is the app component</p>
-
-<app-test [dataFromParent]="message"></app-test>
+<p>This is the message from child component <span style="color:red">{{msg}}</span></p>
+<app-test (childEvent)="msg=$event" [dataFromParent]="message"></app-test>
 
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * The content above * * * * * * * * * * * -->
