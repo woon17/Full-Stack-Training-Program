@@ -1,4 +1,6 @@
+import { i18nMetaToJSDoc } from '@angular/compiler/src/render3/view/i18n/meta';
 import { Component, OnInit } from '@angular/core';
+import { EmployeeServiceService } from '../employee-service.service';
 
 @Component({
   selector: 'app-employee',
@@ -6,11 +8,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./employee.component.css'],
 })
 export class EmployeeComponent implements OnInit {
-  public emp = [
-    { id: 1, name: 'shufa', dep: 'training' },
-    { id: 2, name: 'wen', dep: 'jfs' },
-  ];
-  constructor() {}
+  public emp = [{}];
 
-  ngOnInit(): void {}
+  public toString(emp: any){
+    return emp.id + " - " + emp.name + " - " + emp.dep;
+  }
+
+  constructor(private _employeeService: EmployeeServiceService) {
+
+  }
+
+  ngOnInit(): void {
+    this.emp = this._employeeService.getEmployeeInfo();
+  }
 }
