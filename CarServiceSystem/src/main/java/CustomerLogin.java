@@ -36,7 +36,7 @@ public class CustomerLogin extends HttpServlet {
 //			System.out.println("singin.java: " + model);
 //			
 			resp.sendRedirect("/CarServiceSystem/customerLoginSuccess.jsp");
-//			return;
+			return;
 		}
 		
 		

@@ -52,6 +52,27 @@
 		<servlet-name>RequestService</servlet-name>
 		<servlet-class>RequestService</servlet-class>
 	</servlet>
+	<servlet>
+		<description>
+		</description>
+		<display-name>RegisteredCustomers</display-name>
+		<servlet-name>RegisteredCustomers</servlet-name>
+		<servlet-class>RegisteredCustomers</servlet-class>
+	</servlet>
+	<servlet>
+		<description>
+		</description>
+		<display-name>PendingRequest</display-name>
+		<servlet-name>PendingRequest</servlet-name>
+		<servlet-class>PendingRequest</servlet-class>
+	</servlet>
+	<servlet>
+		<description>
+		</description>
+		<display-name>UpdateServiceStatus</display-name>
+		<servlet-name>UpdateServiceStatus</servlet-name>
+		<servlet-class>UpdateServiceStatus</servlet-class>
+	</servlet>
 	<servlet-mapping>
 		<servlet-name>AdminLogin</servlet-name>
 		<url-pattern>/AdminLogin</url-pattern>
@@ -71,6 +92,18 @@
 	<servlet-mapping>
 		<servlet-name>RequestService</servlet-name>
 		<url-pattern>/RequestService</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>RegisteredCustomers</servlet-name>
+		<url-pattern>/RegisteredCustomers</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>PendingRequest</servlet-name>
+		<url-pattern>/PendingRequest</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>UpdateServiceStatus</servlet-name>
+		<url-pattern>/UpdateServiceStatus</url-pattern>
 	</servlet-mapping>
 	<welcome-file-list>
 		<welcome-file>index.html</welcome-file>

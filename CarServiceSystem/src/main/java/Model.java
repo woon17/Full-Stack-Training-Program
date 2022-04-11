@@ -3,6 +3,8 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import oracle.jdbc.driver.OracleDriver;
 
@@ -14,6 +16,7 @@ public class Model {
 	private String cname;
 	private String cusername;
 	private String cpassword;
+	private String cemail;
 
 	private String carmodel;
 	private String cartype;
@@ -21,8 +24,8 @@ public class Model {
 	private String carservice;
 	private String carstatus;
 	private String carowner;
-
-	private String cemail;
+	private List<Customer> cList = new ArrayList<>();
+	private List<Car> pList = new ArrayList<>();
 
 	// load driver and establish the connection to database
 	Model() {
@@ -35,7 +38,7 @@ public class Model {
 			// TODO: handle exception
 			e.printStackTrace();
 		}
-	
+
 	}
 
 	public String getCarstatus() {
@@ -234,26 +237,97 @@ public class Model {
 		}
 		return 0;
 	}
-	
+
 	public int addCarService() {
 		try {
-			PreparedStatement pstmt = con.prepareStatement("update CUSTOMERCARDETAILS set SERVICEREQUEST=?, STATUS = ? where OWNER = ?");
+			PreparedStatement pstmt = con
+					.prepareStatement("update CUSTOMERCARDETAILS set SERVICEREQUEST=?, STATUS = ? where OWNER = ?");
 			pstmt.setString(1, this.carservice);
 			pstmt.setString(2, this.carstatus);
 			pstmt.setString(3, this.carowner);
-			System.out.println("carservice: " +this.carservice +"; carstatus: " + this.carstatus + " ;carowner: " + this.carowner);
+			System.out.println("carservice: " + this.carservice + "; carstatus: " + this.carstatus + " ;carowner: "
+					+ this.carowner);
 			ResultSet res = pstmt.executeQuery();
 
 			if (res.next()) {// update service and status successfully
 				return 1;
-			}else {// fail in updating 
+			} else {// fail in updating
 				return 0;
 			}
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
-		
+
 		return 0;
+	}
+
+	public List<Customer> printRegisteredCustomer() {
+		try {
+			PreparedStatement pstmt = con.prepareStatement("Select * from CustomerDB");
+
+			ResultSet res = pstmt.executeQuery();
+//			String allCustomers = "";
+			while (res.next()) {
+				cList.add(new Customer(res.getString(1), res.getString(2), res.getString(3), res.getString(4)));
+//				allCustomers += res.getString(1) + " " + res.getString(2) + " " + res.getString(3) + " "
+//						+ res.getString(4) + "\n";
+			}
+			return cList;
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return cList;
+
+	}
+
+	public List<Car> getPendingRequest() {
+		try {
+			PreparedStatement pstmt = con.prepareStatement("Select * from CUSTOMERCARDETAILS where STATUS =?");
+			pstmt.setString(1, "false");
+			ResultSet res = pstmt.executeQuery();
+			
+//			String allCustomers = "";
+			while (res.next()) {
+				pList.add(new Car(res.getString(1), res.getString(2), res.getString(3), res.getString(4), res.getString(5), res.getString(6)));
+//				allCustomers += res.getString(1) + " " + res.getString(2) + " " + res.getString(3) + " "
+//						+ res.getString(4) + "\n";
+			}
+			return pList;
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return pList;
+
+	}
+	
+	public int updateServiceStatus() {
+		try {
+			
+			
+			PreparedStatement pstmt = con
+					.prepareStatement("update CUSTOMERCARDETAILS set STATUS = ? where OWNER = ? and STATUS='false'");
+
+			pstmt.setString(1, this.carstatus);
+			pstmt.setString(2, this.carowner);
+			System.out.println("carservice: " + this.carservice + "; carstatus: " + this.carstatus + " ;carowner: "
+					+ this.carowner);
+			ResultSet res = pstmt.executeQuery();
+
+			if (res.next()) {// update service and status successfully
+				return 1;
+			} else {// fail in updating
+				return 0;
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+
+		return 0;
+		
 	}
 
 	public String toString() {
@@ -263,5 +337,4 @@ public class Model {
 				+ " ; car-type: " + this.cartype + " ; car-num: " + this.carnum + " ; car-service: " + this.carservice
 				+ " ; service-staus: " + this.carservice;
 	}
-
 }

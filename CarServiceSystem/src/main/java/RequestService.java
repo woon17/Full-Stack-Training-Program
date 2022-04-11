@@ -15,22 +15,23 @@ public class RequestService extends HttpServlet {
 		String service = req.getParameter("service");
 		HttpSession session = req.getSession();
 		String owner = (String) session.getAttribute("un");
-		System.out.println("-----------------\nowner: " +owner );
+		System.out.println("-----------------\nowner: " + owner);
 		System.out.println("input service: " + service);
 		Model model = new Model();
 		model.setCarowner(owner);
 		model.setCarservice(service);
 		model.setCarstatus(defaultStatus);
-		System.out.println("model for service: \n" + model );
+		System.out.println("model for service: \n" + model);
 		int serviceResult = model.addCarService();
-		
-		if(serviceResult==0) {
+
+		if (serviceResult == 0) {
 			System.out.println("fail in updating service");
-		}else {
+			resp.sendRedirect("/CarServiceSystem/carServiceAddFailure.html");
+		} else {
 			System.out.println("service updating successfully");
+			resp.sendRedirect("/CarServiceSystem/carServiceAddSuccess.html");
 		}
-		
-		
+
 	}
 
 }

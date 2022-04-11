@@ -38,7 +38,7 @@ public class AdminLogin extends HttpServlet {
 //			System.out.println("singin.java: " + model);
 //			
 			resp.sendRedirect("/CarServiceSystem/adminLoginSuccess.jsp");
-//			return;
+			return;
 		}
 		
 		

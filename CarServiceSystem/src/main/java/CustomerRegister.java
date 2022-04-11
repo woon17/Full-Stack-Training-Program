@@ -1,5 +1,4 @@
 
-
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -17,26 +16,24 @@ public class CustomerRegister extends HttpServlet {
 		String password = req.getParameter("pwd");
 		String cPassword = req.getParameter("cpwd");
 		String email = req.getParameter("email");
-		
+
 		Model model = new Model();
 		model.setCname(name);
 		model.setCusername(username);
 		model.setCpassword(cPassword);
 		model.setCemail(email);
-		
-		int rowsUpdated =model.registerCustomer();
-		
-		if(rowsUpdated == 0) {
+
+		int rowsUpdated = model.registerCustomer();
+
+		if (rowsUpdated == 0) {
 			resp.sendRedirect("/CarServiceSystem/customerRegisterFailure.html");
-		}else {
+		} else {
 			HttpSession session = req.getSession(true);// create a new session
 			session.setAttribute("un", model.getCusername());
-						
-			resp.sendRedirect("/CarServiceSystem/customerRegisterSuccess.jsp");
-		}
-		}
 
-	
-	
-	
+			resp.sendRedirect("/CarServiceSystem/customerRegisterSuccess.jsp");
+			return;
+		}
+	}
+
 }

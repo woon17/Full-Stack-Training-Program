@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,7 +18,13 @@
 		/* ses.getAttribute("un") */
 		%>. You login successfully
 	</p>
-
+	<a href="/CarServiceSystem/RegisteredCustomers">Registered
+		Customers</a>
+	<br>
+	<a href="/CarServiceSystem/PendingRequest">Pending
+		request</a>
+	<br>
+	<a href="/CarServiceSystem/updateServiceStatus.html">Update Status</a>
 
 </body>
 </html>
