@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-electronics-list',
   template: `
     <p>
-      electronics-list works!
+      electronics-list works, here is the electronicsList
     </p>
   `,
   styles: [

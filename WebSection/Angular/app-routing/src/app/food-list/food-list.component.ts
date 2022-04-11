@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-food-list',
   template: `
     <p>
-      food-list works!
+      food-list works!, here is the foodList.
     </p>
   `,
   styles: [
