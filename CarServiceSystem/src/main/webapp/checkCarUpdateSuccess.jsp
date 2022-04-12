@@ -6,21 +6,18 @@
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 </head>
-<body>
-
-
-	<p>
-		<span>Welcome customer</span>,
+<body><p>
+		<span>Welcome customer </span>,
 		<%
 		// println in broswer, in client machine. not in console
 		HttpSession ses = request.getSession();
 		out.println(ses.getAttribute("un"));
-		/* ses.getAttribute("un") */
-		%>. You login successfully
+		%>
+		<span>. Your service status is </span>
+		<%
+		out.println(ses.getAttribute("status"));
+		%>
 	</p>
-	<a href="/CarServiceSystem/addNewCarDetails.html">Add car detail</a><br>
-	<a href="/CarServiceSystem/requestForService.html">Request for a service</a><br>
-	<a href="/CarServiceSystem/CheckStatus">Check Status</a>
-		<br>
+
 </body>
 </html>

@@ -329,6 +329,27 @@ public class Model {
 		return 0;
 		
 	}
+	
+	public int checkStatus() {
+		try {
+			PreparedStatement pstmt = con.prepareStatement("Select * from CUSTOMERCARDETAILS where OWNER =?");
+			pstmt.setString(1, this.carowner);
+			ResultSet res = pstmt.executeQuery();
+			
+//			String allCustomers = "";
+			if (res.next()) {
+				this.carstatus = res.getString("STATUS");
+				return 1;
+//				allCustomers += res.getString(1) + " " + res.getString(2) + " " + res.getString(3) + " "
+//						+ res.getString(4) + "\n";
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return 0;
+
+	}
 
 	public String toString() {
 		return "admin-username: " + this.username + " ; admin-password: " + this.password + "\n" + "cname: "

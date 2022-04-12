@@ -73,6 +73,13 @@
 		<servlet-name>UpdateServiceStatus</servlet-name>
 		<servlet-class>UpdateServiceStatus</servlet-class>
 	</servlet>
+	<servlet>
+		<description>
+		</description>
+		<display-name>CheckStatus</display-name>
+		<servlet-name>CheckStatus</servlet-name>
+		<servlet-class>CheckStatus</servlet-class>
+	</servlet>
 	<servlet-mapping>
 		<servlet-name>AdminLogin</servlet-name>
 		<url-pattern>/AdminLogin</url-pattern>
@@ -104,6 +111,10 @@
 	<servlet-mapping>
 		<servlet-name>UpdateServiceStatus</servlet-name>
 		<url-pattern>/UpdateServiceStatus</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>CheckStatus</servlet-name>
+		<url-pattern>/CheckStatus</url-pattern>
 	</servlet-mapping>
 	<welcome-file-list>
 		<welcome-file>index.html</welcome-file>

@@ -21,6 +21,6 @@ public class Car {
 	public String toString() {
 		return "car-owner: " + this.carowner + " ; car-model: " + this.carmodel
 				+ " ; car-type: " + this.cartype + " ; car-num: " + this.carnum + " ; car-service: " + this.carservice
-				+ " ; service-staus: " + this.carstatus + " ; car owner: " + this.carowner;
+				+ " ; service-staus: " + this.carstatus;
 	}
 }
