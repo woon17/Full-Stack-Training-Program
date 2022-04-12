@@ -1,0 +1,72 @@
+
+div.top-image{
+    width: 2000px;
+    height: 900px;
+    margin: auto;
+}
+div.content{
+    width: 2000px;
+    margin: auto;
+}
+
+p{
+    padding:0px;
+    margin: 0px;
+    margin-bottom: 10px;
+
+    text-align: center;
+    font-size: 50px;
+    color: blue;;
+}
+
+
+img{
+    width: 100%;
+    height: 100%;
+}
+
+table{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.button>input[type=submit] {
+    font-size: 100px;
+    border-radius: 2px;
+}
+
+.button>input{
+    border: 2px;
+    margin-left: 100px;
+    margin-right: 100px;
+    /* border-radius: 500px; */
+}
+
+table .button input[type=submit]:hover {
+    color: blue;
+}
+
+table a{
+    font-size: 50px;
+    padding-left: 100px;
+    padding-right: 100px;
+    color: black;
+}
+
+table a:link {
+    text-decoration: none;
+}
+a:hover {
+    color: blue;
+}
+
+#admin-login tr,
+#admin-login input{
+    font-size: 50px;
+}
+
+#admin-login td>#submit {
+    position: right;
+    background-color: green;
+}
