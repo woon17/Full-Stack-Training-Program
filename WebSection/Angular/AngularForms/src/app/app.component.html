@@ -18,17 +18,31 @@
       <input type="text" name="name" #name class="form-control" [class.is-invalid]="!name.checkValidity()"
         [class.is-valid]="name.checkValidity()" [(ngModel)]="userData.name" required>
     </div>
+    <!-- 1: using ngIf; 2:binding by is-invalid -->
+    <div>
+      <!-- <small class="text-danger">Name is required field, cannot be empty</small><br> -->
+      <small class="text-danger" [class.d-none]="name.checkValidity()">Name is required field, cannot be empty</small><br>
+    </div>
+
     {{name.className}}
     {{name.checkValidity()}}<br><br>
     <div class="form-group">
       <label>Email:</label>
-      <input type="email" name="email" #email class="form-control" [class.is-invalid]="!email.checkValidity()" [class.is-valid]="email.checkValidity()" [(ngModel)]="userData.email">
+      <input type="email" name="email" #email class="form-control" [class.is-invalid]="!email.checkValidity()"
+        [class.is-valid]="email.checkValidity()" [(ngModel)]="userData.email">
+    </div>
+    <div>
+      <small class="text-danger" [class.d-none]="email.checkValidity()">Email is invalid</small><br>
     </div>
     {{email.className}}<br><br>
 
     <div class="form-group">
       <label>Mobile No:</label>
-      <input type="number" name="mobile" #mobile class="form-control" [class.is-invalid]="!mobile.checkValidity()" [class.is-valid]="mobile.checkValidity()" [(ngModel)]="userData.mobile">
+      <input type="number" name="mobile" #mobile class="form-control" [class.is-invalid]="!mobile.checkValidity()"
+        [class.is-valid]="mobile.checkValidity()" [(ngModel)]="userData.mobile">
+    </div>
+    <div>
+      <small class="text-danger" [class.d-none]="mobile.checkValidity()">number is invalid</small><br>
     </div>
     {{mobile.className}}<br><br>
 
