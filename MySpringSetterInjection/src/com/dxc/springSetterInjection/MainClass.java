@@ -14,10 +14,14 @@ public class MainClass {
 //		emp.setEmpName("shufa");
 //		System.out.println(emp);
 		//with IOC
+		
 		ApplicationContext context = new ClassPathXmlApplicationContext("appContext.xml");
 		Employee emp = (Employee) context.getBean("emp");
-		emp.setEmpId(1);
-		emp.setEmpName("shufa");
+		// without setter injection
+//		emp.setEmpId(1);
+//		emp.setEmpName("shufa");
+		
+		
 		System.out.println(emp);
 		
 	}
