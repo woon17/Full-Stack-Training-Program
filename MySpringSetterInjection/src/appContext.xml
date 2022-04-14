@@ -10,7 +10,7 @@
 
 
 	<!-- Define your beans here -->
-	<bean id="emp" class="com.dxc.springSetterInjection.Employee">
+	<bean id="emp" class="com.dxc.springSetterInjection.Employee" scope="prototype">
 		<!-- define the dependency -->
 		<property name="empId" value="1"></property>
 		<property name="empName" value="shufa"></property>

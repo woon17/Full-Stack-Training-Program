@@ -10,10 +10,10 @@
 	<!-- define the dependency -->
 
 	<!-- Define your beans here -->
-	<bean id="j" class="com.dxc.springIOC.JavaTrainer">
+	<bean id="j" class="com.dxc.springIOC.JavaTrainer" scope="singleton">
 	</bean>
 
-	<bean id="w" class="com.dxc.springIOC.WebTechTrainer">
+	<bean id="w" class="com.dxc.springIOC.WebTechTrainer" scope="singleton">
 	</bean>
 
 </beans>

@@ -19,10 +19,16 @@ public class MainClass {
 		Employee emp = (Employee) context.getBean("emp");
 		// without setter injection
 //		emp.setEmpId(1);
-//		emp.setEmpName("shufa");
+//		emp.setEmpName("wen");
 		
-		
+		Employee emp2 = (Employee) context.getBean("emp");
+		Employee emp3 = (Employee) context.getBean("emp");
+//		emp2.setEmpName("test");
 		System.out.println(emp);
+		System.out.println(emp2);
+		System.out.println(emp3);
+		
+		
 		
 	}
 

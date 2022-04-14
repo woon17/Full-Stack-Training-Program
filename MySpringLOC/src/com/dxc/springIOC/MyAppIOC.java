@@ -17,6 +17,9 @@ public class MyAppIOC {
 		// let application to create the object. IOC approach
 		ApplicationContext context = new ClassPathXmlApplicationContext("appContext.xml");
 		Trainer jt = (Trainer) context.getBean("j");
+		Trainer jt2 = (Trainer) context.getBean("j");
+		System.out.println(jt);
+		System.out.println(jt2);
 		System.out.println(jt.getDailyTrainingSession());
 		
 		Trainer wt = (Trainer) context.getBean("w");
