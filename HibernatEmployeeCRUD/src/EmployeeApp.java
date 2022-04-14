@@ -17,6 +17,9 @@ public class EmployeeApp {
 //		hm.Insert(e3);
 		// read
 //		hm.selectById(2);
+//		hm.selectAllData();
+//		hm.selectByName();
+		hm.selectBySecondName("wen");
 		// update
 //		hm.updateById(2, "newEmail@gmail.com");
 		// delete
