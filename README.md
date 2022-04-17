@@ -98,9 +98,93 @@ Practice for Angular section:
   | _Java Section_ | `Servlet · JSP · Session` | |
   | _Web Section_ | ` bootstrap · FormsModule binding · json display · track state · validity · visual feedbacks` | [offline bootstrap css style ](https://github.com/woon17/Full-Stack-Training-Program/commit/558843f35149763fd54b80ae9ee8ff0083a2cf5a) · [testFunc.ts ](https://github.com/woon17/Full-Stack-Training-Program/blob/main/WebSection/TypeScript%20learning/testFunc.ts) · [Angular template driven form ](https://github.com/woon17/Full-Stack-Training-Program/commit/1790cbdf25b60aac3f004e1304e9dfb19a0dd3ab) · [form one way binding](https://github.com/woon17/Full-Stack-Training-Program/commit/046f80ec6aba84785907226f3425dcda0b0eba9a) · [form two-way binding](https://github.com/woon17/Full-Stack-Training-Program/commit/68646bb902dec6cad322b2d8d0f34f464a423c05) · [track state and validity ](https://github.com/woon17/Full-Stack-Training-Program/commit/6200d0d041a6ab1e39169678768e44db9faad786) · [visual feedbacks](https://github.com/woon17/Full-Stack-Training-Program/commit/e4d4fd2a283da0751ff41b32f69adaad395864c8)|
 
-1. If database is changed, then all related query do not works, database independent.
+1. If database is changed, then all related query do not works, database dependent.
    - ORM: object relational model -->> mapping objects to relational tables. Eg, hibernate
    - Hibernate is light weight - pojo, poji
+
+- <strong><em>Day 3</em></strong>:
+  | Section | topic | task |
+  | -------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+  | _Java Section_ | `Hibernate without annotation · JSP · Session` | [HibernateStudentDelet](https://github.com/woon17/Full-Stack-Training-Program/tree/main/HibernateStudentDelet/src) · [HibernateStudentInsert](https://github.com/woon17/Full-Stack-Training-Program/tree/main/HibernateStudentInsert/src) · [HibernateStudentSelect](https://github.com/woon17/Full-Stack-Training-Program/tree/main/HibernateStudentSelect/src) · [HibernateStudentUpdate](https://github.com/woon17/Full-Stack-Training-Program/tree/main/HibernateStudentUpdate/src) · [HibernatEmployeeCRUD](https://github.com/woon17/Full-Stack-Training-Program/tree/main/HibernatEmployeeCRUD/src) |
+  | _Web Section_ | ` Angular form error msg · Singleton class · Spring IOC · Setter injection` | [Angular form error msg ](https://github.com/woon17/Full-Stack-Training-Program/commit/d0c042d63b60148d3e3a4684f3a6191a01314047) · [Singleton class](https://github.com/woon17/Full-Stack-Training-Program/tree/main/JavaSingleton/src/com/shufa/understandSingleton) · [Without IOC](https://github.com/woon17/Full-Stack-Training-Program/commit/4838ddb6f32a96c8ba48db4fe4f79229696715d8) · [IOC without setter injection](https://github.com/woon17/Full-Stack-Training-Program/commit/f29c3fc0c4e5763ffe8867c27b0e8aeb9afa7696) · [IOC with setter injection](https://github.com/woon17/Full-Stack-Training-Program/commit/c1ab12fb8b8217ea978701150d72bb1d8cdb9d95)|
+
+1. Display error message:
+
+   - Using bootstrap class.d-none
+
+   ```
+   <small class="text-danger" [class.d-none]="name.checkValidity()">Name is required field, cannot be empty</small>
+   ```
+
+   - Using `*ngIf`
+
+2. Spring Framwork: (use xml and maven):
+   - Open source, light weight, loosely coupled, dependency injection based application framework to develop varies java application.
+   - Light weiht:
+     - Bean factory
+     - ApplicationContext
+     - ClassPathXMLApplicationCOntext
+     - POJO classes (plain old java object)
+   - Loosely coupled:
+     - Low Dependency:
+   - Dependency injection:
+   - Use bean by xml: [use bean](https://github.com/woon17/Full-Stack-Training-Program/commit/a561656ed4d84fed100185474e9443c888ef1133)
+   - Setter injection: [IOC with setter injection](https://github.com/woon17/Full-Stack-Training-Program/commit/c1ab12fb8b8217ea978701150d72bb1d8cdb9d95)
+     - Not by programmer, spring application do it
+     - Create new Objects, all is the same address: default is like `<bean ..scope="singleton>`
+     - Create different object with different reference address: `<bean ..scope="prototype>`
+   - Constructor injection
+     - Use constructor to create the object
+   - Inversion of control: [IOC without setter injection](https://github.com/woon17/Full-Stack-Training-Program/commit/f29c3fc0c4e5763ffe8867c27b0e8aeb9afa7696)
+     - IoC is all about inverting the control. To explain this in layman's terms, suppose you drive a car to your work place. This means you control the car. The IoC principle suggests to invert the control, meaning that instead of driving the car yourself, you hire a cab, where another person will drive the car. Thus, this is called inversion of the control - from you to the cab driver. You don't have to drive a car yourself and you can let the driver do the driving so that you can focus on your main work
+     - Control give back to application. Spring application will create the object
+     - Create new Objects, all is the same address: default is like `<bean ..scope="singleton>`
+     - Create different object with different reference address: `<bean ..scope="prototype>`
+     - `<bean>`
+   - Singleton and Prototype Bean Scopes in Java Spring:
+     Singleton: Only one instance will be created for a single bean definition per Spring IoC container and the same object will be shared for each request made for that bean. Prototype: A new instance will be created for a single bean definition every time a request is made for that bean
+3. Singleton:
+   - A singleton is a class that allows only a single instance of itself to be created and gives access to that created instance.
+   - Create by using private constructor.
+
+- <strong><em>Day 4</em></strong>:
+  | Section | topic | task |
+  | -------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+  | _Java Section_ | `hibernate with annotation · entity class · session.createQuery` | [session.createQuery](https://github.com/woon17/Full-Stack-Training-Program/commit/74068d4cbb9f8f729e4283c473f47cccd646c6af) · [hibernate with annotation](https://github.com/woon17/Full-Stack-Training-Program/commit/79cc9b5a9fd67a598f3f7668f28fcaae0b0c27d9) |
+  | _Web Section_ | `spring singleton scope · maven` | [spring singleton scope for setter in jection and IOC](https://github.com/woon17/Full-Stack-Training-Program/commit/80bc0a802e308f16836fa3c6c37d913075e4e799) · [Constructor injection with prototype scope](https://github.com/woon17/Full-Stack-Training-Program/commit/506f400d0b144f62ce955f76fb10088a5a986615) · [using maven](https://github.com/woon17/Full-Stack-Training-Program/commit/e61624ec4265140a5b6bb78a3b7086837a2d2ace) · [constructor injection with maven](https://github.com/woon17/Full-Stack-Training-Program/commit/c39b5ccb63efe79b57238235212f230f0d7cc998) · [setter injection with maven](https://github.com/woon17/Full-Stack-Training-Program/commit/756c0cd3456d678d3c7f0f771c6b39eb7f8b89ff) |
+
+1.  Annotation is additional information to the program
+2.  Spring Framwork: (use xml and maven):
+    - Singleton and Prototype Bean Scopes in Java Spring:
+    - Singleton: Only one instance will be created for a single bean definition per Spring IoC container and the same object will be shared for each request made for that bean.
+      Prototype: A new instance will be created for a single bean definition every time a request is made for that bean
+3.  Constructor injection
+    - Use constructor to create the object
+    - <bean><constructor-arg>
+    - Must have the corresponding constructor in that object class, otherwise not working
+4.  Scope of bean:
+    - Default bean will use singleton
+    - Use prototype to allow create different objects
+    - Bean-lifecycle
+      - https://www.geeksforgeeks.org/bean-life-cycle-in-java-spring/
+5.  Create new maven project:
+
+    - Select a default location for project
+    - Provide groupId(package) artifactId(project name)
+    - Create config.xml (src/main/java) and add some lines:
+    - ```
+      <beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context" xmlns:p="http://www.springframework.org/schema/p" xmlns:tx="http://www.springframework.org/schema/tx" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd"> </beans>
+      ```
+
+    - Mvnrepository.com (No need to use predefined jar file within maven)
+      - Spring core
+      - Spring context
+    - Remember to update maven project (maven->update project)
+    - Go to config.xml and add the bean
+    - App.java call the bean and execute it
+
+6.  Maven project with annotation 1. Enable component scanning in spring: @Component - <context: component-scan base-package="com.dxc.SpringPackage"> 2. Java class (is the source for the object) use annotation - @Component("jTrainer")
+    Retrieve bean from Java container
 
 ### Week 5
 
@@ -110,7 +194,7 @@ Practice for Angular section:
   | _Java Section_ | `Servlet · JSP · Session` | [ResultWithVerification](https://github.com/woon17/Full-Stack-Training-Program/tree/main/ResultWithVerification) · [Result1](https://github.com/woon17/Full-Stack-Training-Program/tree/60b2348562ccc8a43cc06f38d29a3c10cae1ad9c/Result1) · [ResultWithVerificationWithSession](https://github.com/woon17/Full-Stack-Training-Program/tree/main/ResultWithVerificationWithSession) · [InsertionToDatabase](https://github.com/woon17/Full-Stack-Training-Program/tree/main/InsertionToDatabase) |
   | _Web Section_ | ` TypeScript Interface · TypeScript optional field · TypeScript inheritance · TypeScript method overriding · TypeScript access modifier · TypeScript extends class · Angular` | [testClass.ts](https://github.com/woon17/Full-Stack-Training-Program/blob/main/WebSection/practice/js%20learning/hotelManagement.html) · [testFunc.ts ](https://github.com/woon17/Full-Stack-Training-Program/blob/main/WebSection/TypeScript%20learning/testFunc.ts) · [Angular demo-proj ](https://github.com/woon17/Full-Stack-Training-Program/tree/d21c2c82477ad6dfaa60889d0851be41ea84c29e/WebSection/Angular/demo-proj) |
 
-1.          Interface example:
+1.                              Interface example:
 
     ```
     interface LabeledValue {
