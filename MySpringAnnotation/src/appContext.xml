@@ -10,11 +10,10 @@
 
 
 	<!-- Define your beans here -->
-	<bean id="emp" class="com.dxc.springSetterInjection.Employee"
-		 init-method="empStart" destroy-method="empStop">
+	<bean id="emp" class="com.dxc.springConstructorInjection.Employee" scope="prototype">
 		<!-- define the dependency -->
-		<property name="empId" value="1"></property>
-		<property name="empName" value="shufa"></property>
+		<constructor-arg name="empId" value="2"></constructor-arg>
+		<constructor-arg name="empName" value="shufa"></constructor-arg>
 	</bean>
 
 

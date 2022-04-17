@@ -1,7 +1,6 @@
-package com.dxc.springSetterInjection;
+package com.dxc.springConstructorInjection;
 
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class MainClass {
@@ -15,6 +14,7 @@ public class MainClass {
 //		emp.setEmpName("shufa");
 //		System.out.println(emp);
 		//with IOC
+		
 		ApplicationContext context = new ClassPathXmlApplicationContext("appContext.xml");
 		Employee emp = (Employee) context.getBean("emp");
 		// without setter injection
@@ -23,11 +23,11 @@ public class MainClass {
 		
 		Employee emp2 = (Employee) context.getBean("emp");
 		Employee emp3 = (Employee) context.getBean("emp");
-		emp2.setEmpName("test");
+//		emp2.setEmpName("test");
 		System.out.println(emp);
 		System.out.println(emp2);
 		System.out.println(emp3);
-		((ConfigurableApplicationContext) context).close();
+		
 		
 		
 	}

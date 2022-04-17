@@ -1,4 +1,4 @@
-package com.dxc.springSetterInjection;
+package com.dxc.springConstructorInjection;
 
 public class Employee {
 	private int empId;
@@ -29,20 +29,11 @@ public class Employee {
 	public void setEmpName(String empName) {
 		this.empName = empName;
 	}
-	
-	public void empStart() {
-		System.out.println("Init sart");
-		
-	}
-	public void empStop() {
-		System.out.println("Destory called");
-		
-		
-	}
 
-//	@Override
-//	public String toString() {
-//		return "Employee [empId=" + empId + ", empName=" + empName + "]";
-//	}
+	@Override
+	public String toString() {
+		return this.getClass().getName() + "@" + 
+		           Integer.toHexString(System.identityHashCode(this)) + " [empId=" + empId + ", empName=" + empName + "]";
+	}
 
 }
