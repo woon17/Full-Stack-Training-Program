@@ -7,12 +7,17 @@ import org.springframework.stereotype.Component;
 public class WebTechTrainer implements Trainer {
 	private StandardPracticeTime spt;
 
+	public WebTechTrainer() {
+
+	}
+
 	public String getDailyTrainingSession() {
 		return "Have web session to practice web development skills";
 	}
 
 	@Autowired
-	public WebTechTrainer(StandardPracticeTime spt) {
+	public void setStandardPracticeTime(StandardPracticeTime spt) {
+		System.out.println("WebTechTrainer setter is called");
 		this.spt = spt;
 	}
 

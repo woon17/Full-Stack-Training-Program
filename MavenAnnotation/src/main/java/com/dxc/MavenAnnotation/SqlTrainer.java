@@ -7,12 +7,17 @@ import org.springframework.stereotype.Component;
 public class SqlTrainer implements Trainer {
 	private StandardPracticeTime spt;
 
+	public SqlTrainer() {
+
+	}
+
 	public String getDailyTrainingSession() {
 		return "Have sql training every day";
 	}
 
 	@Autowired
-	public SqlTrainer(StandardPracticeTime spt) {
+	public void setStandardPracticeTime(StandardPracticeTime spt) {
+		System.out.println("SqlTrainer setter is called");
 		this.spt = spt;
 	}
 
