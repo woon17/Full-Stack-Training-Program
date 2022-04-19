@@ -23,8 +23,10 @@ public class Student {
 	private String email;
 
 	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "studentDetailId")//studentDetailId from student table
-	private StudentDetail studentDetailId;// studentDetailId is the studentDetail primary key
+	//studentDetailId from student table, it is the column name
+	@JoinColumn(name = "studentDetailId")
+	// studentDetailId is the studentDetail reference, show its primary key in  studentDetailId column
+	private StudentDetail studentDetailId;
 
 	public Student() {
 

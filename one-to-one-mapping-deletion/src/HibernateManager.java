@@ -20,7 +20,22 @@ public class HibernateManager {
 
 	}
 	
-	public static void deletedStudentDetailById(int id) {
+	public static void selectStudentDetailById(int id) {
+		connect();
+		session.beginTransaction();
+		StudentDetail s = (StudentDetail) session.get(StudentDetail.class, id);
+		if (s != null) {
+			Student stu = s.getStudent();
+			System.out.println("student studentdetailid: " + id + "\n" + stu);
+			System.out.println("studentdetail id: " + id + "\n" + s);
+			session.getTransaction().commit();
+		} else {
+			System.out.println("studentdetail id: " + id + " does not exist in studentdetail table");
+		}
+
+	}
+	
+	public static void deleteStudentDetailById(int id) {
 		connect();
 		session.beginTransaction();
 		StudentDetail s = (StudentDetail) session.get(StudentDetail.class, id);
@@ -29,7 +44,7 @@ public class HibernateManager {
 			session.getTransaction().commit();
 			System.out.println("Data is deleted from the studentdetail tables");
 		} else {
-			System.out.println("studentid: " + id + " does not exist in studentdetail table");
+			System.out.println("studentdetail id: " + id + " does not exist in studentdetail table");
 		}
 
 	}
@@ -48,7 +63,9 @@ public class HibernateManager {
 //		deleteStudentById(2);
 //		deleteStudentById(3);
 		// Cannot delete or update a parent row: a foreign key constraint fails
-		deletedStudentDetailById(4); 
+		// need to do mapping in studentdetail class. 
+		selectStudentDetailById(5); 
+//		deleteStudentDetailById(4);
 
 	}
 

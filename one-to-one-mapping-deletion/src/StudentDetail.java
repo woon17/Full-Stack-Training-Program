@@ -1,8 +1,11 @@
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -19,6 +22,18 @@ public class StudentDetail {
 
 	@Column(name = "experience")
 	private int experience;
+	
+	// studentDetailId is the attribute in student class, not table column
+	@OneToOne(mappedBy = "studentDetailId", cascade = CascadeType.ALL) 
+	private Student student;
+
+	public Student getStudent() {
+		return student;
+	}
+
+	public void setStudent(Student student) {
+		this.student = student;
+	}
 
 	public StudentDetail() {
 
