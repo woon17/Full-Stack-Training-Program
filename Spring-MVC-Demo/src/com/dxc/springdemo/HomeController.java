@@ -39,16 +39,17 @@ public class HomeController {
 	}
 
 	@RequestMapping("/showFormTwo") // execute when there is request from "/showFormTwo"
-	public String showFormTwo(Model model, @RequestParam("name") String name) {
+	public String showFormTwo(Model model, @RequestParam("name") String empName, @RequestParam("city") String empCity,
+			@RequestParam("country") String empCountry) {
 		// make changes to the data
 		// 1. collect the data from the html/jsp
 
-		name = "hello! " + name;
-		city = city + " is a decent city";
-		country = "SG GOV decide to change " + country + "to newCity";
-		model.addAttribute("name", name);
-		model.addAttribute("city", city);
-		model.addAttribute("country", country);
+		empName = "hello! " + empName;
+		empCity = empCity + " is a decent city";
+		empCountry = "SG GOV decide to change " + empCountry + "to newCity";
+		model.addAttribute("name", empName);
+		model.addAttribute("city", empCity);
+		model.addAttribute("country", empCountry);
 
 		// it will append prefix and suffix as we set up in step 5 in xml file
 		return "processed-form-data";
