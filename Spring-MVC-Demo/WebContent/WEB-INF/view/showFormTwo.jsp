@@ -7,6 +7,7 @@
 <title>This it the Form two page</title>
 </head>
 <body>
+<h1>Enter the detail</h1>
 
 	<form action="showFormTwo" method="GET">
 	<input type="text" name="name" placeholder="Enter your name"><br>
