@@ -1,8 +1,12 @@
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -23,8 +27,15 @@ public class Student {
 	private String email;
 
 	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "studentDetailId")//studentDetailId from student table
+	// f_key
+	@JoinColumn(name = "studentDetailId") // studentDetailId from student table
 	private StudentDetail studentDetailId;// studentDetailId is the studentDetail primary key
+
+	// student is the attribute in student class
+	@OneToMany(mappedBy = "student", cascade = { CascadeType.MERGE, CascadeType.DETACH, CascadeType.PERSIST,
+			CascadeType.REFRESH })
+	// no f_key
+	private List<Course> courses;
 
 	public Student() {
 
@@ -37,12 +48,14 @@ public class Student {
 		this.email = email;
 	}
 
-	public int getId() {
-		return id;
-	}
+	public void add(Course temCourse) {
+		if (this.courses == null) {
+			this.courses = new ArrayList<>();
 
-	public void setId(int id) {
-		this.id = id;
+		} else {
+			this.courses.add(temCourse);
+			temCourse.setStudent(this);
+		}
 	}
 
 	public String getFirstname() {
@@ -69,18 +82,25 @@ public class Student {
 		this.email = email;
 	}
 
-	public StudentDetail getStudentDetialId() {
+	public StudentDetail getStudentDetailId() {
 		return studentDetailId;
 	}
 
-	public void setStudentDetialId(StudentDetail studentDetailId) {
+	public void setStudentDetailId(StudentDetail studentDetailId) {
 		this.studentDetailId = studentDetailId;
+	}
+
+	public List<Course> getCourses() {
+		return courses;
+	}
+
+	public void setCourses(List<Course> courses) {
+		this.courses = courses;
 	}
 
 	@Override
 	public String toString() {
-		return "Student [id=" + id + ", firstname=" + firstname + ", lastname=" + lastname + ", email=" + email
-				+ ", studentDetailId=" + studentDetailId + "]";
+		return "Student [id=" + id + ", firstname=" + firstname + ", lastname=" + lastname + ", email=" + email + "]";
 	}
 
 }
