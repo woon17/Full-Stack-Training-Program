@@ -11,6 +11,7 @@
 Welcome to the spring mvc project.</h1>
 <small>This is main-menu.jsp</small><br>
 <a href="demo">Click here for show-trail.jsp</a><br>
-<a href="showForm">Click here to fill form</a>
+<a href="showForm">Click here to fill form</a><br>
+<a href="displayFormTwo">Click here for form</a><br>
 </body>
 </html>
