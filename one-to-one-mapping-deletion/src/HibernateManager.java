@@ -61,10 +61,10 @@ public class HibernateManager {
 
 //		deleteStudentById(1);
 //		deleteStudentById(2);
-//		deleteStudentById(3);
+		deleteStudentById(10);
 		// Cannot delete or update a parent row: a foreign key constraint fails
 		// need to do mapping in studentdetail class. 
-		selectStudentDetailById(5); 
+//		selectStudentDetailById(5); 
 //		deleteStudentDetailById(4);
 
 	}

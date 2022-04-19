@@ -26,7 +26,7 @@ public class Student {
 	//studentDetailId from student table, it is the column name
 	@JoinColumn(name = "studentDetailId")
 	// studentDetailId is the studentDetail reference, show its primary key in  studentDetailId column
-	private StudentDetail studentDetailId;
+	private StudentDetail studentDetailId;// variable name will be used for studentdetail mapping
 
 	public Student() {
 
