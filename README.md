@@ -53,6 +53,52 @@ Practice for Angular section:
 
 ---
 
+## Table of Contents
+
+- [Full-Stack-Training-Program](#full-stack-training-program)
+    - [Duration: 7 weeks](#duration-7-weeks)
+    - [Editors:](#editors)
+  - [Table of Contents](#table-of-contents)
+    - [Week 7](#week-7)
+    - [Week 6](#week-6)
+    - [Week 5](#week-5)
+    - [Week 4](#week-4)
+    - [Week 3](#week-3)
+    - [Week 2](#week-2)
+    - [Week 1](#week-1)
+
+### Week 7
+
+- <strong><em>Day 1</em></strong>:
+  | Section | topic | task |
+  | -------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+  | _Java Section_ | `One-to-one mapping · foreign key · Mysql` | [hibernate.cfg.xml for Mysql](https://github.com/woon17/Full-Stack-Training-Program/blob/c0d9565baa0ff8823fe30fc3166332b79a336b37/one-to-one-mapping-insertion/src/hibernate.cfg.xml) · [one-to-one insertion](https://github.com/woon17/Full-Stack-Training-Program/commit/c0d9565baa0ff8823fe30fc3166332b79a336b37) · [one-to-one deletion](https://github.com/woon17/Full-Stack-Training-Program/commit/d587f528c9f2e9c8ca713ec308583f28d143a4a7)|
+  | _Web Section_ | `@Autowired` | [@Autowired for constructor injection](https://github.com/woon17/Full-Stack-Training-Program/commit/faabacf98eb8a5b9bee8b0abba65e3417dd79458) · [C@Autowired for setter injection](https://github.com/woon17/Full-Stack-Training-Program/commit/50c31ff317996bb806f2081258f606b157a3103d) |
+
+1. foreign key: studentDetailId is the forrign key in student table
+
+   - ```
+     @OneToOne(cascade = CascadeType.ALL)
+     @JoinColumn(name = "studentDetailId")//studentDetailId from student table
+     private StudentDetail studentDetailId;// studentDetailId is the studentDetail primary key in student table
+     ```
+   - cannot delete foreign key record as student table is using it.
+     ```
+     // Cannot delete or update a parent row: a foreign key constraint fails
+     deletedStudentDetailById(4);
+     ```
+   - it is allowed to delete student table record 
+     ```
+     deleteStudentById(1);
+     ```
+
+2. use @Autowired for constructor injection
+   - use [@component](https://github.com/woon17/Full-Stack-Training-Program/blob/faabacf98eb8a5b9bee8b0abba65e3417dd79458/MavenAnnotation/src/main/java/com/dxc/MavenAnnotation/StandardPracticeTime.java) and [@Autowired](https://github.com/woon17/Full-Stack-Training-Program/blob/faabacf98eb8a5b9bee8b0abba65e3417dd79458/MavenAnnotation/src/main/java/com/dxc/MavenAnnotation/JavaTrainer.java) for calling another class in the constructor.
+   - inject the object dependency implicitly
+3. use @Autowired for setter injection
+   - use [@component](https://github.com/woon17/Full-Stack-Training-Program/blob/faabacf98eb8a5b9bee8b0abba65e3417dd79458/MavenAnnotation/src/main/java/com/dxc/MavenAnnotation/StandardPracticeTime.java) and [@Autowired](https://github.com/woon17/Full-Stack-Training-Program/blob/50c31ff317996bb806f2081258f606b157a3103d/MavenAnnotation/src/main/java/com/dxc/MavenAnnotation/JavaTrainer.java) for calling another class in the constructor.
+   - inject the object dependency implicitly
+
 ### Week 6
 
 - <strong><em>Day 1</em></strong>:
@@ -194,7 +240,7 @@ Practice for Angular section:
   | _Java Section_ | `Servlet · JSP · Session` | [ResultWithVerification](https://github.com/woon17/Full-Stack-Training-Program/tree/main/ResultWithVerification) · [Result1](https://github.com/woon17/Full-Stack-Training-Program/tree/60b2348562ccc8a43cc06f38d29a3c10cae1ad9c/Result1) · [ResultWithVerificationWithSession](https://github.com/woon17/Full-Stack-Training-Program/tree/main/ResultWithVerificationWithSession) · [InsertionToDatabase](https://github.com/woon17/Full-Stack-Training-Program/tree/main/InsertionToDatabase) |
   | _Web Section_ | ` TypeScript Interface · TypeScript optional field · TypeScript inheritance · TypeScript method overriding · TypeScript access modifier · TypeScript extends class · Angular` | [testClass.ts](https://github.com/woon17/Full-Stack-Training-Program/blob/main/WebSection/practice/js%20learning/hotelManagement.html) · [testFunc.ts ](https://github.com/woon17/Full-Stack-Training-Program/blob/main/WebSection/TypeScript%20learning/testFunc.ts) · [Angular demo-proj ](https://github.com/woon17/Full-Stack-Training-Program/tree/d21c2c82477ad6dfaa60889d0851be41ea84c29e/WebSection/Angular/demo-proj) |
 
-1.                              Interface example:
+1.                                       Interface example:
 
     ```
     interface LabeledValue {
@@ -854,7 +900,7 @@ Practice for HTML:
 - [Sports activities website by HTML only](https://github.com/woon17/Full-Stack-Training-Program/tree/HtmlOnly/WebSection/sportsActivities)
 <hr>
 
-### Some important notes:
+Some important notes:
 
 <p>Compiler: can compile the class even if no main method. (check sytax)</p>
 <p>JVM: excute the class file only if the main method is defined in the specific class, otherwise return error.</p>
