@@ -4,6 +4,7 @@ import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -34,7 +35,7 @@ public class Course {
 	// delete course will delete all relevant reviews -> cascade = CascadeType.ALL
 	// no f_key -> cannot use @JoinColumn, need to use mappedBy, mappedBy = "course"
 //	@OneToMany(mappedBy = "course", cascade = CascadeType.ALL)
-	@OneToMany(cascade = CascadeType.ALL)
+	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	@JoinColumn(name="COURSEID")
 	private List<Review> reviews;
 
@@ -91,7 +92,8 @@ public class Course {
 
 	@Override
 	public String toString() {
-		return "Course [id=" + id + ", title=" + title + ", student=" + student + "]";
+		return "Course [id=" + id + ", title=" + title + ", student=" + student + ", reviews=" + reviews + "]";
 	}
+
 
 }

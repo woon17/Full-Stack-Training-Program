@@ -4,6 +4,7 @@ import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
@@ -32,7 +33,7 @@ public class Student {
 	private StudentDetail studentDetailId;// studentDetailId is the studentDetail primary key
 
 	// student is the attribute in student class
-	@OneToMany(mappedBy = "student", cascade = { CascadeType.MERGE, CascadeType.DETACH, CascadeType.PERSIST,
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "student", cascade = { CascadeType.MERGE, CascadeType.DETACH, CascadeType.PERSIST,
 			CascadeType.REFRESH })
 	// no f_key
 	private List<Course> courses;

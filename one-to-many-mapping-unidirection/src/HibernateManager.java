@@ -48,9 +48,11 @@ public class HibernateManager {
 	}
 
 	public static void deleteReviewById(int rid) {
-//		connect();
-//		session.beginTransaction();
-//		Review r = (Review) session.get(Review.class, rid);
+		connect();
+		session.beginTransaction();
+		Review r = (Review) session.get(Review.class, rid);
+		session.delete(r);
+		session.getTransaction().commit();
 //		if (r == null) {
 //			System.out.println("rid is not existing in course table");
 //		} else {
@@ -112,6 +114,17 @@ public class HibernateManager {
 		session.getTransaction().commit();
 
 	}
+	
+	public static void displayCoursesByCourseId(int cid) {
+		connect();
+		session.beginTransaction();
+		Course c = (Course) session.get(Course.class, cid);
+//		List<Review> reviews = c.getReviews();
+		
+		System.out.println("Student id: " + cid + "\n" + c);
+//		System.out.println("reviews: \n" + reviews);
+		session.getTransaction().commit();
+	}
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -149,17 +162,18 @@ public class HibernateManager {
 //		deleteCourseById(11);
 //		displayCoursesByStudentId(4);
 
-		Review r1 = new Review("comment1");
-		Review r2 = new Review("comment2");
-		Review r3 = new Review("comment3");
-		List<Review> reviews = new ArrayList<>();
-		reviews.add(r1);
-		reviews.add(r2);
-		reviews.add(r3);
-
-		insertReviewWithCoursesById(16, reviews);
-//		deleteReviewById(7);
+//		Review r1 = new Review("comment1");
+//		Review r2 = new Review("comment2");
+//		Review r3 = new Review("comment3");
+//		List<Review> reviews = new ArrayList<>();
+//		reviews.add(r1);
+//		reviews.add(r2);
+//		reviews.add(r3);
+//
+//		insertReviewWithCoursesById(12, reviews);
+		deleteReviewById(13);
 //		deleteCourseById(18);
+//		displayCoursesByCourseId(16);
 	}
 
 }
