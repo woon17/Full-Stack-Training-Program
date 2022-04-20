@@ -33,9 +33,9 @@ public class Course {
 	// course is the attribute in review class
 	// delete course will delete all relevant reviews -> cascade = CascadeType.ALL
 	// no f_key -> cannot use @JoinColumn, need to use mappedBy, mappedBy = "course"
-	@OneToMany(mappedBy = "course", cascade = CascadeType.ALL)
-//	@OneToMany(cascade = CascadeType.ALL)
-//	@JoinColumn(name="COURSEID")
+//	@OneToMany(mappedBy = "course", cascade = CascadeType.ALL)
+	@OneToMany(cascade = CascadeType.ALL)
+	@JoinColumn(name="COURSEID")
 	private List<Review> reviews;
 
 	public Course() {
@@ -53,7 +53,7 @@ public class Course {
 
 		} else {
 			this.reviews.add(temReview);
-			temReview.setCourse(this);
+//			temReview.setCourse(this);
 		}
 	}
 

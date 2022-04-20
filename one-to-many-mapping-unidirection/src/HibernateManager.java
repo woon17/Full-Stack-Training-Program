@@ -48,18 +48,18 @@ public class HibernateManager {
 	}
 
 	public static void deleteReviewById(int rid) {
-		connect();
-		session.beginTransaction();
-		Review r = (Review) session.get(Review.class, rid);
-		if (r == null) {
-			System.out.println("rid is not existing in course table");
-		} else {
-			Course c = r.getCourse();
-			c.getReviews().remove(r);
-			session.save(c);
-			session.delete(r);
-			session.getTransaction().commit();
-		}
+//		connect();
+//		session.beginTransaction();
+//		Review r = (Review) session.get(Review.class, rid);
+//		if (r == null) {
+//			System.out.println("rid is not existing in course table");
+//		} else {
+//			Course c = r.getCourse();
+//			c.getReviews().remove(r);
+//			session.save(c);
+//			session.delete(r);
+//			session.getTransaction().commit();
+//		}
 	}
 
 	public static void insertStudentWithStudentDetail(Student s, StudentDetail sd) {
@@ -157,7 +157,7 @@ public class HibernateManager {
 		reviews.add(r2);
 		reviews.add(r3);
 
-		insertReviewWithCoursesById(17, reviews);
+		insertReviewWithCoursesById(16, reviews);
 //		deleteReviewById(7);
 //		deleteCourseById(18);
 	}

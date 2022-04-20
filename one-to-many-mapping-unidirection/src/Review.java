@@ -31,10 +31,10 @@ public class Review {
 	// many reviews to one course -> @ManyToOne relationship
 	// delete review will not delete course -> cascade = { CascadeType.MERGE, CascadeType.DETACH, CascadeType.PERSIST, CascadeType.REFRESH }
 	// 		do not choose CascadeType.REMOVE and CascadeType.ALL
-	@ManyToOne(cascade = { CascadeType.MERGE, CascadeType.DETACH, CascadeType.PERSIST, CascadeType.REFRESH })
-	// f_key
-	@JoinColumn(name = "COURSEID") // courseId from course table
-	private Course course;
+//	@ManyToOne(cascade = { CascadeType.MERGE, CascadeType.DETACH, CascadeType.PERSIST, CascadeType.REFRESH })
+//	// f_key
+//	@JoinColumn(name = "COURSEID") // courseId from course table
+//	private Course course;
 
 	public Review() {
 
@@ -48,7 +48,7 @@ public class Review {
 	public Review(String comment, Course course) {
 		super();
 		this.comment = comment;
-		this.course = course;
+//		this.course = course;
 	}
 
 	public String getComment() {
@@ -59,17 +59,17 @@ public class Review {
 		this.comment = comment;
 	}
 
-	public Course getCourse() {
-		return course;
-	}
-
-	public void setCourse(Course course) {
-		this.course = course;
-	}
+//	public Course getCourse() {
+//		return course;
+//	}
+//
+//	public void setCourse(Course course) {
+//		this.course = course;
+//	}
 
 	@Override
 	public String toString() {
-		return "Review [id=" + id + ", comment=" + comment + ", course=" + course + "]";
+		return "Review [id=" + id + ", comment=" + comment + "]";
 	}
 
 }
