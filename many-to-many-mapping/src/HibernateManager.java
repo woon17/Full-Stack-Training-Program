@@ -1,0 +1,318 @@
+import java.util.ArrayList;
+import java.util.List;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+
+public class HibernateManager {
+	private static SessionFactory factory;
+	private static Session session;
+
+	public static void connect() {
+		factory = new Configuration().configure("hibernate.cfg.xml").addAnnotatedClass(Student.class)
+				.addAnnotatedClass(StudentDetail.class).addAnnotatedClass(Course.class).addAnnotatedClass(Review.class)
+				.addAnnotatedClass(Instructor.class).buildSessionFactory();
+		session = factory.getCurrentSession();
+		System.out.println("connection to database is established");
+	}
+
+	public static void deleteStudentById(int id) {
+		connect();
+		session.beginTransaction();
+		Student s = (Student) session.get(Student.class, id);
+		if (s != null) {
+			session.delete(s);
+			session.getTransaction().commit();
+			System.out.println("Data is deleted from the student tables");
+		} else {
+			System.out.println("studentid: " + id + " does not exist in student table");
+		}
+
+	}
+
+	public static void deleteCourseById(int cid) {
+		connect();
+		session.beginTransaction();
+		Course c = (Course) session.get(Course.class, cid);
+		if (c == null) {
+			System.out.println("cid is not existing in course table");
+		} else {
+			Student s = c.getStudent();
+			s.getCourses().remove(c);
+			session.save(s);
+			session.delete(c);
+			session.getTransaction().commit();
+		}
+
+	}
+
+	public static void deleteReviewById(int rid) {
+		connect();
+		session.beginTransaction();
+		Review r = (Review) session.get(Review.class, rid);
+		session.delete(r);
+		session.getTransaction().commit();
+//		if (r == null) {
+//			System.out.println("rid is not existing in course table");
+//		} else {
+//			Course c = r.getCourse();
+//			c.getReviews().remove(r);
+//			session.save(c);
+//			session.delete(r);
+//			session.getTransaction().commit();
+//		}
+	}
+
+	public static void insertStudentWithStudentDetail(Student s, StudentDetail sd) {
+		connect();
+		s.setStudentDetailId(sd);
+		session.beginTransaction();
+		session.save(s);
+		session.getTransaction().commit();
+
+		System.out.println("Data is saved into the tables");
+	}
+
+	public static void insertStudentWithCoursesById(int sid, List<Course> courses) {
+		connect();
+		session.beginTransaction();
+		Student s = (Student) session.get(Student.class, sid);
+		for (Course c : courses) {
+			s.add(c);
+			session.save(c);
+		}
+		session.getTransaction().commit();
+
+		System.out.println("Data is saved into the tables");
+	}
+
+	public static void insertReviewWithCoursesById(int cid, List<Review> reviews) {
+		connect();
+		session.beginTransaction();
+		Course c = (Course) session.get(Course.class, cid);
+		System.out.println("c: " + c);
+		for (Review r : reviews) {
+			System.out.println("r: " + r);
+			c.add(r);
+			session.save(r);
+		}
+		session.getTransaction().commit();
+
+		System.out.println("Data is saved into the review tables");
+	}
+
+	public static void displayCoursesByStudentId(int sid) {
+		connect();
+		session.beginTransaction();
+		Student s = (Student) session.get(Student.class, sid);
+		List<Course> courses = s.getCourses();
+		for (Course c : courses) {
+			System.out.println(c);
+		}
+		System.out.println("Student id: " + sid + "\n" + s);
+		session.getTransaction().commit();
+
+	}
+
+	public static void displayCoursesByCourseId(int cid) {
+		connect();
+		session.beginTransaction();
+		Course c = (Course) session.get(Course.class, cid);
+//		List<Review> reviews = c.getReviews();
+
+		System.out.println("Student id: " + cid + "\n" + c);
+//		System.out.println("reviews: \n" + reviews);
+		session.getTransaction().commit();
+	}
+
+	public static void insertToNewInstructor(Instructor i, List<Integer> cidList) {
+		connect();
+		session.beginTransaction();
+		for (int id : cidList) {
+			Course c = (Course) session.get(Course.class, id);
+			System.out.println(id + " c: " + c);
+			c.add(i);
+			session.save(i);
+		}
+		System.out.println("i: " + i);
+
+		session.getTransaction().commit();
+
+		System.out.println("Data is saved into the tables");
+	}
+
+//	public static void insertToCourseInstructor(int courseId, int instructorId) {
+//		connect();
+//		session.beginTransaction();
+//		session.save(i);
+//		session.getTransaction().commit();
+//
+//		System.out.println("Data is saved into the tables");
+//	}
+
+	public static void deleteInstructor(int instructorId) {
+		connect();
+		session.beginTransaction();
+		Instructor s = (Instructor) session.get(Instructor.class, instructorId);
+		if (s != null) {
+			session.delete(s);
+			session.getTransaction().commit();
+			System.out.println("Data is deleted from the Instructor tables");
+		} else {
+			System.out.println("InstructorId: " + instructorId + " does not exist in Instructor table");
+		}
+
+	}
+
+	public static void insertToExistingInstructor(int instructorId, List<Integer> cidList) {
+		// TODO Auto-generated method stub
+		connect();
+		session.beginTransaction();
+		Instructor i = (Instructor) session.get(Instructor.class, instructorId);
+
+		for (int id : cidList) {
+			Course c = (Course) session.get(Course.class, id);
+			System.out.println(id + " c: " + c);
+//		c.add(i); // either one is enough
+			i.add(c);
+			session.save(i);
+		}
+		System.out.println("i: " + i);
+
+		session.getTransaction().commit();
+
+		System.out.println("Data is saved into the tables");
+
+	}
+
+	public static void displayCoursesByInstructorId(int instructorId) {
+		// TODO Auto-generated method stub
+		connect();
+		session.beginTransaction();
+		Instructor i = (Instructor) session.get(Instructor.class, instructorId);
+		List<Course> courses = i.getCourses();
+		for (Course c : courses) {
+			System.out.println(c.getId());
+		}
+
+		session.getTransaction().commit();
+	}
+
+	public static void insertToExistingCourse(int cid, List<Integer> instructorIdList) {
+		connect();
+		session.beginTransaction();
+		Course c = (Course) session.get(Course.class, cid);
+
+		for (int id : instructorIdList) {
+			Instructor i = (Instructor) session.get(Instructor.class, id);
+//		c.add(i); // either one is enough
+			i.add(c);
+			session.save(c);
+		}
+		session.getTransaction().commit();
+	}
+
+	public static void deleteCourse(int cid) {
+		connect();
+		session.beginTransaction();
+		Course c = (Course) session.get(Course.class, cid);
+		if (c != null) {
+			session.delete(c);
+			session.getTransaction().commit();
+			System.out.println("Data is deleted from the Course tables");
+		} else {
+			System.out.println("cid: " + cid + " does not exist in Course table");
+		}
+	}
+
+
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+//		Student s = new Student("shufa", "wen", "123@gamil.com");
+//		StudentDetail sd = new StudentDetail("ABC", 1);
+//		insertStudentWithStudentDetail(s, sd);
+
+//		deleteStudentById(4);// fail as studentid is a f_key used in course table
+
+//		Student s = new Student("afuhs", "new", "321@gamil.com");
+//		StudentDetail sd = new StudentDetail("CBA", 3);
+//		insertStudentWithStudentDetail(s, sd);
+//
+//		Course c1 = new Course("Java");
+//		Course c2 = new Course("Python");
+//		Course c3 = new Course("JavaScript");
+//
+//		Course c4 = new Course("Jav");
+//		Course c5 = new Course("Pyt");
+//		Course c6 = new Course("Js");
+//		List<Course> courses = new ArrayList<>();
+		// course insertion and add them to student.courses
+//		courses.add(c1);
+//		courses.add(c2);
+//		courses.add(c3);
+//		insertStudentWithCoursesById(4, courses);
+		// course insertion and add them to student.courses
+//		courses.add(c4);
+//		courses.add(c5);
+//		courses.add(c6);
+//		insertStudentWithCoursesById(8, courses);
+
+//		displayCoursesByStudentId(4);
+//		deleteStudentById(4);// fail as studentid is a f_key used in course table
+//		deleteCourseById(11);
+//		displayCoursesByStudentId(4);
+
+//		Review r1 = new Review("comment1");
+//		Review r2 = new Review("comment2");
+//		Review r3 = new Review("comment3");
+//		List<Review> reviews = new ArrayList<>();
+//		reviews.add(r1);
+//		reviews.add(r2);
+//		reviews.add(r3);
+//
+//		insertReviewWithCoursesById(12, reviews);
+//		deleteReviewById(13);
+//		deleteCourseById(18);
+//		displayCoursesByCourseId(16);
+
+//		// add existing courses to new instructor
+//		List<Integer> cidList = new ArrayList<>();
+////		cidList.add(16);
+////		cidList.add(17);
+////		insertToNewInstructor(new Instructor("Rudresh", "A", "Rudresh@gmail.com"), cidList);
+////		
+//		//add existing courses to existing instructor 
+//		
+//		cidList.clear();
+////		cidList.add(16);
+//		cidList.add(18);
+//		insertToExistingInstructor(13, cidList);
+
+//		displayCoursesByInstructorId(11);
+
+		// different instructor to a course
+		List<Integer> instructorIdList = new ArrayList<>();
+		instructorIdList.add(14);
+		instructorIdList.add(15);
+		instructorIdList.add(19);
+		insertToExistingCourse(16, instructorIdList);
+
+
+
+//		cidList.clear();
+//		cidList.add(17);
+//		insertInstructor(new Instructor("Akhil", "B", "Akhil@gmail.com"), cidList);
+
+//		insertToCourseInstructor(16, 1);
+//		insertToCourseInstructor(16, 1);
+
+//		deleteInstructor(11);// delete instructor, course table is not be affected, but relevant record in
+								// course_instructor are also been deleted
+		
+//		deleteCourse(18); // delete course, Instructor table is not be affected, but relevant record in
+								// course_instructor are also been deleted
+	}
+
+}
