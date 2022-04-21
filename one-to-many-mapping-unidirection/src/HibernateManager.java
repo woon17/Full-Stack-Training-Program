@@ -115,6 +115,15 @@ public class HibernateManager {
 
 	}
 	
+	public static void displayStudentById(int sid) {
+		connect();
+		session.beginTransaction();
+		Student s = (Student) session.get(Student.class, sid);
+		System.out.println("Student id: " + sid + "\n" + s);
+		session.getTransaction().commit();
+
+	}
+	
 	public static void displayCoursesByCourseId(int cid) {
 		connect();
 		session.beginTransaction();
@@ -171,9 +180,11 @@ public class HibernateManager {
 //		reviews.add(r3);
 //
 //		insertReviewWithCoursesById(12, reviews);
-		deleteReviewById(13);
+//		deleteReviewById(13);
 //		deleteCourseById(18);
 //		displayCoursesByCourseId(16);
+		
+		displayStudentById(4);
 	}
 
 }
